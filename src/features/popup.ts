@@ -1,9 +1,22 @@
+import type { StorageData } from '../shared/types';
+import { ScrollHideI18n } from '../shared/i18n';
+import { ScrollHideStorage } from '../shared/storage';
+import { ScrollHideWhitelist } from './whitelist';
+import { ScrollHideConstants } from '../shared/constants';
+
 const initPopup = () => {
-  const { applyI18n } = (globalThis as any).ScrollHideI18n || {};
-  const { getActiveTab } = (globalThis as any).ScrollHideBrowserApi || {};
-  const { getSyncState, setSyncValue, applyTheme } = (globalThis as any).ScrollHideStorage || {};
-  const { isRestrictedUrl, isWhitelisted, sanitizeDomain } = (globalThis as any).ScrollHideWhitelist || {};
-  const { ICONS_ACTIVE, ICONS_INACTIVE } = (globalThis as any).ScrollHideConstants || {};
+  const { applyI18n } = ScrollHideI18n;
+  const { getSyncState, setSyncValue, applyTheme } = ScrollHideStorage;
+  const { isRestrictedUrl, isWhitelisted, sanitizeDomain } = ScrollHideWhitelist;
+  const { ICONS_ACTIVE, ICONS_INACTIVE } = ScrollHideConstants;
+
+  const getActiveTab = async (): Promise<chrome.tabs.Tab | null> => {
+    if (typeof chrome !== 'undefined' && chrome.tabs?.query) {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      return tab || null;
+    }
+    return null;
+  };
 
   const toggle = document.getElementById('toggleScroll') as HTMLButtonElement;
   const addCurrentBtn = document.getElementById('addCurrentBtn') as HTMLButtonElement;
@@ -282,7 +295,7 @@ const initPopup = () => {
     return null;
   };
 
-  const fetchSyncData = async (): Promise<Record<string, unknown>> => {
+  const fetchSyncData = async (): Promise<StorageData> => {
     if (getSyncState) {
       try {
         return await getSyncState();
@@ -321,7 +334,7 @@ const initPopup = () => {
       if (tabUrl) {
         try {
           const parsed = new URL(tabUrl);
-          const RESTRICTED_PROTOCOLS = (globalThis as any).ScrollHideConstants?.RESTRICTED_PROTOCOLS || [];
+          const RESTRICTED_PROTOCOLS = ScrollHideConstants.RESTRICTED_PROTOCOLS;
           if (RESTRICTED_PROTOCOLS.includes(parsed.protocol) || parsed.protocol === 'file:') {
             if (parsed.protocol === 'about:') {
               currentHostname = parsed.href;

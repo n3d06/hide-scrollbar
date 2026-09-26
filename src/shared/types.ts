@@ -21,17 +21,7 @@ export interface IconPaths {
   32: string;
   48: string;
   128: string;
-}
-
-export type StorageChangeHandler = (
-  changes: { [K in keyof StorageData]?: chrome.storage.StorageChange },
-  areaName: string
-) => void;
-
-export interface TabInfo {
-  id?: number;
-  url?: string;
-  title?: string;
+  [size: number]: string;
 }
 
 export type ExtensionMessage =

@@ -3,6 +3,10 @@ import { EditorState, Compartment } from '@codemirror/state';
 import { minimalSetup } from 'codemirror';
 import { StreamLanguage } from '@codemirror/language';
 import { oneDark } from '@codemirror/theme-one-dark';
+import { ScrollHideI18n } from '../shared/i18n';
+import { ScrollHideConstants } from '../shared/constants';
+import { ScrollHideStorage } from '../shared/storage';
+import { ScrollHideWhitelist } from './whitelist';
 
 /* ── Minimal CodeMirror 6 Language for Whitelist ────────────────── */
 
@@ -38,10 +42,10 @@ const whitelistLanguage = StreamLanguage.define(whitelistStreamParser);
 const initSettings = () => {
   'use strict';
 
-  const { applyI18n } = (globalThis as any).ScrollHideI18n || {};
-  const { BACKUP_FILENAME, DEFAULT_SYNC_STATE } = (globalThis as any).ScrollHideConstants || {};
-  const { getSyncState, setSyncValue, applyTheme } = (globalThis as any).ScrollHideStorage || {};
-  const { normalizeWhitelist, sanitizeDomain } = (globalThis as any).ScrollHideWhitelist || {};
+  const { applyI18n } = ScrollHideI18n;
+  const { BACKUP_FILENAME, DEFAULT_SYNC_STATE } = ScrollHideConstants;
+  const { getSyncState, setSyncValue, applyTheme } = ScrollHideStorage;
+  const { normalizeWhitelist, sanitizeDomain } = ScrollHideWhitelist;
 
   if (applyI18n) {
     applyI18n();

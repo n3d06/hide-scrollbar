@@ -188,10 +188,8 @@ function appendDevReloader() {
 // 5. Bundling with esbuild (IIFE format for MV3 Chrome Extension compatibility)
 const unbundledEntryPoints = {
   'src/entries/background': path.join(rootDir, 'src/entries/background.ts'),
-  'src/features/popup': path.join(rootDir, 'src/features/popup.ts'),
   'src/shared/constants': path.join(rootDir, 'src/shared/constants.ts'),
   'src/shared/storage': path.join(rootDir, 'src/shared/storage.ts'),
-  'src/shared/browser-api': path.join(rootDir, 'src/shared/browser-api.ts'),
   'src/shared/i18n': path.join(rootDir, 'src/shared/i18n.ts'),
   'src/shared/logger': path.join(rootDir, 'src/shared/logger.ts'),
   'src/features/whitelist': path.join(rootDir, 'src/features/whitelist.ts'),
@@ -200,6 +198,7 @@ const unbundledEntryPoints = {
 const bundledEntryPoints = {
   'src/features/settings': path.join(rootDir, 'src/features/settings.ts'),
   'src/entries/content': path.join(rootDir, 'src/entries/content.ts'),
+  'src/features/popup': path.join(rootDir, 'src/features/popup.ts'),
 };
 
 const unbundledOptions = {

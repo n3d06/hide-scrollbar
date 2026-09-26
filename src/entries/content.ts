@@ -45,7 +45,7 @@ import { isWhitelisted, isRestrictedUrl } from '../features/whitelist';
               observer.disconnect();
             }
           });
-          observer.observe(document, { childList: true, subtree: true });
+          observer.observe(document, { childList: true });
           document.addEventListener('DOMContentLoaded', () => {
             observer.disconnect();
             if (!document.getElementById(STYLE_ID)) {
