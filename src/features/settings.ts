@@ -576,7 +576,11 @@ const initSettings = () => {
 };
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSettings);
+  document.addEventListener('DOMContentLoaded', () => {
+    initSettings();
+    requestAnimationFrame(() => document.documentElement.classList.add('loaded'));
+  });
 } else {
   initSettings();
+  requestAnimationFrame(() => document.documentElement.classList.add('loaded'));
 }

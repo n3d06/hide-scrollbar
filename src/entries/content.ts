@@ -1,47 +1,12 @@
-(function () {
-  const { STYLE_ID } = (globalThis as any).ScrollHideConstants || { STYLE_ID: 'hide-scrollbar-style' };
-  const { getSyncState } = (globalThis as any).ScrollHideStorage || {};
-  const { isWhitelisted, isRestrictedUrl } = (globalThis as any).ScrollHideWhitelist || {};
+import { ScrollHideConstants } from '../shared/constants';
+import { getSyncState } from '../shared/storage';
+import { isWhitelisted, isRestrictedUrl } from '../features/whitelist';
 
-  const CSS_TEXT = `
-    ::-webkit-scrollbar {
-      display: none !important;
-      width: 0 !important;
-      height: 0 !important;
-      background: transparent !important;
-    }
-    ::-webkit-scrollbar-thumb,
-    ::-webkit-scrollbar-track,
-    ::-webkit-scrollbar-corner,
-    ::-webkit-scrollbar-button {
-      display: none !important;
-      background: transparent !important;
-    }
-    html, body, * {
-      scrollbar-width: none !important;
-      -ms-overflow-style: none !important;
-    }
-    div[data-visualcompletion="ignore"][data-thumb="1"],
-    .os-scrollbar,
-    .os-scrollbar-track,
-    .os-scrollbar-handle,
-    .simplebar-scrollbar,
-    .simplebar-track,
-    .ps__rail-x,
-    .ps__rail-y,
-    .nicescroll-rails,
-    .mCSB_scrollTools,
-    .mCSB_dragger,
-    .nano-pane,
-    .nano-slider,
-    .mac-scrollbar {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      width: 0 !important;
-      height: 0 !important;
-    }
-  `;
+(function () {
+  const STYLE_ID = ScrollHideConstants?.STYLE_ID || 'hide-scrollbar-style';
+
+  const CSS_TEXT =
+    '::-webkit-scrollbar,::-webkit-scrollbar-thumb,::-webkit-scrollbar-track,::-webkit-scrollbar-corner,::-webkit-scrollbar-button{display:none!important;background:transparent!important;width:0!important;height:0!important}html,body,*{scrollbar-width:none!important;-ms-overflow-style:none!important}div[data-visualcompletion="ignore"][data-thumb="1"],.os-scrollbar,.os-scrollbar-track,.os-scrollbar-handle,.simplebar-scrollbar,.simplebar-track,.ps__rail-x,.ps__rail-y,.nicescroll-rails,.mCSB_scrollTools,.mCSB_dragger,.nano-pane,.nano-slider,.mac-scrollbar{display:none!important;visibility:hidden!important;opacity:0!important;width:0!important;height:0!important}';
 
   const SESSION_CACHE_KEY = '__scrollhide_state__';
 

@@ -10,8 +10,21 @@ export interface StorageData {
   theme?: ThemeMode;
 }
 
+/** Strictly typed default state matching StorageData */
+export type DefaultSyncState = Required<StorageData>;
+
+/** Cached state used in memory by service worker */
+export type CachedState = Required<Pick<StorageData, 'scrollbarHidden' | 'whitelist'>>;
+
+export interface IconPaths {
+  16: string;
+  32: string;
+  48: string;
+  128: string;
+}
+
 export type StorageChangeHandler = (
-  changes: { [key: string]: chrome.storage.StorageChange },
+  changes: { [K in keyof StorageData]?: chrome.storage.StorageChange },
   areaName: string
 ) => void;
 
@@ -21,3 +34,6 @@ export interface TabInfo {
   title?: string;
 }
 
+export type ExtensionMessage =
+  | { action: 'toggle-scrollbar' }
+  | { action: 'update-icons' };

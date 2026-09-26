@@ -3,6 +3,7 @@ const initPopup = () => {
   const { getActiveTab } = (globalThis as any).ScrollHideBrowserApi || {};
   const { getSyncState, setSyncValue, applyTheme } = (globalThis as any).ScrollHideStorage || {};
   const { isRestrictedUrl, isWhitelisted, sanitizeDomain } = (globalThis as any).ScrollHideWhitelist || {};
+  const { ICONS_ACTIVE, ICONS_INACTIVE } = (globalThis as any).ScrollHideConstants || {};
 
   const toggle = document.getElementById('toggleScroll') as HTMLButtonElement;
   const addCurrentBtn = document.getElementById('addCurrentBtn') as HTMLButtonElement;
@@ -24,22 +25,8 @@ const initPopup = () => {
   let currentScrollbarHidden = true;
   let currentTabId: number | undefined;
 
-  const ICONS_ACTIVE = {
-    16: '/assets/icons/icon16.png',
-    32: '/assets/icons/icon32.png',
-    48: '/assets/icons/icon48.png',
-    128: '/assets/icons/icon128.png',
-  };
-
-  const ICONS_INACTIVE = {
-    16: '/assets/icons/icon16-off.png',
-    32: '/assets/icons/icon32-off.png',
-    48: '/assets/icons/icon48-off.png',
-    128: '/assets/icons/icon128-off.png',
-  };
-
   const applyImmediateToolbarIcon = (hidden: boolean, inWhitelist: boolean): void => {
-    if (typeof chrome === 'undefined' || !chrome.action?.setIcon) return;
+    if (typeof chrome === 'undefined' || !chrome.action?.setIcon || !ICONS_ACTIVE) return;
     const isTabActive = hidden && !inWhitelist && !isRestricted;
     if (currentTabId !== undefined) {
       chrome.action.setIcon({

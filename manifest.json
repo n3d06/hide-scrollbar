@@ -40,9 +40,6 @@
         "<all_urls>"
       ],
       "js": [
-        "src/shared/constants.js",
-        "src/shared/storage.js",
-        "src/features/whitelist.js",
         "src/entries/content.js"
       ],
       "run_at": "document_start",
