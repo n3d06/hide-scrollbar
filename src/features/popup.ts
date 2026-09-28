@@ -274,7 +274,7 @@ const initPopup = () => {
       const extId = typeof chrome !== 'undefined' && chrome.runtime?.id;
       const reviewUrl = extId
         ? `https://chromewebstore.google.com/detail/${extId}/reviews`
-        : 'https://github.com/3ky4r0/HideScrollbar';
+        : 'https://github.com/n3d06/HideScrollbar';
       if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
         chrome.tabs.create({ url: reviewUrl });
       } else {

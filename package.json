@@ -2,15 +2,15 @@
   "name": "hide-scrollbar-extension",
   "version": "1.0.0",
   "description": "Clean up scrollbars and improve web aesthetics seamlessly",
-  "author": "3ky4r0",
+  "author": "n3d06",
   "repository": {
     "type": "git",
-    "url": "https://github.com/3ky4r0/HideScrollbar.git"
+    "url": "https://github.com/n3d06/HideScrollbar.git"
   },
   "bugs": {
-    "url": "https://github.com/3ky4r0/HideScrollbar/issues"
+    "url": "https://github.com/n3d06/HideScrollbar/issues"
   },
-  "homepage": "https://github.com/3ky4r0/HideScrollbar#readme",
+  "homepage": "https://github.com/n3d06/HideScrollbar#readme",
   "private": true,
   "scripts": {
     "build": "node scripts/build.js",
