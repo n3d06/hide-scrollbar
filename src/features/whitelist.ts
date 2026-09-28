@@ -39,44 +39,102 @@ export const normalizeWhitelist = (domains: unknown): string[] =>
 export const serializeDomains = (domains: unknown): string =>
   normalizeWhitelist(domains).join('\n');
 
-let cachedWhitelist: unknown = null;
-let cachedSet = new Set<string>();
+/**
+ * Convert a single domain or wildcard rule into Chrome Extension match patterns (for excludeMatches)
+ */
+export const domainToMatchPatterns = (domain: string): string[] => {
+  const clean = sanitizeDomain(domain);
+  if (!clean) return [];
+  if (clean.startsWith('*.')) {
+    const apex = clean.slice(2);
+    return [`*://${clean}/*`, `*://${apex}/*`];
+  }
+  const withoutWww = clean.startsWith('www.') ? clean.slice(4) : clean;
+  return [`*://${withoutWww}/*`, `*://www.${withoutWww}/*`];
+};
 
-export const isWhitelisted = (hostname: string | null | undefined, whitelist: string[] | unknown): boolean => {
-  if (!hostname) return false;
-  const cleanHost = String(hostname).toLowerCase().replace(/:\d+$/, '').trim();
+/**
+ * Convert an entire whitelist into Chrome Extension excludeMatches array
+ */
+export const whitelistToExcludeMatches = (whitelist: string[] | unknown): string[] => {
+  const list = normalizeWhitelist(whitelist);
+  const patterns = new Set<string>();
+  for (const domain of list) {
+    for (const pattern of domainToMatchPatterns(domain)) {
+      patterns.add(pattern);
+    }
+  }
+  return [...patterns].sort();
+};
+
+let cachedWhitelist: unknown = null;
+let cachedPatterns: any[] = [];
+let cachedExactSet = new Set<string>();
+let cachedWildcards: string[] = [];
+
+/**
+ * Check if a hostname or URL matches the whitelist using native URLPattern API
+ */
+export const isWhitelisted = (
+  hostnameOrUrl: string | null | undefined,
+  whitelist: string[] | unknown
+): boolean => {
+  if (!hostnameOrUrl) return false;
+  let cleanHost = String(hostnameOrUrl).toLowerCase().replace(/:\d+$/, '').trim();
+  if (cleanHost.includes('://')) {
+    try {
+      cleanHost = new URL(cleanHost).hostname;
+    } catch (_) {}
+  }
   if (!cleanHost) return false;
 
   if (whitelist !== cachedWhitelist) {
     cachedWhitelist = whitelist;
-    cachedSet = new Set(
-      (Array.isArray(whitelist) ? (whitelist as string[]) : [])
-        .map((d) => sanitizeDomain(d))
-        .filter(Boolean)
-    );
+    const list = normalizeWhitelist(whitelist);
+    cachedExactSet = new Set<string>();
+    cachedPatterns = [];
+    cachedWildcards = [];
+
+    const hasNativeURLPattern = typeof (globalThis as any).URLPattern === 'function';
+
+    for (const item of list) {
+      if (item.startsWith('*.')) {
+        const apex = item.slice(2);
+        cachedExactSet.add(apex);
+        cachedWildcards.push(apex);
+        if (hasNativeURLPattern) {
+          try {
+            cachedPatterns.push(new (globalThis as any).URLPattern({ hostname: `{*.}?${apex}` }));
+          } catch (_) {}
+        }
+      } else {
+        const withoutWww = item.startsWith('www.') ? item.slice(4) : item;
+        cachedExactSet.add(withoutWww);
+        cachedExactSet.add(`www.${withoutWww}`);
+        if (hasNativeURLPattern) {
+          try {
+            cachedPatterns.push(new (globalThis as any).URLPattern({ hostname: `{www.}?${withoutWww}` }));
+          } catch (_) {}
+        }
+      }
+    }
   }
 
-  // 1. Exact match (e.g., mail.google.com === mail.google.com)
-  if (cachedSet.has(cleanHost)) return true;
+  // 1. Instant O(1) exact match
+  if (cachedExactSet.has(cleanHost)) return true;
 
-  // 2. www alias match: www.domain.com <-> domain.com
-  const withoutWww = cleanHost.startsWith('www.') ? cleanHost.slice(4) : null;
-  const withWww = cleanHost.startsWith('www.') ? null : `www.${cleanHost}`;
-  if (withoutWww && cachedSet.has(withoutWww)) return true;
-  if (withWww && cachedSet.has(withWww)) return true;
-
-  // 3. Exact apex domain matching a wildcard rule (*.google.com matches google.com)
-  if (cachedSet.has(`*.${cleanHost}`)) return true;
-
-  // 4. Wildcard subdomain match: ONLY matches if user explicitly added a wildcard rule (*.domain)
-  // e.g., cleanHost "mail.google.com" matches "*.google.com", but DOES NOT match plain "google.com"
-  const parts = cleanHost.split('.');
-  while (parts.length > 1) {
-    parts.shift();
-    const wildcardRule = `*.${parts.join('.')}`;
-    if (cachedSet.has(wildcardRule)) return true;
+  // 2. Native URLPattern matching
+  if (cachedPatterns.length > 0) {
+    for (const pattern of cachedPatterns) {
+      if (pattern.test({ hostname: cleanHost })) return true;
+    }
+    return false;
   }
 
+  // 3. Fallback matching
+  for (const apex of cachedWildcards) {
+    if (cleanHost.endsWith(`.${apex}`)) return true;
+  }
   return false;
 };
 
@@ -92,11 +150,13 @@ export const isRestrictedUrl = (url: string | null | undefined): boolean => {
 };
 
 export const ScrollHideWhitelist = {
+  domainToMatchPatterns,
   isRestrictedUrl,
   isWhitelisted,
   normalizeWhitelist,
   sanitizeDomain,
   serializeDomains,
+  whitelistToExcludeMatches,
 };
 
 // Global assignment for HTML script tags

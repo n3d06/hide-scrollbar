@@ -246,8 +246,17 @@
           domain per line). Lines starting with <code>!</code> or <code>#</code> are comments.</p>
       </div>
 
-      <!-- CodeMirror Editor Container -->
-      <div id="whitelistEditorContainer" class="editor-container"></div>
+      <!-- Native Whitelist Editor -->
+      <div class="whitelist-editor-wrap">
+        <div class="editor-gutter" id="whitelistGutter" aria-hidden="true">1</div>
+        <textarea id="whitelistInput"
+          class="whitelist-textarea"
+          spellcheck="false"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder="! Enter domains here, one per line&#10;example.com&#10;*.youtube.com"></textarea>
+      </div>
     </section>
 
     <!-- TAB 3: GUIDE -->

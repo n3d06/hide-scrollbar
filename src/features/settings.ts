@@ -1,38 +1,3 @@
-import { EditorView, placeholder, keymap, lineNumbers, highlightActiveLine, highlightActiveLineGutter } from '@codemirror/view';
-import { EditorState, Compartment } from '@codemirror/state';
-import { minimalSetup } from 'codemirror';
-import { StreamLanguage } from '@codemirror/language';
-import { oneDark } from '@codemirror/theme-one-dark';
-
-/* ── Minimal CodeMirror 6 Language for Whitelist ────────────────── */
-
-const whitelistStreamParser = {
-  token(stream: any) {
-    if (stream.sol()) {
-      stream.eatSpace();
-      if (stream.peek() === '!' || stream.peek() === '#') {
-        stream.skipToEnd();
-        return 'lineComment';
-      }
-    }
-    if (stream.eatSpace()) return null;
-    if (stream.peek() === '!' || stream.peek() === '#') {
-      stream.skipToEnd();
-      return 'lineComment';
-    }
-    if (stream.match(/^https?:\/\/[^\s]+/)) {
-      return 'url';
-    }
-    if (stream.match(/^(\*\.)?[a-zA-Z0-9][-a-zA-Z0-9]*(\.[a-zA-Z0-9][-a-zA-Z0-9]*)*(:\d+)?/)) {
-      return 'keyword';
-    }
-    stream.next();
-    return null;
-  },
-};
-
-const whitelistLanguage = StreamLanguage.define(whitelistStreamParser);
-
 /* ── Main Settings Initialization ──────────────────────────────── */
 
 const initSettings = () => {
@@ -68,44 +33,27 @@ const initSettings = () => {
   const btnExportWhitelist = document.getElementById('btnExportWhitelist') as HTMLButtonElement | null;
   const whitelistFileInput = document.getElementById('whitelistFileInput') as HTMLInputElement | null;
   const saveIndicator = document.getElementById('saveIndicator') as HTMLElement | null;
-  const whitelistEditorContainer = document.getElementById('whitelistEditorContainer') as HTMLElement | null;
+  const whitelistInput = document.getElementById('whitelistInput') as HTMLTextAreaElement | null;
+  const whitelistGutter = document.getElementById('whitelistGutter') as HTMLElement | null;
 
   let lastSavedWhitelistText = '';
-  let editorView: EditorView | null = null;
-  const themeCompartment = new Compartment();
 
-  const darkTheme = EditorView.theme(
-    {
-      '&': {
-        backgroundColor: 'var(--secondary-bg) !important',
-        color: 'var(--text)',
-      },
-      '.cm-gutters': {
-        backgroundColor: 'var(--secondary-bg) !important',
-        color: 'var(--muted)',
-        borderRight: '1px solid rgba(255, 255, 255, 0.15) !important',
-      },
-      '.cm-activeLineGutter': {
-        backgroundColor: 'rgba(255, 255, 255, 0.07)',
-      },
-      '.cm-activeLine': {
-        backgroundColor: 'rgba(255, 255, 255, 0.03)',
-      },
-    },
-    { dark: true }
-  );
+  const updateLineNumbers = (): void => {
+    if (!whitelistInput || !whitelistGutter) return;
+    const count = Math.max(1, whitelistInput.value.split('\n').length);
+    let numbers = '';
+    for (let i = 1; i <= count; i++) {
+      numbers += `${i}\n`;
+    }
+    whitelistGutter.textContent = numbers;
+  };
 
-  const getEditorText = (): string => (editorView ? editorView.state.doc.toString() : '');
+  const getEditorText = (): string => (whitelistInput ? whitelistInput.value : '');
 
   const setEditorText = (text: string): void => {
-    if (!editorView) return;
-    editorView.dispatch({
-      changes: {
-        from: 0,
-        to: editorView.state.doc.length,
-        insert: text,
-      },
-    });
+    if (!whitelistInput) return;
+    whitelistInput.value = text;
+    updateLineNumbers();
   };
 
   const checkWhitelistDirty = (): void => {
@@ -115,55 +63,27 @@ const initSettings = () => {
     btnRevertWhitelist.disabled = !isDirty;
   };
 
-  const updateEditorTheme = (themeName?: string): void => {
-    if (!editorView) return;
-    const theme = themeName || (settingTheme ? settingTheme.value : 'system');
-    const isDark =
-      theme === 'dark' ||
-      (theme === 'system' && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    editorView.dispatch({
-      effects: themeCompartment.reconfigure(isDark ? [oneDark, darkTheme] : []),
+  // Wire native textarea events
+  if (whitelistInput) {
+    whitelistInput.addEventListener('input', () => {
+      updateLineNumbers();
+      checkWhitelistDirty();
     });
-  };
 
-  // Initialize CodeMirror 6 Editor
-  if (whitelistEditorContainer) {
-    const isInitialDark =
-      typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    whitelistInput.addEventListener('scroll', () => {
+      if (whitelistGutter) {
+        whitelistGutter.scrollTop = whitelistInput.scrollTop;
+      }
+    });
 
-    editorView = new EditorView({
-      state: EditorState.create({
-        doc: '',
-        extensions: [
-          minimalSetup,
-          lineNumbers(),
-          highlightActiveLineGutter(),
-          highlightActiveLine(),
-          whitelistLanguage,
-          themeCompartment.of(isInitialDark ? [oneDark, darkTheme] : []),
-          EditorView.theme({
-            '&': { height: '100%' },
-          }),
-          placeholder('! Enter domains here, one per line\nexample.com\nyoutube.com'),
-          EditorView.updateListener.of((update) => {
-            if (update.docChanged) {
-              checkWhitelistDirty();
-            }
-          }),
-          keymap.of([
-            {
-              key: 'Mod-s',
-              run: () => {
-                if (btnApplyWhitelist && !btnApplyWhitelist.disabled) {
-                  applyWhitelistChanges();
-                }
-                return true;
-              },
-            },
-          ]),
-        ],
-      }),
-      parent: whitelistEditorContainer,
+    whitelistInput.addEventListener('keydown', (e: KeyboardEvent) => {
+      // Ctrl+S / Cmd+S to save
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        if (btnApplyWhitelist && !btnApplyWhitelist.disabled) {
+          applyWhitelistChanges();
+        }
+      }
     });
   }
 
@@ -188,8 +108,8 @@ const initSettings = () => {
       history.replaceState(null, '', newUrl);
     }
 
-    if (tabName === 'whitelist' && editorView) {
-      editorView.requestMeasure();
+    if (tabName === 'whitelist') {
+      updateLineNumbers();
     }
   }
 
@@ -210,14 +130,6 @@ const initSettings = () => {
       switchTab(popTab);
     }
   });
-
-  if (typeof window !== 'undefined' && window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      if (settingTheme && settingTheme.value === 'system') {
-        updateEditorTheme('system');
-      }
-    });
-  }
 
   function showSavedToast(msg: string = 'Changes saved'): void {
     if (!saveIndicator) return;
@@ -266,7 +178,6 @@ const initSettings = () => {
         if (applyTheme) {
           applyTheme(theme);
         }
-        updateEditorTheme(theme);
 
         // Whitelist
         const domains = normalizeWhitelist ? normalizeWhitelist(state.whitelist || []) : (state.whitelist || []);
@@ -311,7 +222,6 @@ const initSettings = () => {
       const themeVal = settingTheme.value;
       if (applyTheme) applyTheme(themeVal);
       setSyncValue({ theme: themeVal });
-      updateEditorTheme(themeVal);
     });
   }
 
@@ -400,7 +310,7 @@ const initSettings = () => {
   /* ── Whitelist Tab Event Listeners ────────────────────────── */
 
   function applyWhitelistChanges(): void {
-    if (!editorView || !setSyncValue) return;
+    if (!setSyncValue) return;
     const currentText = getEditorText();
     const domains = parseEditorContent(currentText);
     setSyncValue({ whitelist: domains }).then(() => {
@@ -555,7 +465,6 @@ const initSettings = () => {
           const newTheme = String(changes.theme.newValue || 'system');
           if (settingTheme) settingTheme.value = newTheme;
           if (applyTheme) applyTheme(newTheme);
-          updateEditorTheme(newTheme);
         }
         if (changes.whitelist && Array.isArray(changes.whitelist.newValue)) {
           const isDirty = getEditorText() !== lastSavedWhitelistText;

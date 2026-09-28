@@ -171,7 +171,17 @@ assert(service.isWhitelisted('github.com', list) === true, 'Wildcard matches ape
 assert(service.isWhitelisted('gist.github.com', list) === true, 'isWhitelisted matches subdomain of wildcard domain');
 assert(service.isWhitelisted('localhost', list) === true, 'isWhitelisted finds localhost');
 assert(service.isWhitelisted('localhost:3000', list) === true, 'isWhitelisted matches localhost with port');
+assert(service.isWhitelisted('https://example.com/some/path', list) === true, 'isWhitelisted matches full URL');
 assert(service.isWhitelisted('other.com', list) === false, 'isWhitelisted returns false for non-listed site');
+
+const matchPatterns = service.domainToMatchPatterns('example.com');
+assert(matchPatterns.includes('*://example.com/*') && matchPatterns.includes('*://www.example.com/*'), 'domainToMatchPatterns generates exact and www match patterns');
+
+const wildcardPatterns = service.domainToMatchPatterns('*.google.com');
+assert(wildcardPatterns.includes('*://*.google.com/*') && wildcardPatterns.includes('*://google.com/*'), 'domainToMatchPatterns generates wildcard and apex match patterns');
+
+const excludeMatches = service.whitelistToExcludeMatches(['example.com', '*.google.com']);
+assert(excludeMatches.length === 4, 'whitelistToExcludeMatches creates full list of exclude matches');
 
 assert(service.isRestrictedUrl('chrome://settings') === true, 'Restricted on chrome://');
 assert(service.isRestrictedUrl('edge://extensions') === true, 'Restricted on edge://');
