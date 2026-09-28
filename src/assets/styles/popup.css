@@ -45,8 +45,14 @@ body {
 .top-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   flex-shrink: 0;
+}
+
+.action-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* ── Toggle Switch (Zero Animation, Native look) ─────────── */
@@ -93,10 +99,9 @@ body {
   border: none;
   color: var(--muted);
   cursor: pointer;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   padding: 0;
-  border-radius: 4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +109,7 @@ body {
 }
 
 .action-btn:hover:not(:disabled) {
-  background: rgba(128, 128, 128, 0.15);
+  background: transparent;
   color: var(--text);
 }
 
@@ -166,14 +171,13 @@ body {
 }
 
 .add-btn {
-  background: var(--secondary-bg);
-  border: 1px solid var(--border);
-  color: var(--text);
+  background: transparent;
+  border: none;
+  color: var(--muted);
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   padding: 0;
-  border-radius: 4px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -183,7 +187,8 @@ body {
 }
 
 .add-btn:hover:not(:disabled) {
-  background: rgba(128, 128, 128, 0.2);
+  background: transparent;
+  color: var(--text);
 }
 
 .add-btn:disabled {
