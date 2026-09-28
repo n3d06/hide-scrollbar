@@ -56,6 +56,14 @@ function copyRecursive(src, dest) {
           console.warn(`⚠️ Failed to minify CSS ${src}, copying as is.`, err.message);
           fs.copyFileSync(src, dest);
         }
+      } else if (ext === '.json' && !isWatch) {
+        try {
+          const rawJson = fs.readFileSync(src, 'utf8');
+          const minified = JSON.stringify(JSON.parse(rawJson));
+          fs.writeFileSync(dest, minified);
+        } catch (_) {
+          fs.copyFileSync(src, dest);
+        }
       } else {
         fs.copyFileSync(src, dest);
       }
@@ -85,7 +93,16 @@ function copyHtmlFile(src, dest) {
 
 function copyAllStatic() {
   if (fs.existsSync(path.join(rootDir, 'manifest.json'))) {
-    fs.copyFileSync(path.join(rootDir, 'manifest.json'), path.join(distDir, 'manifest.json'));
+    if (!isWatch) {
+      try {
+        const raw = fs.readFileSync(path.join(rootDir, 'manifest.json'), 'utf8');
+        fs.writeFileSync(path.join(distDir, 'manifest.json'), JSON.stringify(JSON.parse(raw)), 'utf8');
+      } catch (_) {
+        fs.copyFileSync(path.join(rootDir, 'manifest.json'), path.join(distDir, 'manifest.json'));
+      }
+    } else {
+      fs.copyFileSync(path.join(rootDir, 'manifest.json'), path.join(distDir, 'manifest.json'));
+    }
   }
   copyHtmlFile(path.join(rootDir, 'src/options.html'), path.join(distDir, 'options.html'));
   copyHtmlFile(path.join(rootDir, 'src/popup.html'), path.join(distDir, 'popup.html'));
