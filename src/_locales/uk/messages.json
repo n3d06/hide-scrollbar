@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Недійсна сторінка"
     },
-    "exceptionsTitle": {
-        "message": "Винятки"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Збереження..."
-    },
-    "saved": {
-        "message": "Збережено"
-    },
-    "error": {
-        "message": "Помилка"
-    },
     "addCurrentHost": {
         "message": "Додати сайт до білого списку"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Перезавантажити сторінку"
     },
-    "exportData": {
-        "message": "Експортувати дані"
-    },
-    "importData": {
-        "message": "Імпортувати дані"
-    },
-    "openExceptions": {
-        "message": "Відкрити винятки"
-    },
     "settings": {
         "message": "Settings"
-    },
-    "info": {
-        "message": "Інформація"
     },
     "statsStatus": {
         "message": "Статус"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Обмежено"
     },
-    "invalidFileError": {
-        "message": "Помилка: недійсний формат файлу!"
-    },
-    "appearanceGroup": {
-        "message": "Appearance"
-    },
     "themeTitle": {
         "message": "Theme"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Dark"
     },
-    "tabSettings": {
-        "message": "Settings"
-    },
     "tabWhitelist": {
         "message": "Whitelist"
-    },
-    "tabGuide": {
-        "message": "Guide"
     },
     "tabReport": {
         "message": "Report"
     },
-    "tabAbout": {
-        "message": "Про розширення та конфіденційність"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Політика конфіденційності"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide не збирає, не зберігає та не передає жодних даних перегляду. Усе працює на 100% локально."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Пояснення дозволів"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Відкритий код та ліцензія"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide — це безкоштовне програмне забезпечення з відкритим кодом, випущене під ліцензією MIT."
     },
     "generalSettingsGroup": {
         "message": "General Settings"
@@ -156,7 +102,7 @@
         "message": "Backup to file"
     },
     "backupImport": {
-        "message": "Restore from file..."
+        "message": "Restore from file"
     },
     "backupReset": {
         "message": "Reset to defaults"
@@ -168,19 +114,13 @@
         "message": "Revert"
     },
     "btnImportAppend": {
-        "message": "Import and append..."
+        "message": "Import and append"
     },
     "btnExport": {
-        "message": "Export..."
+        "message": "Export"
     },
     "whitelistWarning": {
         "message": "Lines starting with ! or # are treated as comments."
-    },
-    "guideTitle": {
-        "message": "Quick Usage Guide"
-    },
-    "reportTitle": {
-        "message": "Report Unhidden Scrollbars & Issues"
     },
     "reportDesc": {
         "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Copy System Info"
     },
-    "reportHelpfulDetails": {
-        "message": "Helpful Details to Include in Your Report"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Налаштувати"
     }
 }

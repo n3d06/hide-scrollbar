@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Neplatná stránka"
     },
-    "exceptionsTitle": {
-        "message": "Výjimky"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Ukládání..."
-    },
-    "saved": {
-        "message": "Uloženo"
-    },
-    "error": {
-        "message": "Chyba"
-    },
     "addCurrentHost": {
         "message": "Přidat web na seznam výjimek"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Znovu načíst stránku"
     },
-    "exportData": {
-        "message": "Exportovat data"
-    },
-    "importData": {
-        "message": "Importovat data"
-    },
-    "openExceptions": {
-        "message": "Otevřít výjimky"
-    },
     "settings": {
         "message": "Settings"
-    },
-    "info": {
-        "message": "Informace"
     },
     "statsStatus": {
         "message": "Stav"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Omezeno"
     },
-    "invalidFileError": {
-        "message": "Chyba: Neplatný formát souboru!"
-    },
-    "appearanceGroup": {
-        "message": "Appearance"
-    },
     "themeTitle": {
         "message": "Theme"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Dark"
     },
-    "tabSettings": {
-        "message": "Settings"
-    },
     "tabWhitelist": {
         "message": "Whitelist"
-    },
-    "tabGuide": {
-        "message": "Guide"
     },
     "tabReport": {
         "message": "Report"
     },
-    "tabAbout": {
-        "message": "O aplikaci a soukromí"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Zásady ochrany osobních údajů"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide neshromažďuje, neukládá ani nepřenáší žádná data o prohlížení. Vše funguje 100% lokálně."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Vysvětlení oprávnění"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Open Source a licence"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide je bezplatný software s otevřeným zdrojovým kódem vydaný pod licencí MIT."
     },
     "generalSettingsGroup": {
         "message": "General Settings"
@@ -156,7 +102,7 @@
         "message": "Backup to file"
     },
     "backupImport": {
-        "message": "Restore from file..."
+        "message": "Restore from file"
     },
     "backupReset": {
         "message": "Reset to defaults"
@@ -168,19 +114,13 @@
         "message": "Revert"
     },
     "btnImportAppend": {
-        "message": "Import and append..."
+        "message": "Import and append"
     },
     "btnExport": {
-        "message": "Export..."
+        "message": "Export"
     },
     "whitelistWarning": {
         "message": "Lines starting with ! or # are treated as comments."
-    },
-    "guideTitle": {
-        "message": "Quick Usage Guide"
-    },
-    "reportTitle": {
-        "message": "Report Unhidden Scrollbars & Issues"
     },
     "reportDesc": {
         "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Copy System Info"
     },
-    "reportHelpfulDetails": {
-        "message": "Helpful Details to Include in Your Report"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Konfigurovat"
     }
 }

@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Page non valide"
     },
-    "exceptionsTitle": {
-        "message": "Exceptions"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Enregistrement..."
-    },
-    "saved": {
-        "message": "Enregistré"
-    },
-    "error": {
-        "message": "Erreur"
-    },
     "addCurrentHost": {
         "message": "Ajouter le site à la liste blanche"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Recharger la page"
     },
-    "exportData": {
-        "message": "Exporter les données"
-    },
-    "importData": {
-        "message": "Importer les données"
-    },
-    "openExceptions": {
-        "message": "Ouvrir les exceptions"
-    },
     "settings": {
         "message": "Paramètres"
-    },
-    "info": {
-        "message": "Informations"
     },
     "statsStatus": {
         "message": "Statut"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Restreint"
     },
-    "invalidFileError": {
-        "message": "Erreur : format de fichier non valide !"
-    },
-    "appearanceGroup": {
-        "message": "Apparence"
-    },
     "themeTitle": {
         "message": "Thème"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Sombre"
     },
-    "tabSettings": {
-        "message": "Paramètres"
-    },
     "tabWhitelist": {
         "message": "Liste blanche"
-    },
-    "tabGuide": {
-        "message": "Guide"
     },
     "tabReport": {
         "message": "Signaler"
     },
-    "tabAbout": {
-        "message": "À propos et Confidentialité"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Politique de confidentialité"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide ne collecte, ne stocke ni ne transmet aucune donnée de navigation. Tout fonctionne à 100% hors ligne."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Explication des autorisations"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Open Source et Licence"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide est un logiciel libre et gratuit publié sous licence MIT."
     },
     "generalSettingsGroup": {
         "message": "Paramètres généraux"
@@ -156,7 +102,7 @@
         "message": "Sauvegarder dans un fichier"
     },
     "backupImport": {
-        "message": "Restaurar à partir d'un fichier..."
+        "message": "Restaurar à partir d'un fichier"
     },
     "backupReset": {
         "message": "Rétablir les paramètres par défaut"
@@ -168,19 +114,13 @@
         "message": "Rétablir"
     },
     "btnImportAppend": {
-        "message": "Importer et ajouter..."
+        "message": "Importer et ajouter"
     },
     "btnExport": {
-        "message": "Exporter..."
+        "message": "Exporter"
     },
     "whitelistWarning": {
         "message": "Les lignes commençant par ! ou # sont traitées comme des commentaires."
-    },
-    "guideTitle": {
-        "message": "Guide d'utilisation rapide"
-    },
-    "reportTitle": {
-        "message": "Signaler des barres non masquées ou un problème"
     },
     "reportDesc": {
         "message": "Vous avez trouvé un site web où les barres sont visibles ou rencontré un bug ? Envoyez un rapport pour nous aider à améliorer la compatibilité !"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Copier les infos système"
     },
-    "reportHelpfulDetails": {
-        "message": "Détails utiles à inclure dans votre rapport"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Configurer"
     }
 }

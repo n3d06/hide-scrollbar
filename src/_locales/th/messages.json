@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "หน้าไม่ถูกต้อง"
     },
-    "exceptionsTitle": {
-        "message": "ข้อยกเว้น"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "กำลังบันทึก..."
-    },
-    "saved": {
-        "message": "บันทึกแล้ว"
-    },
-    "error": {
-        "message": "ข้อผิดพลาด"
-    },
     "addCurrentHost": {
         "message": "เพิ่มไซต์ลงในรายการที่อนุญาต"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "โหลดหน้านี้ใหม่"
     },
-    "exportData": {
-        "message": "ส่งออกข้อมูล"
-    },
-    "importData": {
-        "message": "นำเข้าข้อมูล"
-    },
-    "openExceptions": {
-        "message": "เปิดข้อยกเว้น"
-    },
     "settings": {
         "message": "การตั้งค่า"
-    },
-    "info": {
-        "message": "ข้อมูล"
     },
     "statsStatus": {
         "message": "สถานะ"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "ถูกจำกัด"
     },
-    "invalidFileError": {
-        "message": "ข้อผิดพลาด: รูปแบบไฟล์ไม่ถูกต้อง!"
-    },
-    "appearanceGroup": {
-        "message": "รูปลักษณ์"
-    },
     "themeTitle": {
         "message": "ธีม"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "โหมดมืด"
     },
-    "tabSettings": {
-        "message": "การตั้งค่า"
-    },
     "tabWhitelist": {
         "message": "รายการที่อนุญาต"
-    },
-    "tabGuide": {
-        "message": "คู่มือ"
     },
     "tabReport": {
         "message": "รายงานปัญหา"
     },
-    "tabAbout": {
-        "message": "เกี่ยวกับ & ความเป็นส่วนตัว"
-    },
-    "aboutPrivacyTitle": {
-        "message": "นโยบายความเป็นส่วนตัว"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide ไม่มีการเก็บรวบรวม บันทึก หรือส่งต่อข้อมูลการท่องเว็บใดๆ ทุกอย่างทำงานแบบออฟไลน์ 100%"
-    },
-    "aboutPermissionsTitle": {
-        "message": "คำอธิบายเกี่ยวกับสิทธิ์การใช้งาน"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "โอเพนซอร์ส & ใบอนุญาต"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide เป็นซอฟต์แวร์ฟรีและโอเพนซอร์สที่เผยแพร่ภายใต้ใบอนุญาต MIT"
     },
     "generalSettingsGroup": {
         "message": "การตั้งค่าทั่วไป"
@@ -156,7 +102,7 @@
         "message": "สำรองข้อมูลไปยังไฟล์"
     },
     "backupImport": {
-        "message": "กู้คืนจากไฟล์..."
+        "message": "กู้คืนจากไฟล์"
     },
     "backupReset": {
         "message": "รีเซ็ตเป็นค่าเริ่มต้น"
@@ -168,19 +114,13 @@
         "message": "ย้อนกลับ"
     },
     "btnImportAppend": {
-        "message": "นำเข้าและต่อท้าย..."
+        "message": "นำเข้าและต่อท้าย"
     },
     "btnExport": {
-        "message": "ส่งออก..."
+        "message": "ส่งออก"
     },
     "whitelistWarning": {
         "message": "บรรทัดที่ขึ้นต้นด้วย ! หรือ # จะถือเป็นความคิดเห็น"
-    },
-    "guideTitle": {
-        "message": "คู่มือการใช้งานฉบับย่อ"
-    },
-    "reportTitle": {
-        "message": "รายงานแถบเลื่อนที่ยังไม่ถูกซ่อนหรือปัญหา"
     },
     "reportDesc": {
         "message": "พบเว็บไซต์ที่ยังแสดงแถบเลื่อนหรือพบบั๊ก? ส่งรายงานเพื่อให้เราปรับปรุงความเข้ากันได้!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "คัดลอกข้อมูลระบบ"
     },
-    "reportHelpfulDetails": {
-        "message": "รายละเอียดที่เป็นประโยชน์ในการรายงานของคุณ"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "กำหนดค่า"
     }
 }

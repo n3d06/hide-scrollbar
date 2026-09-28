@@ -4,15 +4,16 @@ const initPopup = () => {
   const { getSyncState, setSyncValue, applyTheme } = (globalThis as any).ScrollHideStorage || {};
   const { isRestrictedUrl, isWhitelisted, sanitizeDomain } = (globalThis as any).ScrollHideWhitelist || {};
 
-  const toggle = document.getElementById('toggleScroll') as HTMLButtonElement;
-  const addCurrentBtn = document.getElementById('addCurrentBtn') as HTMLButtonElement;
-  const addCurrentVertical = document.getElementById('addCurrentVertical') as HTMLElement;
-  const whitelistedNotice = document.getElementById('whitelistedNotice') as HTMLElement;
-  const restrictedNotice = document.getElementById('restrictedNotice') as HTMLElement;
+  const toggle = document.getElementById('toggleScroll') as HTMLButtonElement | null;
+  const addCurrentBtn = document.getElementById('addCurrentBtn') as HTMLButtonElement | null;
+  const addCurrentVertical = document.getElementById('addCurrentVertical') as HTMLElement | null;
+  const whitelistedNotice = document.getElementById('whitelistedNotice') as HTMLElement | null;
+  const restrictedNotice = document.getElementById('restrictedNotice') as HTMLElement | null;
   const reloadTabBtn = document.getElementById('reloadTabBtn') as HTMLButtonElement | null;
   const openWhitelistBtn = document.getElementById('openWhitelistBtn') as HTMLButtonElement | null;
   const openReportBtn = document.getElementById('openReportBtn') as HTMLButtonElement | null;
   const openSettingsBtn = document.getElementById('openSettingsBtn') as HTMLButtonElement | null;
+  const openReviewBtn = document.getElementById('openReviewBtn') as HTMLButtonElement | null;
   const domainDisplay = document.getElementById('domainDisplay') as HTMLElement;
   const statusVal = document.getElementById('statusValue');
   const exceptionsCnt = document.getElementById('exceptionsCount');
@@ -127,6 +128,7 @@ const initPopup = () => {
     if (toggle) {
       const shouldBeActive = !inList && !isRestricted && scrollbarHidden;
       toggle.classList.toggle('active', shouldBeActive);
+      toggle.setAttribute('aria-checked', String(shouldBeActive));
       toggle.disabled = inList || isRestricted;
       toggle.style.opacity = (inList || isRestricted) ? '0.4' : '1';
       toggle.style.pointerEvents = (inList || isRestricted) ? 'none' : 'auto';
@@ -188,6 +190,7 @@ const initPopup = () => {
     toggle.addEventListener('click', async () => {
       toggle.classList.toggle('active');
       const hidden = toggle.classList.contains('active');
+      toggle.setAttribute('aria-checked', String(hidden));
       currentScrollbarHidden = hidden;
       const inList = isWhitelisted ? isWhitelisted(currentHostname, currentWhitelist) : false;
       applyImmediateToolbarIcon(hidden, inList);
@@ -263,6 +266,21 @@ const initPopup = () => {
   if (openSettingsBtn) {
     openSettingsBtn.addEventListener('click', () => {
       openOrFocusSettingsTab('settings');
+    });
+  }
+
+  if (openReviewBtn) {
+    openReviewBtn.addEventListener('click', () => {
+      const extId = typeof chrome !== 'undefined' && chrome.runtime?.id;
+      const reviewUrl = extId
+        ? `https://chromewebstore.google.com/detail/${extId}/reviews`
+        : 'https://github.com/3ky4r0/HideScrollbar';
+      if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+        chrome.tabs.create({ url: reviewUrl });
+      } else {
+        window.open(reviewUrl, '_blank');
+      }
+      window.close();
     });
   }
 

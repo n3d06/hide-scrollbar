@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Geçersiz sayfa"
     },
-    "exceptionsTitle": {
-        "message": "İstisnalar"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Kaydediliyor..."
-    },
-    "saved": {
-        "message": "Kaydedildi"
-    },
-    "error": {
-        "message": "Hata"
-    },
     "addCurrentHost": {
         "message": "Siteyi beyaz listeye ekle"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Sayfayı yenile"
     },
-    "exportData": {
-        "message": "Verileri dışa aktar"
-    },
-    "importData": {
-        "message": "Verileri içe aktar"
-    },
-    "openExceptions": {
-        "message": "İstisnaları aç"
-    },
     "settings": {
         "message": "Settings"
-    },
-    "info": {
-        "message": "Bilgi"
     },
     "statsStatus": {
         "message": "Durum"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Kısıtlı"
     },
-    "invalidFileError": {
-        "message": "Hata: Geçersiz dosya biçimi!"
-    },
-    "appearanceGroup": {
-        "message": "Appearance"
-    },
     "themeTitle": {
         "message": "Theme"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Dark"
     },
-    "tabSettings": {
-        "message": "Settings"
-    },
     "tabWhitelist": {
         "message": "Whitelist"
-    },
-    "tabGuide": {
-        "message": "Guide"
     },
     "tabReport": {
         "message": "Report"
     },
-    "tabAbout": {
-        "message": "Hakkında ve Gizlilik"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Gizlilik Politikası"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide hiçbir tarama verisini toplamaz, saklamaz veya iletmez. Her şey %100 yerel olarak çalışır."
-    },
-    "aboutPermissionsTitle": {
-        "message": "İzinlerin Açıklaması"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Açık Kaynak ve Lisans"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide, MIT Lisansı altında yayınlanan ücretsiz ve açık kaynaklı bir yazılımdır."
     },
     "generalSettingsGroup": {
         "message": "General Settings"
@@ -156,7 +102,7 @@
         "message": "Backup to file"
     },
     "backupImport": {
-        "message": "Restore from file..."
+        "message": "Restore from file"
     },
     "backupReset": {
         "message": "Reset to defaults"
@@ -168,19 +114,13 @@
         "message": "Revert"
     },
     "btnImportAppend": {
-        "message": "Import and append..."
+        "message": "Import and append"
     },
     "btnExport": {
-        "message": "Export..."
+        "message": "Export"
     },
     "whitelistWarning": {
         "message": "Lines starting with ! or # are treated as comments."
-    },
-    "guideTitle": {
-        "message": "Quick Usage Guide"
-    },
-    "reportTitle": {
-        "message": "Report Unhidden Scrollbars & Issues"
     },
     "reportDesc": {
         "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Copy System Info"
     },
-    "reportHelpfulDetails": {
-        "message": "Helpful Details to Include in Your Report"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Yapılandır"
     }
 }

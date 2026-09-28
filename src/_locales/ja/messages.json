@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "無効なページ"
     },
-    "exceptionsTitle": {
-        "message": "例外リスト"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "保存中..."
-    },
-    "saved": {
-        "message": "保存済み"
-    },
-    "error": {
-        "message": "エラー"
-    },
     "addCurrentHost": {
         "message": "ホワイトリストに追加"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "ページを再読み込み"
     },
-    "exportData": {
-        "message": "データのエクスポート"
-    },
-    "importData": {
-        "message": "データのインポート"
-    },
-    "openExceptions": {
-        "message": "例外リストを開く"
-    },
     "settings": {
         "message": "設定"
-    },
-    "info": {
-        "message": "情報"
     },
     "statsStatus": {
         "message": "状態"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "制限あり"
     },
-    "invalidFileError": {
-        "message": "エラー：無効なファイル形式です！"
-    },
-    "appearanceGroup": {
-        "message": "外観"
-    },
     "themeTitle": {
         "message": "テーマ"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "ダーク"
     },
-    "tabSettings": {
-        "message": "設定"
-    },
     "tabWhitelist": {
         "message": "ホワイトリスト"
-    },
-    "tabGuide": {
-        "message": "ガイド"
     },
     "tabReport": {
         "message": "問題の報告"
     },
-    "tabAbout": {
-        "message": "概要とプライバシー"
-    },
-    "aboutPrivacyTitle": {
-        "message": "プライバシーポリシー"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide は閲覧データを収集、保存、送信しません。すべてが100%オフラインでローカルに動作します。"
-    },
-    "aboutPermissionsTitle": {
-        "message": "権限の説明"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "オープンソースとライセンス"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide は MIT ライセンスの下でリリースされた無料のオープンソース ソフトウェアです。"
     },
     "generalSettingsGroup": {
         "message": "一般設定"
@@ -156,7 +102,7 @@
         "message": "ファイルにバックアップ"
     },
     "backupImport": {
-        "message": "ファイルから復元..."
+        "message": "ファイルから復元"
     },
     "backupReset": {
         "message": "初期設定に戻す"
@@ -168,19 +114,13 @@
         "message": "元に戻す"
     },
     "btnImportAppend": {
-        "message": "インポートして追加..."
+        "message": "インポートして追加"
     },
     "btnExport": {
-        "message": "エクスポート..."
+        "message": "エクスポート"
     },
     "whitelistWarning": {
         "message": "! または # で始まる行はコメントとして扱われます。"
-    },
-    "guideTitle": {
-        "message": "クイック利用ガイド"
-    },
-    "reportTitle": {
-        "message": "未対応のスクロールバーや不具合を報告"
     },
     "reportDesc": {
         "message": "スクロールバーが表示されたままのサイトやバグを発見しましたか？互換性向上のためレポートをお寄せください！"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "システム情報をコピー"
     },
-    "reportHelpfulDetails": {
-        "message": "報告に含めると役立つ情報"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "設定"
     }
 }

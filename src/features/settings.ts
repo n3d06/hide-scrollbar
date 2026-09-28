@@ -12,13 +12,22 @@ const initSettings = () => {
     applyI18n();
   }
 
-  // Tabs
-  const navTabs = document.querySelectorAll<HTMLElement>('.nav-tab[data-tab]');
-  const tabPanes = document.querySelectorAll<HTMLElement>('.tab-pane');
-
-  // Settings elements
+  // DOM Elements - General & Appearance
   const settingHideScrollbar = document.getElementById('settingHideScrollbar') as HTMLInputElement | null;
   const settingTheme = document.getElementById('settingTheme') as HTMLSelectElement | null;
+  const btnConfigureShortcuts = document.getElementById('btnConfigureShortcuts') as HTMLButtonElement | null;
+
+  // DOM Elements - Whitelist Editor
+  const btnApplyWhitelist = document.getElementById('btnApplyWhitelist') as HTMLButtonElement | null;
+  const btnRevertWhitelist = document.getElementById('btnRevertWhitelist') as HTMLButtonElement | null;
+  const btnImportWhitelist = document.getElementById('btnImportWhitelist') as HTMLButtonElement | null;
+  const btnExportWhitelist = document.getElementById('btnExportWhitelist') as HTMLButtonElement | null;
+  const whitelistFileInput = document.getElementById('whitelistFileInput') as HTMLInputElement | null;
+  const saveIndicator = document.getElementById('saveIndicator') as HTMLElement | null;
+  const whitelistGutter = document.getElementById('whitelistGutter') as HTMLElement | null;
+  const whitelistInput = document.getElementById('whitelistInput') as HTMLTextAreaElement | null;
+
+  // DOM Elements - Statistics & Backup
   const statCleanedCount = document.getElementById('statCleanedCount') as HTMLElement | null;
   const btnResetCleaned = document.getElementById('btnResetCleaned') as HTMLButtonElement | null;
   const btnExportSettings = document.getElementById('btnExportSettings') as HTMLButtonElement | null;
@@ -26,110 +35,11 @@ const initSettings = () => {
   const settingsFileInput = document.getElementById('settingsFileInput') as HTMLInputElement | null;
   const btnResetDefaults = document.getElementById('btnResetDefaults') as HTMLButtonElement | null;
 
-  // Whitelist elements
-  const btnApplyWhitelist = document.getElementById('btnApplyWhitelist') as HTMLButtonElement | null;
-  const btnRevertWhitelist = document.getElementById('btnRevertWhitelist') as HTMLButtonElement | null;
-  const btnImportWhitelist = document.getElementById('btnImportWhitelist') as HTMLButtonElement | null;
-  const btnExportWhitelist = document.getElementById('btnExportWhitelist') as HTMLButtonElement | null;
-  const whitelistFileInput = document.getElementById('whitelistFileInput') as HTMLInputElement | null;
-  const saveIndicator = document.getElementById('saveIndicator') as HTMLElement | null;
-  const whitelistInput = document.getElementById('whitelistInput') as HTMLTextAreaElement | null;
-  const whitelistGutter = document.getElementById('whitelistGutter') as HTMLElement | null;
+  // DOM Elements - Report & Privacy
+  const btnCopyReportInfo = document.getElementById('btnCopyReportInfo') as HTMLButtonElement | null;
+  const copyReportInfoText = document.getElementById('copyReportInfoText') as HTMLElement | null;
 
   let lastSavedWhitelistText = '';
-
-  const updateLineNumbers = (): void => {
-    if (!whitelistInput || !whitelistGutter) return;
-    const count = Math.max(1, whitelistInput.value.split('\n').length);
-    let numbers = '';
-    for (let i = 1; i <= count; i++) {
-      numbers += `${i}\n`;
-    }
-    whitelistGutter.textContent = numbers;
-  };
-
-  const getEditorText = (): string => (whitelistInput ? whitelistInput.value : '');
-
-  const setEditorText = (text: string): void => {
-    if (!whitelistInput) return;
-    whitelistInput.value = text;
-    updateLineNumbers();
-  };
-
-  const checkWhitelistDirty = (): void => {
-    if (!btnApplyWhitelist || !btnRevertWhitelist) return;
-    const isDirty = getEditorText() !== lastSavedWhitelistText;
-    btnApplyWhitelist.disabled = !isDirty;
-    btnRevertWhitelist.disabled = !isDirty;
-  };
-
-  // Wire native textarea events
-  if (whitelistInput) {
-    whitelistInput.addEventListener('input', () => {
-      updateLineNumbers();
-      checkWhitelistDirty();
-    });
-
-    whitelistInput.addEventListener('scroll', () => {
-      if (whitelistGutter) {
-        whitelistGutter.scrollTop = whitelistInput.scrollTop;
-      }
-    });
-
-    whitelistInput.addEventListener('keydown', (e: KeyboardEvent) => {
-      // Ctrl+S / Cmd+S to save
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
-        e.preventDefault();
-        if (btnApplyWhitelist && !btnApplyWhitelist.disabled) {
-          applyWhitelistChanges();
-        }
-      }
-    });
-  }
-
-  /* ── Tab Switching ────────────────────────────────────────── */
-
-  function switchTab(tabName: string | undefined): void {
-    if (!tabName) return;
-    navTabs.forEach((tab) => {
-      const isTarget = tab.dataset.tab === tabName;
-      tab.classList.toggle('active', isTarget);
-      tab.setAttribute('aria-selected', String(isTarget));
-    });
-
-    tabPanes.forEach((pane) => {
-      pane.classList.toggle('active', pane.id === `tab-${tabName}`);
-    });
-
-    // Synchronize query parameter ?tab=... in URL (no hash #)
-    const currentParams = new URLSearchParams(window.location.search);
-    if (currentParams.get('tab') !== tabName) {
-      const newUrl = `${window.location.pathname}?tab=${tabName}`;
-      history.replaceState(null, '', newUrl);
-    }
-
-    if (tabName === 'whitelist') {
-      updateLineNumbers();
-    }
-  }
-
-  navTabs.forEach((tab) => {
-    tab.addEventListener('click', () => switchTab(tab.dataset.tab));
-  });
-
-  const validTabs = ['settings', 'whitelist', 'guide', 'report', 'about'];
-  const params = new URLSearchParams(window.location.search);
-  const initialTab = params.get('tab');
-
-  switchTab(initialTab && validTabs.includes(initialTab) ? initialTab : 'settings');
-
-  window.addEventListener('popstate', () => {
-    const popParams = new URLSearchParams(window.location.search);
-    const popTab = popParams.get('tab') || 'settings';
-    if (validTabs.includes(popTab)) {
-      switchTab(popTab);
-    }
-  });
 
   function showSavedToast(msg: string = 'Changes saved'): void {
     if (!saveIndicator) return;
@@ -138,6 +48,35 @@ const initSettings = () => {
     setTimeout(() => {
       saveIndicator?.classList.remove('visible');
     }, 2000);
+  }
+
+  /* ── Native Editor Helpers ────────────────────────────────── */
+
+  function updateLineNumbers(): void {
+    if (!whitelistInput || !whitelistGutter) return;
+    const lineCount = (whitelistInput.value.match(/\n/g) || []).length + 1;
+    let numbers = '';
+    for (let i = 1; i <= lineCount; i++) {
+      numbers += i + '\n';
+    }
+    whitelistGutter.textContent = numbers;
+  }
+
+  function getEditorText(): string {
+    return whitelistInput ? whitelistInput.value : '';
+  }
+
+  function setEditorText(text: string): void {
+    if (whitelistInput) {
+      whitelistInput.value = text;
+      updateLineNumbers();
+    }
+  }
+
+  function checkWhitelistDirty(): void {
+    const isDirty = getEditorText() !== lastSavedWhitelistText;
+    if (btnApplyWhitelist) btnApplyWhitelist.disabled = !isDirty;
+    if (btnRevertWhitelist) btnRevertWhitelist.disabled = !isDirty;
   }
 
   /* ── Parse & Normalize Lines ──────────────────────────────── */
@@ -225,7 +164,6 @@ const initSettings = () => {
     });
   }
 
-  const btnConfigureShortcuts = document.getElementById('btnConfigureShortcuts') as HTMLButtonElement | null;
   if (btnConfigureShortcuts) {
     btnConfigureShortcuts.addEventListener('click', () => {
       if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
@@ -320,6 +258,24 @@ const initSettings = () => {
     });
   }
 
+  if (whitelistInput && whitelistGutter) {
+    whitelistInput.addEventListener('scroll', () => {
+      whitelistGutter.scrollTop = whitelistInput.scrollTop;
+    });
+
+    whitelistInput.addEventListener('input', () => {
+      updateLineNumbers();
+      checkWhitelistDirty();
+    });
+
+    whitelistInput.addEventListener('keydown', (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        applyWhitelistChanges();
+      }
+    });
+  }
+
   if (btnApplyWhitelist) {
     btnApplyWhitelist.addEventListener('click', applyWhitelistChanges);
   }
@@ -395,9 +351,7 @@ const initSettings = () => {
     });
   }
 
-  // Report Tab: Copy System Info
-  const btnCopyReportInfo = document.getElementById('btnCopyReportInfo') as HTMLButtonElement | null;
-  const copyReportInfoText = document.getElementById('copyReportInfoText') as HTMLElement | null;
+  // Report: Copy System Info
   if (btnCopyReportInfo) {
     btnCopyReportInfo.addEventListener('click', async () => {
       const extVersion =

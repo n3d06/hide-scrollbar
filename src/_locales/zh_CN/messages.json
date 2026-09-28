@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "无效的页面"
     },
-    "exceptionsTitle": {
-        "message": "例外名单"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "正在保存..."
-    },
-    "saved": {
-        "message": "已保存"
-    },
-    "error": {
-        "message": "错误"
-    },
     "addCurrentHost": {
         "message": "将此网站加入白名单"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "重新加载页面"
     },
-    "exportData": {
-        "message": "导出数据"
-    },
-    "importData": {
-        "message": "导入数据"
-    },
-    "openExceptions": {
-        "message": "打开例外列表"
-    },
     "settings": {
         "message": "设置"
-    },
-    "info": {
-        "message": "关于信息"
     },
     "statsStatus": {
         "message": "状态"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "受限页面"
     },
-    "invalidFileError": {
-        "message": "错误：文件格式无效！"
-    },
-    "appearanceGroup": {
-        "message": "外观"
-    },
     "themeTitle": {
         "message": "界面主题"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "深色"
     },
-    "tabSettings": {
-        "message": "设置"
-    },
     "tabWhitelist": {
         "message": "白名单"
-    },
-    "tabGuide": {
-        "message": "使用指南"
     },
     "tabReport": {
         "message": "反馈报告"
     },
-    "tabAbout": {
-        "message": "关于与隐私"
-    },
-    "aboutPrivacyTitle": {
-        "message": "隐私政策"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide 不会收集、存储或传输任何浏览数据。所有操作均为 100% 本地离线运行。"
-    },
-    "aboutPermissionsTitle": {
-        "message": "权限说明"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "开源与许可协议"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide 是根据 MIT 许可证发布的免费开源软件。"
     },
     "generalSettingsGroup": {
         "message": "常规设置"
@@ -156,7 +102,7 @@
         "message": "备份到文件"
     },
     "backupImport": {
-        "message": "从文件恢复..."
+        "message": "从文件恢复"
     },
     "backupReset": {
         "message": "恢复默认设置"
@@ -168,19 +114,13 @@
         "message": "撤销"
     },
     "btnImportAppend": {
-        "message": "导入并追加..."
+        "message": "导入并追加"
     },
     "btnExport": {
-        "message": "导出列表..."
+        "message": "导出列表"
     },
     "whitelistWarning": {
         "message": "以 ! 或 # 开头的行将被视为注释。"
-    },
-    "guideTitle": {
-        "message": "快速使用指南"
-    },
-    "reportTitle": {
-        "message": "报告未隐藏的滚动条或问题"
     },
     "reportDesc": {
         "message": "发现某个网站滚动条未被隐藏或遇到了 Bug？欢迎提交报告以便我们提供更好支持！"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "复制系统信息"
     },
-    "reportHelpfulDetails": {
-        "message": "报告中建议包含的有用信息"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "配置"
     }
 }

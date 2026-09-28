@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Ungültige Seite"
     },
-    "exceptionsTitle": {
-        "message": "Ausnahmen"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Speichern..."
-    },
-    "saved": {
-        "message": "Gespeichert"
-    },
-    "error": {
-        "message": "Fehler"
-    },
     "addCurrentHost": {
         "message": "Seite zur Whitelist hinzufügen"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Seite neu laden"
     },
-    "exportData": {
-        "message": "Daten exportieren"
-    },
-    "importData": {
-        "message": "Daten importieren"
-    },
-    "openExceptions": {
-        "message": "Ausnahmen öffnen"
-    },
     "settings": {
         "message": "Einstellungen"
-    },
-    "info": {
-        "message": "Informationen"
     },
     "statsStatus": {
         "message": "Status"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Eingeschränkt"
     },
-    "invalidFileError": {
-        "message": "Fehler: Ungültiges Dateiformat!"
-    },
-    "appearanceGroup": {
-        "message": "Erscheinungsbild"
-    },
     "themeTitle": {
         "message": "Design"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Dunkel"
     },
-    "tabSettings": {
-        "message": "Einstellungen"
-    },
     "tabWhitelist": {
         "message": "Whitelist"
-    },
-    "tabGuide": {
-        "message": "Anleitung"
     },
     "tabReport": {
         "message": "Problem melden"
     },
-    "tabAbout": {
-        "message": "Über & Datenschutz"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Datenschutzerklärung"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide sammelt, speichert oder überträgt keinerlei Browserdaten. Alles funktioniert zu 100 % lokal."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Erklärung der Berechtigungen"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Open Source & Lizenz"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide ist kostenlose Open-Source-Software, die unter der MIT-Lizenz veröffentlicht wurde."
     },
     "generalSettingsGroup": {
         "message": "Allgemeine Einstellungen"
@@ -156,7 +102,7 @@
         "message": "In Datei sichern"
     },
     "backupImport": {
-        "message": "Aus Datei wiederherstellen..."
+        "message": "Aus Datei wiederherstellen"
     },
     "backupReset": {
         "message": "Auf Standardwerte zurücksetzen"
@@ -168,19 +114,13 @@
         "message": "Rückgängig"
     },
     "btnImportAppend": {
-        "message": "Importieren und anhängen..."
+        "message": "Importieren und anhängen"
     },
     "btnExport": {
-        "message": "Exportieren..."
+        "message": "Exportieren"
     },
     "whitelistWarning": {
         "message": "Zeilen, die mit ! oder # beginnen, werden als Kommentare behandelt."
-    },
-    "guideTitle": {
-        "message": "Kurzanleitung"
-    },
-    "reportTitle": {
-        "message": "Sichtbare Scrollleisten oder Fehler melden"
     },
     "reportDesc": {
         "message": "Haben Sie eine Website mit sichtbaren Scrollleisten oder einen Fehler gefunden? Senden Sie einen Bericht für bessere Kompatibilität!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Systeminfo kopieren"
     },
-    "reportHelpfulDetails": {
-        "message": "Hilfreiche Details für Ihren Bericht"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Konfigurieren"
     }
 }

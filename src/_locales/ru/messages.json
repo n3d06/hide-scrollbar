@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Недопустимая страница"
     },
-    "exceptionsTitle": {
-        "message": "Исключения"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Сохранение..."
-    },
-    "saved": {
-        "message": "Сохранено"
-    },
-    "error": {
-        "message": "Ошибка"
-    },
     "addCurrentHost": {
         "message": "Добавить сайт в белый список"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Перезагрузить страницу"
     },
-    "exportData": {
-        "message": "Экспорт данных"
-    },
-    "importData": {
-        "message": "Импорт данных"
-    },
-    "openExceptions": {
-        "message": "Открыть исключения"
-    },
     "settings": {
         "message": "Настройки"
-    },
-    "info": {
-        "message": "Информация"
     },
     "statsStatus": {
         "message": "Статус"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Ограничено"
     },
-    "invalidFileError": {
-        "message": "Ошибка: неверный формат файла!"
-    },
-    "appearanceGroup": {
-        "message": "Внешний вид"
-    },
     "themeTitle": {
         "message": "Тема оформления"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Темная"
     },
-    "tabSettings": {
-        "message": "Настройки"
-    },
     "tabWhitelist": {
         "message": "Белый список"
-    },
-    "tabGuide": {
-        "message": "Руководство"
     },
     "tabReport": {
         "message": "Отчет об ошибке"
     },
-    "tabAbout": {
-        "message": "О расширении и конфиденциальность"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Политика конфиденциальности"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide не собирает, не сохраняет и не передает данные о просмотре. Всё работает на 100% локально."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Описание разрешений"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Открытый исходный код и лицензия"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide — это бесплатное программное обеспечение с открытым исходным кодом, выпущенное под лицензией MIT."
     },
     "generalSettingsGroup": {
         "message": "Основные настройки"
@@ -156,7 +102,7 @@
         "message": "Создать резервную копию"
     },
     "backupImport": {
-        "message": "Восстановить из файла..."
+        "message": "Восстановить из файла"
     },
     "backupReset": {
         "message": "Сбросить настройки по умолчанию"
@@ -168,19 +114,13 @@
         "message": "Отменить"
     },
     "btnImportAppend": {
-        "message": "Импортировать и добавить..."
+        "message": "Импортировать и добавить"
     },
     "btnExport": {
-        "message": "Экспорт..."
+        "message": "Экспорт"
     },
     "whitelistWarning": {
         "message": "Строки, начинающиеся с ! или #, считаются комментариями."
-    },
-    "guideTitle": {
-        "message": "Краткое руководство"
-    },
-    "reportTitle": {
-        "message": "Сообщить о неспрятанных полосах или ошибке"
     },
     "reportDesc": {
         "message": "Нашли сайт с видимыми полосами прокрутки или баг? Отправьте отчет для улучшения совместимости!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Копировать данные о системе"
     },
-    "reportHelpfulDetails": {
-        "message": "Полезные данные для отчета"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Настроить"
     }
 }

@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Halaman tidak valid"
     },
-    "exceptionsTitle": {
-        "message": "Pengecualian"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Menyimpan..."
-    },
-    "saved": {
-        "message": "Tersimpan"
-    },
-    "error": {
-        "message": "Kesalahan"
-    },
     "addCurrentHost": {
         "message": "Tambahkan situs ke daftar putih"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Muat ulang halaman"
     },
-    "exportData": {
-        "message": "Ekspor data"
-    },
-    "importData": {
-        "message": "Impor data"
-    },
-    "openExceptions": {
-        "message": "Buka pengecualian"
-    },
     "settings": {
         "message": "Pengaturan"
-    },
-    "info": {
-        "message": "Informasi"
     },
     "statsStatus": {
         "message": "Status"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Dibatasi"
     },
-    "invalidFileError": {
-        "message": "Kesalahan: Format berkas tidak valid!"
-    },
-    "appearanceGroup": {
-        "message": "Tampilan"
-    },
     "themeTitle": {
         "message": "Tema"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Gelap"
     },
-    "tabSettings": {
-        "message": "Pengaturan"
-    },
     "tabWhitelist": {
         "message": "Daftar Putih"
-    },
-    "tabGuide": {
-        "message": "Panduan"
     },
     "tabReport": {
         "message": "Laporan"
     },
-    "tabAbout": {
-        "message": "Tentang & Privasi"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Kebijakan Privasi"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide tidak mengumpulkan, menyimpan, atau mengirimkan data penjelajahan. Semuanya berfungsi 100% lokal."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Penjelasan Izin"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Sumber Terbuka & Lisensi"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide adalah perangkat lunak gratis dan sumber terbuka yang dirilis di bawah Lisensi MIT."
     },
     "generalSettingsGroup": {
         "message": "Pengaturan Umum"
@@ -156,7 +102,7 @@
         "message": "Cadangkan ke berkas"
     },
     "backupImport": {
-        "message": "Pulihkan dari berkas..."
+        "message": "Pulihkan dari berkas"
     },
     "backupReset": {
         "message": "Atur ulang ke default"
@@ -168,19 +114,13 @@
         "message": "Kembalikan"
     },
     "btnImportAppend": {
-        "message": "Impor dan tambahkan..."
+        "message": "Impor dan tambahkan"
     },
     "btnExport": {
-        "message": "Ekspor..."
+        "message": "Ekspor"
     },
     "whitelistWarning": {
         "message": "Baris yang diawali dengan ! atau # dianggap sebagai komentar."
-    },
-    "guideTitle": {
-        "message": "Panduan Penggunaan Cepat"
-    },
-    "reportTitle": {
-        "message": "Laporkan Bilah Gulir yang Belum Tersembunyi atau Masalah"
     },
     "reportDesc": {
         "message": "Menemukan situs web yang bilah gulirnya masih terlihat atau mengalami bug? Kirimkan laporan untuk membantu kami meningkatkan kompatibilitas!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Salin Info Sistem"
     },
-    "reportHelpfulDetails": {
-        "message": "Detail Berguna untuk Disertakan dalam Laporan Anda"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Konfigurasi"
     }
 }

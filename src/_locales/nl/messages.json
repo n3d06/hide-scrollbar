@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Ongeldige pagina"
     },
-    "exceptionsTitle": {
-        "message": "Uitzonderingen"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Opslaan..."
-    },
-    "saved": {
-        "message": "Opgeslagen"
-    },
-    "error": {
-        "message": "Fout"
-    },
     "addCurrentHost": {
         "message": "Site aan whitelist toevoegen"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Pagina vernieuwen"
     },
-    "exportData": {
-        "message": "Gegevens exporteren"
-    },
-    "importData": {
-        "message": "Gegevens importeren"
-    },
-    "openExceptions": {
-        "message": "Uitzonderingen openen"
-    },
     "settings": {
         "message": "Settings"
-    },
-    "info": {
-        "message": "Informatie"
     },
     "statsStatus": {
         "message": "Status"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Beperkt"
     },
-    "invalidFileError": {
-        "message": "Fout: Ongeldige bestandsindeling!"
-    },
-    "appearanceGroup": {
-        "message": "Appearance"
-    },
     "themeTitle": {
         "message": "Theme"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Dark"
     },
-    "tabSettings": {
-        "message": "Settings"
-    },
     "tabWhitelist": {
         "message": "Whitelist"
-    },
-    "tabGuide": {
-        "message": "Guide"
     },
     "tabReport": {
         "message": "Report"
     },
-    "tabAbout": {
-        "message": "Over & Privacy"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Privacybeleid"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide verzamelt, bewaart of verzendt geen browsegegevens. Alles werkt 100% lokaal."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Uitleg over machtigingen"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Open source & Licentie"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide is gratis en open-sourcesoftware uitgebracht onder de MIT-licentie."
     },
     "generalSettingsGroup": {
         "message": "General Settings"
@@ -156,7 +102,7 @@
         "message": "Backup to file"
     },
     "backupImport": {
-        "message": "Restore from file..."
+        "message": "Restore from file"
     },
     "backupReset": {
         "message": "Reset to defaults"
@@ -168,19 +114,13 @@
         "message": "Revert"
     },
     "btnImportAppend": {
-        "message": "Import and append..."
+        "message": "Import and append"
     },
     "btnExport": {
-        "message": "Export..."
+        "message": "Export"
     },
     "whitelistWarning": {
         "message": "Lines starting with ! or # are treated as comments."
-    },
-    "guideTitle": {
-        "message": "Quick Usage Guide"
-    },
-    "reportTitle": {
-        "message": "Report Unhidden Scrollbars & Issues"
     },
     "reportDesc": {
         "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Copy System Info"
     },
-    "reportHelpfulDetails": {
-        "message": "Helpful Details to Include in Your Report"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Configureren"
     }
 }

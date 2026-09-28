@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "अमान्य पृष्ठ"
     },
-    "exceptionsTitle": {
-        "message": "अपवाद"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "सहेज रहा है..."
-    },
-    "saved": {
-        "message": "सहेजा गया"
-    },
-    "error": {
-        "message": "त्रुटि"
-    },
     "addCurrentHost": {
         "message": "साइट को व्हाइटलिस्ट में जोड़ें"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "पृष्ठ पुनः लोड करें"
     },
-    "exportData": {
-        "message": "डेटा निर्यात करें"
-    },
-    "importData": {
-        "message": "डेटा आयात करें"
-    },
-    "openExceptions": {
-        "message": "अपवाद खोलें"
-    },
     "settings": {
         "message": "सेटिंग्स"
-    },
-    "info": {
-        "message": "जानकारी"
     },
     "statsStatus": {
         "message": "स्थिति"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "प्रतिबंधित"
     },
-    "invalidFileError": {
-        "message": "त्रुटि: अमान्य फ़ाइल प्रारूप!"
-    },
-    "appearanceGroup": {
-        "message": "दिखावट"
-    },
     "themeTitle": {
         "message": "थीम"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "डार्क"
     },
-    "tabSettings": {
-        "message": "सेटिंग्स"
-    },
     "tabWhitelist": {
         "message": "व्हाइटलिस्ट"
-    },
-    "tabGuide": {
-        "message": "मार्गदर्शिका"
     },
     "tabReport": {
         "message": "रिपोर्ट करें"
     },
-    "tabAbout": {
-        "message": "परिचय और गोपनीयता"
-    },
-    "aboutPrivacyTitle": {
-        "message": "गोपनीयता नीति"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide कोई भी ब्राउज़िंग डेटा एकत्र, संग्रहीत या प्रसारित नहीं करता है। सब कुछ 100% ऑफ़लाइन काम करता है।"
-    },
-    "aboutPermissionsTitle": {
-        "message": "अनुमतियों का विवरण"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "ओपन सोर्स और लाइसेंस"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide MIT लाइसेंस के तहत जारी किया गया मुफ्त और ओपन-सोर्स सॉफ्टवेयर है।"
     },
     "generalSettingsGroup": {
         "message": "सामान्य सेटिंग्स"
@@ -156,7 +102,7 @@
         "message": "फ़ाइल में बैकअप लें"
     },
     "backupImport": {
-        "message": "फ़ाइल से पुनर्स्थापित करें..."
+        "message": "फ़ाइल से पुनर्स्थापित करें"
     },
     "backupReset": {
         "message": "डिफ़ॉल्ट पर रीसेट करें"
@@ -168,19 +114,13 @@
         "message": "वापस लें"
     },
     "btnImportAppend": {
-        "message": "आयात करें और जोड़ें..."
+        "message": "आयात करें और जोड़ें"
     },
     "btnExport": {
-        "message": "निर्यात करें..."
+        "message": "निर्यात करें"
     },
     "whitelistWarning": {
         "message": "! या # से शुरू होने वाली पंक्तियों को टिप्पणियों के रूप में माना जाता है।"
-    },
-    "guideTitle": {
-        "message": "त्वरित उपयोग मार्गदर्शिका"
-    },
-    "reportTitle": {
-        "message": "दिखाई देने वाले स्क्रॉलबार या समस्या की रिपोर्ट करें"
     },
     "reportDesc": {
         "message": "क्या आपको कोई ऐसी वेबसाइट मिली जहाँ स्क्रॉलबार अभी भी दिखाई दे रहे हैं? अनुकूलता सुधारने के लिए रिपोर्ट सबमिट करें!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "सिस्टम जानकारी कॉपी करें"
     },
-    "reportHelpfulDetails": {
-        "message": "आपकी रिपोर्ट में शामिल करने के लिए उपयोगी विवरण"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "कॉन्फ़िगर करें"
     }
 }

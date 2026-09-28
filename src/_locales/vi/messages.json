@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Trang không hợp lệ"
     },
-    "exceptionsTitle": {
-        "message": "Danh sách ngoại lệ"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Đang lưu..."
-    },
-    "saved": {
-        "message": "Đã lưu"
-    },
-    "error": {
-        "message": "Lỗi"
-    },
     "addCurrentHost": {
         "message": "Thêm trang vào danh sách trắng"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Tải lại trang"
     },
-    "exportData": {
-        "message": "Xuất dữ liệu"
-    },
-    "importData": {
-        "message": "Nhập dữ liệu"
-    },
-    "openExceptions": {
-        "message": "Mở ngoại lệ"
-    },
     "settings": {
         "message": "Cài đặt"
-    },
-    "info": {
-        "message": "Thông tin"
     },
     "statsStatus": {
         "message": "Trạng thái"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Giới hạn"
     },
-    "invalidFileError": {
-        "message": "Lỗi: Tệp tin không hợp lệ!"
-    },
-    "appearanceGroup": {
-        "message": "Giao diện"
-    },
     "themeTitle": {
         "message": "Chủ đề giao diện"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Tối"
     },
-    "tabSettings": {
-        "message": "Cài đặt"
-    },
     "tabWhitelist": {
         "message": "Ngoại lệ"
-    },
-    "tabGuide": {
-        "message": "Hướng dẫn"
     },
     "tabReport": {
         "message": "Báo cáo"
     },
-    "tabAbout": {
-        "message": "Giới thiệu & Quyền riêng tư"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Chính sách quyền riêng tư"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide hoàn toàn không thu thập, lưu trữ hay gửi dữ liệu của bạn đi đâu. Hoạt động 100% offline."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Giải thích quyền hạn"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Mã nguồn mở & Bản quyền"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide là phần mềm mã nguồn mở miễn phí phát hành theo giấy phép MIT."
     },
     "generalSettingsGroup": {
         "message": "Cài đặt chung"
@@ -156,7 +102,7 @@
         "message": "Sao lưu ra tệp"
     },
     "backupImport": {
-        "message": "Khôi phục từ tệp..."
+        "message": "Khôi phục từ tệp"
     },
     "backupReset": {
         "message": "Đặt lại mặc định"
@@ -168,19 +114,13 @@
         "message": "Hoàn tác"
     },
     "btnImportAppend": {
-        "message": "Nhập và thêm tiếp..."
+        "message": "Nhập và thêm tiếp"
     },
     "btnExport": {
-        "message": "Xuất danh sách..."
+        "message": "Xuất danh sách"
     },
     "whitelistWarning": {
         "message": "Các dòng bắt đầu bằng ! hoặc # được coi là ghi chú."
-    },
-    "guideTitle": {
-        "message": "Hướng dẫn sử dụng nhanh"
-    },
-    "reportTitle": {
-        "message": "Báo cáo thanh cuộn chưa ẩn hoặc lỗi"
     },
     "reportDesc": {
         "message": "Tìm thấy trang web chưa ẩn thanh cuộn hoặc gặp lỗi? Hãy gửi báo cáo để chúng tôi hỗ trợ và hoàn thiện hơn!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Sao chép thông tin hệ thống"
     },
-    "reportHelpfulDetails": {
-        "message": "Thông tin hữu ích nên gửi kèm trong báo cáo"
-    },
     "shortcutsGroup": {
         "message": "Phím tắt"
     },
@@ -201,6 +138,6 @@
         "message": "Kích hoạt nhanh các tính năng của ScrollHide bằng tổ hợp phím tắt có thể tùy chỉnh."
     },
     "btnConfigureShortcuts": {
-        "message": "Chỉnh sửa phím tắt..."
+        "message": "Cấu hình"
     }
 }

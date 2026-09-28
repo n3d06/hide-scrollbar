@@ -12,79 +12,55 @@
 <body>
   <div class="top-bar">
     <div id="domainDisplay" class="domain-display">&nbsp;</div>
-  </div>
-
-  <div class="main-power-section">
-    <button id="toggleScroll" class="power-btn active" aria-label="Toggle hiding scrollbar" title="Toggle scrollbar">
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
-        <line x1="12" y1="2" x2="12" y2="12"></line>
-      </svg>
-    </button>
-    <div class="divider"></div>
-    <div class="stats-section">
-      <div class="stats-item">
-        <span class="stats-label" data-i18n="statsStatus">Status</span>
-        <span id="statusValue" class="stats-value status-dot" title="Status"></span>
-      </div>
-      <div class="stats-item">
-        <span class="stats-label" data-i18n="statsExceptions">Exceptions</span>
-        <span id="exceptionsCount" class="stats-value">0</span>
-      </div>
-      <div class="stats-item">
-        <span class="stats-label" data-i18n="statsCleaned">Cleaned</span>
-        <span id="cleanedCount" class="stats-value">0</span>
-      </div>
+    <div class="top-actions">
+      <button id="toggleScroll" class="switch-toggle active" role="switch" aria-checked="true" title="Toggle hiding scrollbar" aria-label="Toggle hiding scrollbar">
+        <span class="switch-thumb"></span>
+      </button>
+      <button id="openReviewBtn" class="action-btn" title="Rate on Web Store" aria-label="Rate on Web Store">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+      </button>
+      <button id="reloadTabBtn" class="action-btn" title="Reload page" aria-label="Reload page" data-i18n-aria-label="reloadTab" data-i18n-title="reloadTab">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+          <path d="M21 3v5h-5"></path>
+          <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+          <path d="M8 16H3v5"></path>
+        </svg>
+      </button>
+      <button id="openSettingsBtn" class="action-btn" title="Settings" aria-label="Settings" data-i18n-aria-label="settings" data-i18n-title="settings">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+          </path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
     </div>
   </div>
 
-  <div class="bottom-controls">
-    <button id="addCurrentBtn" class="control-btn add-btn" title="Add site to whitelist" aria-label="Add site to whitelist" data-i18n-aria-label="addCurrentHost" data-i18n-title="addCurrentHost">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+  <div class="stats-row">
+    <div class="stat-item">
+      <span class="stat-label" data-i18n="statsStatus">Status</span>
+      <span id="statusValue" class="status-dot active" title="Status"></span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label" data-i18n="statsExceptions">Exceptions</span>
+      <span id="exceptionsCount" class="stat-val">0</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-label" data-i18n="statsCleaned">Cleaned</span>
+      <span id="cleanedCount" class="stat-val">0</span>
+    </div>
+    <button id="addCurrentBtn" class="add-btn" title="Add site to whitelist" aria-label="Add site to whitelist" data-i18n-aria-label="addCurrentHost" data-i18n-title="addCurrentHost">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <line id="addCurrentVertical" x1="12" y1="5" x2="12" y2="19"></line>
         <line x1="5" y1="12" x2="19" y2="12"></line>
-      </svg>
-    </button>
-
-    <button id="reloadTabBtn" class="control-btn" title="Reload page" aria-label="Reload page" data-i18n-aria-label="reloadTab" data-i18n-title="reloadTab">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
-        <path d="M21 3v5h-5"></path>
-        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
-        <path d="M8 16H3v5"></path>
-      </svg>
-    </button>
-
-    <button id="openWhitelistBtn" class="control-btn" title="Open exceptions" aria-label="Open exceptions" data-i18n-aria-label="openExceptions" data-i18n-title="openExceptions">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="8" y1="6" x2="21" y2="6"></line>
-        <line x1="8" y1="12" x2="21" y2="12"></line>
-        <line x1="8" y1="18" x2="21" y2="18"></line>
-        <line x1="3" y1="6" x2="3.01" y2="6"></line>
-        <line x1="3" y1="12" x2="3.01" y2="12"></line>
-        <line x1="3" y1="18" x2="3.01" y2="18"></line>
-      </svg>
-    </button>
-
-    <button id="openReportBtn" class="control-btn" title="Report" aria-label="Report" data-i18n-aria-label="tabReport" data-i18n-title="tabReport">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-        <line x1="4" y1="22" x2="4" y2="15"></line>
-      </svg>
-    </button>
-
-    <button id="openSettingsBtn" class="control-btn" title="Settings" aria-label="Settings" data-i18n-aria-label="settings" data-i18n-title="settings">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path
-          d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
-        </path>
-        <circle cx="12" cy="12" r="3"></circle>
       </svg>
     </button>
   </div>

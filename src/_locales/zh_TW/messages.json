@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "無效的頁面"
     },
-    "exceptionsTitle": {
-        "message": "例外清單"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "正在儲存..."
-    },
-    "saved": {
-        "message": "已儲存"
-    },
-    "error": {
-        "message": "錯誤"
-    },
     "addCurrentHost": {
         "message": "將此網站加入白名單"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "重新載入頁面"
     },
-    "exportData": {
-        "message": "匯出資料"
-    },
-    "importData": {
-        "message": "匯入資料"
-    },
-    "openExceptions": {
-        "message": "開啟例外清單"
-    },
     "settings": {
         "message": "設定"
-    },
-    "info": {
-        "message": "相關資訊"
     },
     "statsStatus": {
         "message": "狀態"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "受限頁面"
     },
-    "invalidFileError": {
-        "message": "錯誤：檔案格式無效！"
-    },
-    "appearanceGroup": {
-        "message": "外觀"
-    },
     "themeTitle": {
         "message": "介面佈景"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "深色"
     },
-    "tabSettings": {
-        "message": "設定"
-    },
     "tabWhitelist": {
         "message": "白名單"
-    },
-    "tabGuide": {
-        "message": "使用指南"
     },
     "tabReport": {
         "message": "回報問題"
     },
-    "tabAbout": {
-        "message": "關於與隱私"
-    },
-    "aboutPrivacyTitle": {
-        "message": "隱私政策"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide 不會收集、儲存或傳輸任何瀏覽資料。所有操作均為 100% 本地離線運行。"
-    },
-    "aboutPermissionsTitle": {
-        "message": "權限說明"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "開源與授權條款"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide 是根據 MIT 授權條款發布的免費開源軟體。"
     },
     "generalSettingsGroup": {
         "message": "一般設定"
@@ -156,7 +102,7 @@
         "message": "備份至檔案"
     },
     "backupImport": {
-        "message": "從檔案還原..."
+        "message": "從檔案還原"
     },
     "backupReset": {
         "message": "重設為預設值"
@@ -168,19 +114,13 @@
         "message": "復原"
     },
     "btnImportAppend": {
-        "message": "匯入並附加..."
+        "message": "匯入並附加"
     },
     "btnExport": {
-        "message": "匯出清單..."
+        "message": "匯出清單"
     },
     "whitelistWarning": {
         "message": "以 ! 或 # 開頭的行將被視為註解。"
-    },
-    "guideTitle": {
-        "message": "快速使用指南"
-    },
-    "reportTitle": {
-        "message": "回報未隱藏的捲軸或問題"
     },
     "reportDesc": {
         "message": "發現某個網站捲軸未被隱藏或遇到了 Bug？歡迎提交回報以便我們提供更好支援！"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "複製系統資訊"
     },
-    "reportHelpfulDetails": {
-        "message": "回報中建議包含的有用資訊"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "設定"
     }
 }

@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Maling pahina"
     },
-    "exceptionsTitle": {
-        "message": "Mga Pagbubukod"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Nagse-save..."
-    },
-    "saved": {
-        "message": "Nai-save"
-    },
-    "error": {
-        "message": "Error"
-    },
     "addCurrentHost": {
         "message": "Idagdag ang site sa whitelist"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "I-reload ang pahina"
     },
-    "exportData": {
-        "message": "I-export ang data"
-    },
-    "importData": {
-        "message": "I-import ang data"
-    },
-    "openExceptions": {
-        "message": "Buksan ang mga exception"
-    },
     "settings": {
         "message": "Settings"
-    },
-    "info": {
-        "message": "Impormasyon"
     },
     "statsStatus": {
         "message": "Katayuan"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Restricted"
     },
-    "invalidFileError": {
-        "message": "Error: Invalid na format ng file!"
-    },
-    "appearanceGroup": {
-        "message": "Appearance"
-    },
     "themeTitle": {
         "message": "Theme"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Dark"
     },
-    "tabSettings": {
-        "message": "Settings"
-    },
     "tabWhitelist": {
         "message": "Whitelist"
-    },
-    "tabGuide": {
-        "message": "Guide"
     },
     "tabReport": {
         "message": "Report"
     },
-    "tabAbout": {
-        "message": "Tungkol at Privacy"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Patakaran sa Privacy"
-    },
     "aboutPrivacyDesc": {
         "message": "Ang ScrollHide ay hindi nangongolekta, nag-iimbak, o nagpapadala ng data ng pag-browse. Lahat ay 100% lokal."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Paliwanag sa mga Pahintulot"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Open Source at Lisensya"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "Ang ScrollHide ay libre at open-source na software sa ilalim ng Lisensya ng MIT."
     },
     "generalSettingsGroup": {
         "message": "General Settings"
@@ -156,7 +102,7 @@
         "message": "Backup to file"
     },
     "backupImport": {
-        "message": "Restore from file..."
+        "message": "Restore from file"
     },
     "backupReset": {
         "message": "Reset to defaults"
@@ -168,19 +114,13 @@
         "message": "Revert"
     },
     "btnImportAppend": {
-        "message": "Import and append..."
+        "message": "Import and append"
     },
     "btnExport": {
-        "message": "Export..."
+        "message": "Export"
     },
     "whitelistWarning": {
         "message": "Lines starting with ! or # are treated as comments."
-    },
-    "guideTitle": {
-        "message": "Quick Usage Guide"
-    },
-    "reportTitle": {
-        "message": "Report Unhidden Scrollbars & Issues"
     },
     "reportDesc": {
         "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Copy System Info"
     },
-    "reportHelpfulDetails": {
-        "message": "Helpful Details to Include in Your Report"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "I-configure"
     }
 }

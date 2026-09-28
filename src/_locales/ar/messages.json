@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "صفحة غير صالحة"
     },
-    "exceptionsTitle": {
-        "message": "الاستثناءات"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "جارٍ الحفظ..."
-    },
-    "saved": {
-        "message": "تم الحفظ"
-    },
-    "error": {
-        "message": "خطأ"
-    },
     "addCurrentHost": {
         "message": "إضافة الموقع إلى القائمة البيضاء"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "إعادة تحميل الصفحة"
     },
-    "exportData": {
-        "message": "تصدير البيانات"
-    },
-    "importData": {
-        "message": "استيراد البيانات"
-    },
-    "openExceptions": {
-        "message": "فتح الاستثناءات"
-    },
     "settings": {
         "message": "الإعدادات"
-    },
-    "info": {
-        "message": "معلومات"
     },
     "statsStatus": {
         "message": "الحالة"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "مقيد"
     },
-    "invalidFileError": {
-        "message": "خطأ: تنسيق الملف غير صالح!"
-    },
-    "appearanceGroup": {
-        "message": "المظهر"
-    },
     "themeTitle": {
         "message": "السمة"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "داكن"
     },
-    "tabSettings": {
-        "message": "الإعدادات"
-    },
     "tabWhitelist": {
         "message": "القائمة البيضاء"
-    },
-    "tabGuide": {
-        "message": "الدليل"
     },
     "tabReport": {
         "message": "إبلاغ"
     },
-    "tabAbout": {
-        "message": "حول والخصوصية"
-    },
-    "aboutPrivacyTitle": {
-        "message": "سياسة الخصوصية"
-    },
     "aboutPrivacyDesc": {
         "message": "لا يقوم ScrollHide بجمع أي بيانات تصفح أو تخزينها أو نقلها. كل شيء يعمل محليًا بنسبة 100%."
-    },
-    "aboutPermissionsTitle": {
-        "message": "شرح الأذونات"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "المصدر المفتوح والترخيص"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide هو برنامج مجاني ومفتوح المصدر تم إصداره بموجب ترخيص MIT."
     },
     "generalSettingsGroup": {
         "message": "الإعدادات العامة"
@@ -156,7 +102,7 @@
         "message": "نسخ احتياطي إلى ملف"
     },
     "backupImport": {
-        "message": "استعادة من ملف..."
+        "message": "استعادة من ملف"
     },
     "backupReset": {
         "message": "إعادة التعيين إلى الإعدادات الافتراضية"
@@ -168,19 +114,13 @@
         "message": "تراجع"
     },
     "btnImportAppend": {
-        "message": "استيراد وإلحاق..."
+        "message": "استيراد وإلحاق"
     },
     "btnExport": {
-        "message": "تصدير..."
+        "message": "تصدير"
     },
     "whitelistWarning": {
         "message": "تعتبر الأسطر التي تبدأ بـ ! أو # تعليقات."
-    },
-    "guideTitle": {
-        "message": "دليل الاستخدام السريع"
-    },
-    "reportTitle": {
-        "message": "الإبلاغ عن أشرطة تمرير غير مخفية أو مشاكل"
     },
     "reportDesc": {
         "message": "هل عثرت على موقع ويب لا تزال أشرطة التمرير فيه مرئية أو واجهت خطأ؟ أرسل تقريرًا لمساعدتنا في تحسين التوافق!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "نسخ معلومات النظام"
     },
-    "reportHelpfulDetails": {
-        "message": "تفاصيل مفيدة لتضمينها في تقريرك"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "تكوين"
     }
 }

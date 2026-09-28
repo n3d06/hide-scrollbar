@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Ugyldig side"
     },
-    "exceptionsTitle": {
-        "message": "Undtagelser"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Gemmer..."
-    },
-    "saved": {
-        "message": "Gemt"
-    },
-    "error": {
-        "message": "Fejl"
-    },
     "addCurrentHost": {
         "message": "Tilføj websted til undtagelser"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Genindlæs side"
     },
-    "exportData": {
-        "message": "Eksporter data"
-    },
-    "importData": {
-        "message": "Importer data"
-    },
-    "openExceptions": {
-        "message": "Åbn undtagelser"
-    },
     "settings": {
         "message": "Settings"
-    },
-    "info": {
-        "message": "Information"
     },
     "statsStatus": {
         "message": "Status"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Begrænset"
     },
-    "invalidFileError": {
-        "message": "Fejl: Ugyldigt filformat!"
-    },
-    "appearanceGroup": {
-        "message": "Appearance"
-    },
     "themeTitle": {
         "message": "Theme"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Dark"
     },
-    "tabSettings": {
-        "message": "Settings"
-    },
     "tabWhitelist": {
         "message": "Whitelist"
-    },
-    "tabGuide": {
-        "message": "Guide"
     },
     "tabReport": {
         "message": "Report"
     },
-    "tabAbout": {
-        "message": "Om & Privatliv"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Privatlivspolitik"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide indsamler, gemmer eller overfører ikke browserdata. Alt fungerer 100 % lokalt."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Forklaring af tilladelser"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Open Source & Licens"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide er gratis og open source-software udgivet under MIT-licensen."
     },
     "generalSettingsGroup": {
         "message": "General Settings"
@@ -156,7 +102,7 @@
         "message": "Backup to file"
     },
     "backupImport": {
-        "message": "Restore from file..."
+        "message": "Restore from file"
     },
     "backupReset": {
         "message": "Reset to defaults"
@@ -168,19 +114,13 @@
         "message": "Revert"
     },
     "btnImportAppend": {
-        "message": "Import and append..."
+        "message": "Import and append"
     },
     "btnExport": {
-        "message": "Export..."
+        "message": "Export"
     },
     "whitelistWarning": {
         "message": "Lines starting with ! or # are treated as comments."
-    },
-    "guideTitle": {
-        "message": "Quick Usage Guide"
-    },
-    "reportTitle": {
-        "message": "Report Unhidden Scrollbars & Issues"
     },
     "reportDesc": {
         "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Copy System Info"
     },
-    "reportHelpfulDetails": {
-        "message": "Helpful Details to Include in Your Report"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Konfigurer"
     }
 }

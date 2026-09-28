@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "Ogiltig sida"
     },
-    "exceptionsTitle": {
-        "message": "Undantag"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "Sparar..."
-    },
-    "saved": {
-        "message": "Sparad"
-    },
-    "error": {
-        "message": "Fel"
-    },
     "addCurrentHost": {
         "message": "Lägg till webbplats i vitlistan"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "Ladda om sidan"
     },
-    "exportData": {
-        "message": "Exportera data"
-    },
-    "importData": {
-        "message": "Importera data"
-    },
-    "openExceptions": {
-        "message": "Öppna undantag"
-    },
     "settings": {
         "message": "Settings"
-    },
-    "info": {
-        "message": "Information"
     },
     "statsStatus": {
         "message": "Status"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "Begränsad"
     },
-    "invalidFileError": {
-        "message": "Fel: Ugyldigt filformat!"
-    },
-    "appearanceGroup": {
-        "message": "Appearance"
-    },
     "themeTitle": {
         "message": "Theme"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Dark"
     },
-    "tabSettings": {
-        "message": "Settings"
-    },
     "tabWhitelist": {
         "message": "Whitelist"
-    },
-    "tabGuide": {
-        "message": "Guide"
     },
     "tabReport": {
         "message": "Report"
     },
-    "tabAbout": {
-        "message": "Om & Integritet"
-    },
-    "aboutPrivacyTitle": {
-        "message": "Integritetspolicy"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide samlar inte in, lagrar eller överför någon webbläsardata. Allt fungerar 100 % lokalt."
-    },
-    "aboutPermissionsTitle": {
-        "message": "Förklaring av behörigheter"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "Öppen källkod och licens"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide är gratis programvara med öppen källkod som släpps under MIT-licensen."
     },
     "generalSettingsGroup": {
         "message": "General Settings"
@@ -156,7 +102,7 @@
         "message": "Backup to file"
     },
     "backupImport": {
-        "message": "Restore from file..."
+        "message": "Restore from file"
     },
     "backupReset": {
         "message": "Reset to defaults"
@@ -168,19 +114,13 @@
         "message": "Revert"
     },
     "btnImportAppend": {
-        "message": "Import and append..."
+        "message": "Import and append"
     },
     "btnExport": {
-        "message": "Export..."
+        "message": "Export"
     },
     "whitelistWarning": {
         "message": "Lines starting with ! or # are treated as comments."
-    },
-    "guideTitle": {
-        "message": "Quick Usage Guide"
-    },
-    "reportTitle": {
-        "message": "Report Unhidden Scrollbars & Issues"
     },
     "reportDesc": {
         "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Copy System Info"
     },
-    "reportHelpfulDetails": {
-        "message": "Helpful Details to Include in Your Report"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "Konfigurera"
     }
 }

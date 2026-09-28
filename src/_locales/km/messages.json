@@ -14,21 +14,6 @@
     "cantAddPage": {
         "message": "ទំព័រមិនត្រឹមត្រូវ"
     },
-    "exceptionsTitle": {
-        "message": "ការលើកលែង"
-    },
-    "domainPlaceholder": {
-        "message": "https://www.example.com/"
-    },
-    "saving": {
-        "message": "កំពុងរក្សាទុក..."
-    },
-    "saved": {
-        "message": "បានរក្សាទុក"
-    },
-    "error": {
-        "message": "កំហុស"
-    },
     "addCurrentHost": {
         "message": "បន្ថែមគេហទំព័រទៅបញ្ជីស"
     },
@@ -38,20 +23,8 @@
     "reloadTab": {
         "message": "ផ្ទុកទំព័រឡើងវិញ"
     },
-    "exportData": {
-        "message": "នាំចេញទិន្នន័យ"
-    },
-    "importData": {
-        "message": "នាំចូលទិន្នន័យ"
-    },
-    "openExceptions": {
-        "message": "បើកករណីលើកលែង"
-    },
     "settings": {
         "message": "Settings"
-    },
-    "info": {
-        "message": "ព័ត៌មាន"
     },
     "statsStatus": {
         "message": "ស្ថានភាព"
@@ -74,12 +47,6 @@
     "statusRestricted": {
         "message": "បានកម្រិត"
     },
-    "invalidFileError": {
-        "message": "កំហុស៖ ទ្រង់ទ្រាយឯកសារមិនត្រឹមត្រូវ!"
-    },
-    "appearanceGroup": {
-        "message": "Appearance"
-    },
     "themeTitle": {
         "message": "Theme"
     },
@@ -95,35 +62,14 @@
     "themeDark": {
         "message": "Dark"
     },
-    "tabSettings": {
-        "message": "Settings"
-    },
     "tabWhitelist": {
         "message": "Whitelist"
-    },
-    "tabGuide": {
-        "message": "Guide"
     },
     "tabReport": {
         "message": "Report"
     },
-    "tabAbout": {
-        "message": "អំពី & ភាពឯកជន"
-    },
-    "aboutPrivacyTitle": {
-        "message": "គោលការណ៍​ភាព​ឯកជន"
-    },
     "aboutPrivacyDesc": {
         "message": "ScrollHide មិនប្រមូល ផ្ទុក ឬបញ្ជូនទិន្នន័យរុករកណាមួយឡើយ។ អ្វីៗទាំងអស់ដំណើរការក្នុងមូលដ្ឋាន 100%។"
-    },
-    "aboutPermissionsTitle": {
-        "message": "ការពន្យល់អំពីការអនុញ្ញាត"
-    },
-    "aboutOpenSourceTitle": {
-        "message": "ប្រភពបើកចំហ & អាជ្ញាប័ណ្ណ"
-    },
-    "aboutOpenSourceDesc": {
-        "message": "ScrollHide គឺជាកម្មវិធីឥតគិតថ្លៃ និងប្រភពបើកចំហដែលចេញផ្សាយក្រោមអាជ្ញាប័ណ្ណ MIT។"
     },
     "generalSettingsGroup": {
         "message": "General Settings"
@@ -156,7 +102,7 @@
         "message": "Backup to file"
     },
     "backupImport": {
-        "message": "Restore from file..."
+        "message": "Restore from file"
     },
     "backupReset": {
         "message": "Reset to defaults"
@@ -168,19 +114,13 @@
         "message": "Revert"
     },
     "btnImportAppend": {
-        "message": "Import and append..."
+        "message": "Import and append"
     },
     "btnExport": {
-        "message": "Export..."
+        "message": "Export"
     },
     "whitelistWarning": {
         "message": "Lines starting with ! or # are treated as comments."
-    },
-    "guideTitle": {
-        "message": "Quick Usage Guide"
-    },
-    "reportTitle": {
-        "message": "Report Unhidden Scrollbars & Issues"
     },
     "reportDesc": {
         "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
@@ -191,9 +131,6 @@
     "btnCopySystemInfo": {
         "message": "Copy System Info"
     },
-    "reportHelpfulDetails": {
-        "message": "Helpful Details to Include in Your Report"
-    },
     "shortcutsGroup": {
         "message": "Keyboard Shortcuts"
     },
@@ -201,6 +138,6 @@
         "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
     },
     "btnConfigureShortcuts": {
-        "message": "Configure shortcuts..."
+        "message": "កំណត់រចនាសម្ព័ន្ធ"
     }
 }
