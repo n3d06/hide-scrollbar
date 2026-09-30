@@ -18,7 +18,7 @@ A browser extension to hide scrollbars for a cleaner interface, while keeping sc
 If you find this extension helpful, consider buying me a coffee:
 
 <a href="https://www.buymeacoffee.com/n3d06" target="_blank">
-  <img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=n3d06&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" alt="Buy Me A Coffee" height="42" />
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="42" />
 </a>
 
 
