@@ -45,6 +45,24 @@ const ICONS_INACTIVE = {
   128: '/assets/icons/icon128-off.png',
 };
 
+const safeSetBadgeText = (details: chrome.action.BadgeTextDetails): void => {
+  if (typeof chrome === 'undefined' || !chrome.action?.setBadgeText) return;
+  try {
+    chrome.action.setBadgeText(details, () => {
+      void chrome.runtime?.lastError;
+    });
+  } catch (_) {}
+};
+
+const safeSetIcon = (details: chrome.action.TabIconDetails): void => {
+  if (typeof chrome === 'undefined' || !chrome.action?.setIcon) return;
+  try {
+    chrome.action.setIcon(details, () => {
+      void chrome.runtime?.lastError;
+    });
+  } catch (_) {}
+};
+
 const updateBadge = async (
   tabOrId: chrome.tabs.Tab | number | undefined,
   scrollbarHidden: boolean,
@@ -58,16 +76,18 @@ const updateBadge = async (
     tabId = tabOrId;
     try {
       const tab = await chrome.tabs.get(tabId);
-      tabUrl = tab?.url;
+      if (!tab || tab.id === undefined) return;
+      tabUrl = tab.url;
     } catch (_) {
-      tabUrl = undefined;
+      // Tab closed or unavailable, stop immediately to avoid calling APIs on non-existent tab
+      return;
     }
   } else {
     tabId = tabOrId.id;
     tabUrl = tabOrId.url;
   }
 
-  if (tabId === undefined) return;
+  if (tabId === undefined || tabId < 0) return;
 
   let restricted = false;
   let whitelisted = false;
@@ -86,57 +106,74 @@ const updateBadge = async (
   }
 
   // Clear badge text completely for a clean look
-  chrome.action.setBadgeText({ text: '', tabId }).catch(() => {});
+  safeSetBadgeText({ text: '', tabId });
 
   const active = !restricted && scrollbarHidden && !whitelisted;
-  chrome.action.setIcon({
+  safeSetIcon({
     path: active ? ICONS_ACTIVE : ICONS_INACTIVE,
     tabId,
-  }).catch(() => {});
+  });
 };
 
 const updateBadgeForTab = async (tabId: number | undefined): Promise<void> => {
-  if (tabId === undefined) return;
+  if (tabId === undefined || tabId < 0) return;
   const { scrollbarHidden, whitelist } = await getCachedSyncState();
   await updateBadge(tabId, scrollbarHidden, whitelist);
 };
 
 const updateAllBadges = async (): Promise<void> => {
   const { scrollbarHidden, whitelist } = await getCachedSyncState();
-  chrome.action.setIcon({
+  safeSetIcon({
     path: scrollbarHidden ? ICONS_ACTIVE : ICONS_INACTIVE,
-  }).catch(() => {});
-  chrome.tabs.query({}, (tabs) => {
-    tabs.forEach((tab) => updateBadge(tab, scrollbarHidden, whitelist));
   });
+  if (typeof chrome !== 'undefined' && chrome.tabs?.query) {
+    chrome.tabs.query({}, (tabs) => {
+      if (chrome.runtime?.lastError || !Array.isArray(tabs)) return;
+      tabs.forEach((tab) => {
+        if (tab && tab.id !== undefined && tab.id >= 0) {
+          updateBadge(tab, scrollbarHidden, whitelist);
+        }
+      });
+    });
+  }
 };
 
 const injectAllTabs = async (): Promise<void> => {
   const { scrollbarHidden, whitelist } = await getCachedSyncState();
 
-  chrome.tabs.query({}, (tabs) => {
-    tabs.forEach((tab) => {
-      updateBadge(tab, scrollbarHidden, whitelist);
+  if (typeof chrome !== 'undefined' && chrome.tabs?.query) {
+    chrome.tabs.query({}, (tabs) => {
+      if (chrome.runtime?.lastError || !Array.isArray(tabs)) return;
+      tabs.forEach((tab) => {
+        if (!tab || tab.id === undefined || tab.id < 0) return;
+        updateBadge(tab, scrollbarHidden, whitelist);
 
-      if (tab.id && tab.url && (!isRestrictedUrl || !isRestrictedUrl(tab.url)) && chrome.scripting) {
-        chrome.scripting.executeScript({
-          target: { tabId: tab.id, allFrames: true },
-          files: [
-            'src/shared/constants.js',
-            'src/shared/storage.js',
-            'src/features/whitelist.js',
-            'src/entries/content.js',
-          ],
-        }).catch(() => {});
-      }
+        if (tab.url && (!isRestrictedUrl || !isRestrictedUrl(tab.url)) && chrome.scripting?.executeScript) {
+          chrome.scripting.executeScript({
+            target: { tabId: tab.id, allFrames: true },
+            files: [
+              'src/shared/constants.js',
+              'src/shared/storage.js',
+              'src/features/whitelist.js',
+              'src/entries/content.js',
+            ],
+          }, () => {
+            void chrome.runtime?.lastError;
+          });
+        }
+      });
     });
-  });
+  }
 };
 
-chrome.tabs.onActivated.addListener(({ tabId }) => updateBadgeForTab(tabId));
+chrome.tabs.onActivated.addListener(({ tabId }) => {
+  if (tabId !== undefined && tabId >= 0) {
+    updateBadgeForTab(tabId);
+  }
+});
 
 chrome.tabs.onUpdated.addListener((tabId, info) => {
-  if (info.status === 'loading' || info.status === 'complete' || info.url) {
+  if (tabId !== undefined && tabId >= 0 && (info.status === 'loading' || info.status === 'complete' || info.url)) {
     updateBadgeForTab(tabId);
   }
 });

@@ -181,10 +181,15 @@ function appendDevReloader() {
         // Reload all extension tabs (settings, popup, sidepanel)
         if (chrome.tabs && chrome.tabs.query) {
           chrome.tabs.query({}, (tabs) => {
+            if (chrome.runtime?.lastError || !Array.isArray(tabs)) return;
             const extPrefix = 'chrome-extension://' + chrome.runtime.id;
             tabs.forEach((tab) => {
               if (tab.url && tab.url.startsWith(extPrefix) && tab.id) {
-                chrome.tabs.reload(tab.id).catch(() => {});
+                try {
+                  chrome.tabs.reload(tab.id, () => {
+                    void chrome.runtime?.lastError;
+                  });
+                } catch (_) {}
               }
             });
           });

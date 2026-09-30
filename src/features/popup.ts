@@ -43,15 +43,23 @@ const initPopup = () => {
   const applyImmediateToolbarIcon = (hidden: boolean, inWhitelist: boolean): void => {
     if (typeof chrome === 'undefined' || !chrome.action?.setIcon) return;
     const isTabActive = hidden && !inWhitelist && !isRestricted;
-    if (currentTabId !== undefined) {
-      chrome.action.setIcon({
-        path: isTabActive ? ICONS_ACTIVE : ICONS_INACTIVE,
-        tabId: currentTabId,
-      }).catch(() => {});
+    if (currentTabId !== undefined && currentTabId >= 0) {
+      try {
+        chrome.action.setIcon({
+          path: isTabActive ? ICONS_ACTIVE : ICONS_INACTIVE,
+          tabId: currentTabId,
+        }, () => {
+          void chrome.runtime?.lastError;
+        });
+      } catch (_) {}
     }
-    chrome.action.setIcon({
-      path: hidden ? ICONS_ACTIVE : ICONS_INACTIVE,
-    }).catch(() => {});
+    try {
+      chrome.action.setIcon({
+        path: hidden ? ICONS_ACTIVE : ICONS_INACTIVE,
+      }, () => {
+        void chrome.runtime?.lastError;
+      });
+    } catch (_) {}
   };
 
   if (applyI18n) {
@@ -226,27 +234,38 @@ const initPopup = () => {
     reloadTabBtn.addEventListener('click', async () => {
       if (isRestricted || !getActiveTab) return;
       const tab = await getActiveTab();
-      if (tab?.id && typeof chrome !== 'undefined' && chrome.tabs?.reload) {
-        chrome.tabs.reload(tab.id);
+      if (tab?.id !== undefined && tab.id >= 0 && typeof chrome !== 'undefined' && chrome.tabs?.reload) {
+        try {
+          chrome.tabs.reload(tab.id, () => {
+            void chrome.runtime?.lastError;
+          });
+        } catch (_) {}
         window.close();
       }
     });
   }
 
   const openOrFocusSettingsTab = (tabName: string = ''): void => {
-    if (typeof chrome === 'undefined' || !chrome.tabs) return;
+    if (typeof chrome === 'undefined' || !chrome.tabs?.query) return;
     const settingsUrl = chrome.runtime.getURL('options.html');
     const targetUrl = `${settingsUrl}?tab=${tabName || 'settings'}`;
 
     chrome.tabs.query({}, (tabs) => {
+      if (chrome.runtime?.lastError || !Array.isArray(tabs)) return;
       const existingTab = tabs.find((t) => t.url && (t.url.startsWith(settingsUrl) || t.url.includes('/options.html')));
-      if (existingTab && existingTab.id) {
-        chrome.tabs.update(existingTab.id, { active: true, url: targetUrl });
+      if (existingTab && existingTab.id !== undefined && existingTab.id >= 0) {
+        chrome.tabs.update(existingTab.id, { active: true, url: targetUrl }, () => {
+          void chrome.runtime?.lastError;
+        });
         if (existingTab.windowId && chrome.windows?.update) {
-          chrome.windows.update(existingTab.windowId, { focused: true });
+          chrome.windows.update(existingTab.windowId, { focused: true }, () => {
+            void chrome.runtime?.lastError;
+          });
         }
-      } else {
-        chrome.tabs.create({ url: targetUrl });
+      } else if (chrome.tabs.create) {
+        chrome.tabs.create({ url: targetUrl }, () => {
+          void chrome.runtime?.lastError;
+        });
       }
       window.close();
     });
