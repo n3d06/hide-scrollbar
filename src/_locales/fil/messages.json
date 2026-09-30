@@ -139,5 +139,8 @@
     },
     "btnConfigureShortcuts": {
         "message": "I-configure"
+    },
+    "buyMeACoffee": {
+        "message": "Buy Me a Coffee"
     }
 }

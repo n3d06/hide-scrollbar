@@ -139,5 +139,8 @@
     },
     "btnConfigureShortcuts": {
         "message": "Διαμόρφωση"
+    },
+    "buyMeACoffee": {
+        "message": "Κερνάτε έναν καφέ"
     }
 }

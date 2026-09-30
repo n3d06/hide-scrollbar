@@ -5,12 +5,12 @@
   "author": "n3d06",
   "repository": {
     "type": "git",
-    "url": "https://github.com/n3d06/HideScrollbar.git"
+    "url": "https://github.com/n3d06/hide-scrollbar.git"
   },
   "bugs": {
-    "url": "https://github.com/n3d06/HideScrollbar/issues"
+    "url": "https://github.com/n3d06/hide-scrollbar/issues"
   },
-  "homepage": "https://github.com/n3d06/HideScrollbar#readme",
+  "homepage": "https://github.com/n3d06/hide-scrollbar#readme",
   "private": true,
   "scripts": {
     "build": "node scripts/build.js",

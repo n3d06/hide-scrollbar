@@ -85,6 +85,26 @@ body {
   color: var(--text);
 }
 
+.link-btn-coffee {
+  background: #ffdd00;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.15);
+  font-family: "Cookie", cursive, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.link-btn-coffee:hover {
+  background: #ffe133;
+  color: #000000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.link-btn-coffee:active {
+  background: #f5d400;
+}
+
+
 /* ── Content & Sections ───────────────────────────────────── */
 
 .settings-content {

@@ -139,5 +139,8 @@
     },
     "btnConfigureShortcuts": {
         "message": "Yapılandır"
+    },
+    "buyMeACoffee": {
+        "message": "Bir kahve ısmarla"
     }
 }

@@ -139,5 +139,8 @@
     },
     "btnConfigureShortcuts": {
         "message": "Настроить"
+    },
+    "buyMeACoffee": {
+        "message": "Угостить кофе"
     }
 }

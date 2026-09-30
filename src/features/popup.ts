@@ -14,6 +14,7 @@ const initPopup = () => {
   const openReportBtn = document.getElementById('openReportBtn') as HTMLButtonElement | null;
   const openSettingsBtn = document.getElementById('openSettingsBtn') as HTMLButtonElement | null;
   const openReviewBtn = document.getElementById('openReviewBtn') as HTMLButtonElement | null;
+  const buyCoffeeBtn = document.getElementById('buyCoffeeBtn') as HTMLElement | null;
   const domainDisplay = document.getElementById('domainDisplay') as HTMLElement;
   const statusVal = document.getElementById('statusValue');
   const exceptionsCnt = document.getElementById('exceptionsCount');
@@ -274,11 +275,24 @@ const initPopup = () => {
       const extId = typeof chrome !== 'undefined' && chrome.runtime?.id;
       const reviewUrl = extId
         ? `https://chromewebstore.google.com/detail/${extId}/reviews`
-        : 'https://github.com/n3d06/HideScrollbar';
+        : 'https://github.com/n3d06/hide-scrollbar';
       if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
         chrome.tabs.create({ url: reviewUrl });
       } else {
         window.open(reviewUrl, '_blank');
+      }
+      window.close();
+    });
+  }
+
+  if (buyCoffeeBtn) {
+    buyCoffeeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const coffeeUrl = 'https://buymeacoffee.com/n3d06';
+      if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+        chrome.tabs.create({ url: coffeeUrl });
+      } else {
+        window.open(coffeeUrl, '_blank');
       }
       window.close();
     });

@@ -139,5 +139,8 @@
     },
     "btnConfigureShortcuts": {
         "message": "Konfigurasi"
+    },
+    "buyMeACoffee": {
+        "message": "Traktir Kopi"
     }
 }

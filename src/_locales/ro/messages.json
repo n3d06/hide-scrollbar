@@ -139,5 +139,8 @@
     },
     "btnConfigureShortcuts": {
         "message": "Configurează"
+    },
+    "buyMeACoffee": {
+        "message": "Cumpără-mi o cafea"
     }
 }

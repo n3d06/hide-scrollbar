@@ -219,3 +219,53 @@ body {
   background: rgba(217, 48, 37, 0.08);
   color: var(--danger);
 }
+
+/* ── Buy Me a Coffee Button ──────────────────────────────── */
+
+.bmc-container {
+  display: flex;
+  padding: 0 12px 10px 14px;
+}
+
+.bmc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  height: 28px;
+  background-color: #ffdd00;
+  color: #000000;
+  font-family: "Cookie", cursive, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.bmc-btn:hover {
+  background-color: #ffe133;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.bmc-btn:active {
+  background-color: #f5d400;
+}
+
+.bmc-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.bmc-text {
+  line-height: 1;
+  color: #000000;
+  font-weight: 600;
+}
+

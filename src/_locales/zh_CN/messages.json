@@ -139,5 +139,8 @@
     },
     "btnConfigureShortcuts": {
         "message": "配置"
+    },
+    "buyMeACoffee": {
+        "message": "请我喝杯咖啡"
     }
 }

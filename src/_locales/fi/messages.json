@@ -139,5 +139,8 @@
     },
     "btnConfigureShortcuts": {
         "message": "Määritä"
+    },
+    "buyMeACoffee": {
+        "message": "Osta minulle kahvi"
     }
 }
