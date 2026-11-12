@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hide Scrollbar marquee</title>
+<!-- Marquee promo 1400x560. Render: chrome --headless --screenshot=marquee-1400x560.png --window-size=1400,560 marquee-1400x560.html -->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1400px; height: 560px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    background: #f7f7f7;
+    color: #171717;
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    align-items: center;
+    gap: 64px;
+    padding: 0 0 0 96px;
+  }
+
+  /* ── Text ── */
+  .logo { width: 72px; height: 72px; display: block; margin-bottom: 28px; }
+  h1 { font-size: 60px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.05; }
+  p { margin-top: 18px; font-size: 24px; line-height: 1.45; color: #737373; }
+  .tags { display: flex; gap: 10px; margin-top: 30px; }
+  .tag { font-size: 16px; font-weight: 600; padding: 6px 14px; border-radius: 6px; background: #eaf1fd; color: #2772ed; white-space: nowrap; }
+
+  /* ── Browser mockup (bleeds off the right edge) ── */
+  .browser {
+    position: relative;
+    height: 440px;
+    border: 1px solid #d4d4d4;
+    border-right: 0;
+    border-radius: 12px 0 0 12px;
+    background: #fff;
+    overflow: hidden;
+  }
+  .chrome-bar { height: 52px; display: flex; align-items: center; gap: 14px; padding: 0 20px; border-bottom: 1px solid #e5e5e5; background: #fafafa; }
+  .dots { display: flex; gap: 7px; }
+  .dots i { width: 11px; height: 11px; border-radius: 50%; background: #d4d4d4; }
+  .url { flex: 1; height: 30px; border-radius: 15px; background: #f0f0f0; display: flex; align-items: center; padding: 0 16px; font-size: 14px; color: #737373; }
+  .ext-icon { width: 24px; height: 24px; margin-right: 20px; }
+
+  .page { padding: 36px 44px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; width: 560px; }
+  .card { border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; }
+  .thumb { height: 92px; background: #f0f0f0; }
+  .line { height: 9px; border-radius: 5px; background: #e5e5e5; margin: 12px 12px 0; }
+  .line.short { width: 55%; margin-bottom: 14px; }
+
+  /* ── Popup (anchored under the extension icon) ── */
+  .popup {
+    position: absolute;
+    top: 62px;
+    right: 14px;
+    width: 240px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    font-size: 14px;
+  }
+  .bar { height: 40px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14.5px; border-bottom: 1px solid #e5e5e5; }
+  .seg-wrap { padding: 16px 14px; }
+  .seg { display: grid; grid-template-columns: 1fr 1fr; padding: 3px; border: 1px solid #d4d4d4; border-radius: 8px; }
+  .seg span { text-align: center; padding: 7px 0; border-radius: 5px; font-weight: 600; color: #737373; }
+  .seg .on { background: #2772ed; color: #fff; }
+  .row { display: flex; justify-content: space-between; align-items: center; height: 36px; padding: 0 14px; border-top: 1px solid #e5e5e5; }
+  .row .k { color: #737373; }
+  .row .v { font-weight: 600; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #2772ed; }
+  .tools { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #e5e5e5; height: 40px; }
+  .tools i { border-right: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: center; color: #737373; font-style: normal; }
+  .tools i:last-child { border-right: 0; }
+</style>
+</head>
+<body>
+  <div>
+    <img class="logo" src="../../src/assets/icons/icon128.png" alt="">
+    <h1>Hide Scrollbar</h1>
+    <p>Hide scrollbars on every site for a cleaner look. Scrolling still works.</p>
+    <div class="tags"><span class="tag">Chrome · Firefox</span><span class="tag">One-click toggle</span><span class="tag">30 languages</span></div>
+  </div>
+
+  <div class="browser" aria-hidden="true">
+    <div class="chrome-bar">
+      <div class="dots"><i></i><i></i><i></i></div>
+      <div class="url">www.youtube.com</div>
+      <img class="ext-icon" src="../../src/assets/icons/icon32.png" alt="">
+    </div>
+    <div class="page">
+      <div class="card"><div class="thumb"></div><div class="line"></div><div class="line short"></div></div>
+      <div class="card"><div class="thumb"></div><div class="line"></div><div class="line short"></div></div>
+      <div class="card"><div class="thumb"></div><div class="line"></div><div class="line short"></div></div>
+      <div class="card"><div class="thumb"></div><div class="line"></div><div class="line short"></div></div>
+      <div class="card"><div class="thumb"></div><div class="line"></div><div class="line short"></div></div>
+      <div class="card"><div class="thumb"></div><div class="line"></div><div class="line short"></div></div>
+    </div>
+
+    <div class="popup">
+      <div class="bar">www.youtube.com</div>
+      <div class="seg-wrap"><div class="seg"><span class="on">Hide</span><span>Show</span></div></div>
+      <div class="row"><span class="k">Status</span><span class="dot"></span></div>
+      <div class="row"><span class="k">Exceptions</span><span class="v">2</span></div>
+      <div class="row"><span class="k">Cleaned</span><span class="v">1,284</span></div>
+      <div class="tools">
+        <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></i>
+        <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></i>
+        <i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></i>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

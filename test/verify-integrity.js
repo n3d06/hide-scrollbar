@@ -219,7 +219,20 @@ assert(excludeMatches.length === 4, 'whitelistToExcludeMatches creates full list
 assert(service.isRestrictedUrl('chrome://settings') === true, 'Restricted on chrome://');
 assert(service.isRestrictedUrl('edge://extensions') === true, 'Restricted on edge://');
 assert(service.isRestrictedUrl('about:blank') === true, 'Restricted on about:');
-assert(service.isRestrictedUrl('https://chromewebstore.google.com') === false, 'Chrome Web Store is NOT restricted');
+assert(service.isRestrictedUrl('https://chromewebstore.google.com/detail/x') === true, 'Restricted on Chrome Web Store');
+assert(
+  service.isRestrictedUrl('https://chrome.google.com/webstore/devconsole/') === true,
+  'Restricted on chrome.google.com/webstore (devconsole)',
+);
+assert(service.isRestrictedUrl('https://chrome.google.com/webstore') === true, 'Restricted on chrome.google.com/webstore root');
+assert(service.isRestrictedUrl('https://chrome.google.com/intl/en/chrome/') === false, 'Other chrome.google.com pages NOT restricted');
+assert(service.isRestrictedUrl('https://chrome.google.com/webstorefront') === false, 'Path prefix needs a "/" boundary');
+assert(
+  service.isRestrictedUrl('https://microsoftedge.microsoft.com/addons/detail/x') === true,
+  'Restricted on Edge Add-ons',
+);
+assert(service.isRestrictedUrl('chrome-search://local-ntp/') === true, 'Restricted on chrome-search://');
+assert(service.isRestrictedUrl('https://sync.services.mozilla.com/') === true, 'Restricted on sync.services.mozilla.com');
 assert(service.isRestrictedUrl('https://google.com') === false, 'google.com is NOT restricted');
 assert(service.isRestrictedUrl('moz-extension://abc/popup.html') === true, 'Restricted on moz-extension://');
 assert(service.isRestrictedUrl('https://addons.mozilla.org/firefox/') === true, 'Restricted on addons.mozilla.org');

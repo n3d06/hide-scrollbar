@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hide Scrollbar promo tile</title>
+<!-- Small promo tile 440x280. Render: chrome --headless --screenshot=promo-440x280.png --window-size=440,280 promo-440x280.html -->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 440px; height: 280px; overflow: hidden; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #171717;
+    display: grid;
+    grid-template-columns: 1fr 170px;
+    align-items: center;
+    gap: 22px;
+    padding: 0 28px 0 30px;
+    border: 1px solid #e5e5e5;
+  }
+  .logo { width: 44px; height: 44px; display: block; margin-bottom: 16px; }
+  h1 { font-size: 27px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+  p { margin-top: 10px; font-size: 14px; line-height: 1.45; color: #737373; }
+  .tags { display: flex; gap: 6px; margin-top: 16px; }
+  .tag { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 4px; background: #eaf1fd; color: #2772ed; white-space: nowrap; }
+
+  /* Mini popup mockup */
+  .popup { width: 170px; border: 1px solid #d4d4d4; border-radius: 8px; overflow: hidden; background: #fff; font-size: 11px; }
+  .bar { height: 30px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 11.5px; border-bottom: 1px solid #e5e5e5; }
+  .seg-wrap { padding: 12px 10px; }
+  .seg { display: grid; grid-template-columns: 1fr 1fr; padding: 2px; border: 1px solid #d4d4d4; border-radius: 6px; }
+  .seg span { text-align: center; padding: 5px 0; border-radius: 4px; font-weight: 600; color: #737373; }
+  .seg .on { background: #2772ed; color: #fff; }
+  .row { display: flex; justify-content: space-between; align-items: center; height: 26px; padding: 0 10px; border-top: 1px solid #e5e5e5; }
+  .row .k { color: #737373; }
+  .row .v { font-weight: 600; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #2772ed; }
+  .tools { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #e5e5e5; height: 28px; }
+  .tools i { border-right: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: center; color: #737373; font-style: normal; }
+  .tools i:last-child { border-right: 0; }
+</style>
+</head>
+<body>
+  <div>
+    <img class="logo" src="../../src/assets/icons/icon128.png" alt="">
+    <h1>Hide Scrollbar</h1>
+    <p>Hide scrollbars on every site for a cleaner look. Scrolling still works.</p>
+    <div class="tags"><span class="tag">Chrome · Firefox</span><span class="tag">30 languages</span></div>
+  </div>
+
+  <div class="popup" aria-hidden="true">
+    <div class="bar">www.youtube.com</div>
+    <div class="seg-wrap"><div class="seg"><span class="on">Hide</span><span>Show</span></div></div>
+    <div class="row"><span class="k">Status</span><span class="dot"></span></div>
+    <div class="row"><span class="k">Exceptions</span><span class="v">2</span></div>
+    <div class="row"><span class="k">Cleaned</span><span class="v">1,284</span></div>
+    <div class="tools">
+      <i><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></i>
+      <i><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></i>
+      <i><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></i>
+    </div>
+  </div>
+</body>
+</html>

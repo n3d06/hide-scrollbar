@@ -1,18 +1,6 @@
 (() => {
-  const getConstants = () => {
-    const g = globalThis;
-    return (
-      g.ScrollHideConstants || {
-        RESTRICTED_HOSTS: [
-          // Firefox blocks extensions on these Mozilla pages
-          'addons.mozilla.org',
-          'accounts.firefox.com',
-          'support.mozilla.org',
-        ],
-        RESTRICTED_PROTOCOLS: ['chrome:', 'chrome-extension:', 'edge:', 'about:', 'view-source:', 'devtools:', 'moz-extension:', 'resource:'],
-      }
-    );
-  };
+  // Lists live in shared/constants.js, which every context loads first
+  const getConstants = () => globalThis.ScrollHideConstants || {};
 
   const sanitizeDomain = (raw) => {
     let str = String(raw || '')
@@ -134,8 +122,11 @@
     if (!url) return true;
     try {
       const parsed = new URL(url);
-      const { RESTRICTED_HOSTS, RESTRICTED_PROTOCOLS } = getConstants();
-      return RESTRICTED_PROTOCOLS.includes(parsed.protocol) || RESTRICTED_HOSTS.includes(parsed.hostname);
+      const { RESTRICTED_HOSTS = [], RESTRICTED_PROTOCOLS = [], RESTRICTED_PATHS = [] } = getConstants();
+      if (RESTRICTED_PROTOCOLS.includes(parsed.protocol) || RESTRICTED_HOSTS.includes(parsed.hostname)) return true;
+      // "chrome.google.com/webstore" matches /webstore and /webstore/..., not /webstoreX
+      const hostPath = parsed.hostname + parsed.pathname;
+      return RESTRICTED_PATHS.some((prefix) => hostPath === prefix || hostPath.startsWith(`${prefix}/`));
     } catch (_) {
       return true;
     }

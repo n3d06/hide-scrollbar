@@ -15,13 +15,40 @@
     BACKUP_FILENAME: 'scrollhide-backup.json',
     CSS_FILE: 'assets/styles/hide-scrollbar.css',
     DEFAULT_SYNC_STATE,
-    RESTRICTED_HOSTS: [
-      // Firefox blocks extensions on these Mozilla pages
-      'addons.mozilla.org',
-      'accounts.firefox.com',
-      'support.mozilla.org',
+    // Pages where the browser blocks all extensions (CSS can't be injected).
+    // Chrome has no official list; this follows Chromium source + Firefox's
+    // extensions.webextensions.restrictedDomains pref.
+    RESTRICTED_PROTOCOLS: [
+      'about:',
+      'chrome:',
+      'chrome-extension:',
+      'chrome-search:',
+      'chrome-untrusted:',
+      'devtools:',
+      'edge:',
+      'moz-extension:',
+      'resource:',
+      'view-source:',
     ],
-    RESTRICTED_PROTOCOLS: ['chrome:', 'chrome-extension:', 'edge:', 'about:', 'view-source:', 'devtools:', 'moz-extension:', 'resource:'],
+    RESTRICTED_HOSTS: [
+      // Chrome Web Store
+      'chromewebstore.google.com',
+      // Mozilla (Firefox restrictedDomains)
+      'accounts-static.cdn.mozilla.net',
+      'accounts.firefox.com',
+      'addons.cdn.mozilla.net',
+      'addons.mozilla.org',
+      'api.accounts.firefox.com',
+      'content.cdn.mozilla.net',
+      'discovery.addons.mozilla.org',
+      'install.mozilla.org',
+      'oauth.accounts.firefox.com',
+      'profile.accounts.firefox.com',
+      'support.mozilla.org',
+      'sync.services.mozilla.com',
+    ],
+    // host + path prefix, for stores that live under a shared domain
+    RESTRICTED_PATHS: ['chrome.google.com/webstore', 'microsoftedge.microsoft.com/addons'],
     STORAGE_KEYS,
     OFF_ATTR: 'data-scrollhide-off',
     SCRIPT_ID: 'scrollhide-css',
