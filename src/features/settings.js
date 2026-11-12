@@ -171,15 +171,11 @@
     if (btnConfigureShortcuts) {
       btnConfigureShortcuts.addEventListener('click', () => {
         if (typeof chrome === 'undefined') return;
-        // Firefox 137+ has a dedicated API; extensions can't open about:addons directly
-        if (chrome.commands?.openShortcutSettings) {
+        // Firefox (min version 140) has a dedicated API; extensions can't open about:addons directly
+        if (isFirefox) {
           chrome.commands.openShortcutSettings();
         } else if (chrome.tabs?.create) {
-          chrome.tabs.create({
-            url: isFirefox
-              ? 'https://support.mozilla.org/kb/manage-extension-shortcuts-firefox'
-              : 'chrome://extensions/shortcuts',
-          });
+          chrome.tabs.create({ url: 'chrome://extensions/shortcuts' });
         }
       });
     }
