@@ -369,8 +369,8 @@
       btnRateExtension.addEventListener('click', () => {
         const extId = typeof chrome !== 'undefined' && chrome.runtime?.id;
         let reviewUrl = 'https://github.com/n3d06/hide-scrollbar';
-        if (isFirefox && extId) {
-          reviewUrl = `https://addons.mozilla.org/firefox/addon/${encodeURIComponent(extId)}/reviews/`;
+        if (isFirefox) {
+          reviewUrl = 'https://addons.mozilla.org/firefox/addon/ihatescrollbar/reviews/';
         } else if (extId) {
           reviewUrl = `https://chromewebstore.google.com/detail/${extId}/reviews`;
         }
