@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "M'offrir un café"
+    },
+    "toggleHide": {
+        "message": "Masquer"
+    },
+    "toggleShow": {
+        "message": "Afficher"
+    },
+    "permissionNotice": {
+        "message": "L’accès aux sites est désactivé"
+    },
+    "grantPermission": {
+        "message": "Autoriser"
     }
 }

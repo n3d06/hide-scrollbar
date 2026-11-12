@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Mời tôi một ly cà phê"
+    },
+    "toggleHide": {
+        "message": "Ẩn"
+    },
+    "toggleShow": {
+        "message": "Hiện"
+    },
+    "permissionNotice": {
+        "message": "Chưa được cấp quyền truy cập trang"
+    },
+    "grantPermission": {
+        "message": "Cho phép"
     }
 }

@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "ទិញកាហ្វេឱ្យខ្ញុំ"
+    },
+    "toggleHide": {
+        "message": "លាក់"
+    },
+    "toggleShow": {
+        "message": "បង្ហាញ"
+    },
+    "permissionNotice": {
+        "message": "ការចូលប្រើគេហទំព័រត្រូវបានបិទ"
+    },
+    "grantPermission": {
+        "message": "អនុញ្ញាត"
     }
 }

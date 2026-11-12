@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "เลี้ยงกาแฟฉัน"
+    },
+    "toggleHide": {
+        "message": "ซ่อน"
+    },
+    "toggleShow": {
+        "message": "แสดง"
+    },
+    "permissionNotice": {
+        "message": "ปิดการเข้าถึงเว็บไซต์อยู่"
+    },
+    "grantPermission": {
+        "message": "อนุญาต"
     }
 }

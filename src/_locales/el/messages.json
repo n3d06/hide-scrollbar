@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Κερνάτε έναν καφέ"
+    },
+    "toggleHide": {
+        "message": "Απόκρυψη"
+    },
+    "toggleShow": {
+        "message": "Εμφάνιση"
+    },
+    "permissionNotice": {
+        "message": "Η πρόσβαση σε ιστότοπους είναι ανενεργή"
+    },
+    "grantPermission": {
+        "message": "Να επιτρέπεται"
     }
 }

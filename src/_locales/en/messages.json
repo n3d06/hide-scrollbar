@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Buy Me a Coffee"
+    },
+    "toggleHide": {
+        "message": "Hide"
+    },
+    "toggleShow": {
+        "message": "Show"
+    },
+    "permissionNotice": {
+        "message": "Site access is off"
+    },
+    "grantPermission": {
+        "message": "Allow"
     }
 }

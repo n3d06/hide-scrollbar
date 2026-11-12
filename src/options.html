@@ -17,17 +17,18 @@
         <img src="assets/icons/icon48.png" alt="Hide Scrollbar" class="logo">
         <div>
           <h1 class="title" data-i18n="extName">Hide Scrollbar</h1>
-          <span class="version" id="extVersion">v2.1</span>
+          <span class="version" id="extVersion">v2.2</span>
         </div>
       </div>
       <div class="header-links">
-        <a href="https://buymeacoffee.com/n3d06" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-coffee" title="Buy me a coffee">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 8h1a4 4 0 1 1 0 8h-1" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff"/>
-            <line x1="6" y1="2" x2="6" y2="4" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-            <line x1="10" y1="2" x2="10" y2="4" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-            <line x1="14" y1="2" x2="14" y2="4" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+        <a href="https://buymeacoffee.com/n3d06" target="_blank" rel="noopener noreferrer" class="link-btn" title="Buy me a coffee">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+            <line x1="6" y1="2" x2="6" y2="4"/>
+            <line x1="10" y1="2" x2="10" y2="4"/>
+            <line x1="14" y1="2" x2="14" y2="4"/>
           </svg>
           <span>Buy me a coffee</span>
         </a>
@@ -168,8 +169,8 @@
           </button>
         </div>
 
-        <h2 class="section-title" data-i18n="backupGroup" style="margin-top: 18px;">Backup and Restore</h2>
-        <div class="setting-hint" data-i18n="backupDesc" style="margin-bottom: 12px;">Export or import your ScrollHide configuration and whitelist domains.</div>
+        <h2 class="section-title spaced" data-i18n="backupGroup">Backup and Restore</h2>
+        <div class="setting-hint" data-i18n="backupDesc">Export or import your ScrollHide configuration and whitelist domains.</div>
         <div class="btn-group">
           <button id="btnExportSettings" class="btn btn-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -204,9 +205,9 @@
       <!-- Section 4: Report & Privacy -->
       <section class="section-card">
         <h2 class="section-title" data-i18n="tabReport">Report</h2>
-        <div class="setting-hint" data-i18n="reportDesc" style="margin-bottom: 12px;">Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!</div>
+        <div class="setting-hint" data-i18n="reportDesc">Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!</div>
         <div class="btn-group">
-          <a href="https://github.com/n3d06/hide-scrollbar/issues/new" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="text-decoration: none;">
+          <a href="https://github.com/n3d06/hide-scrollbar/issues/new" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
@@ -222,17 +223,24 @@
             </svg>
             <span id="copyReportInfoText" data-i18n="btnCopySystemInfo">Copy System Info</span>
           </button>
+          <button id="btnRateExtension" class="btn btn-secondary" title="Rate on Web Store">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span>Rate extension</span>
+          </button>
         </div>
         <div class="privacy-note" data-i18n="aboutPrivacyDesc">ScrollHide does not collect, store, or transmit any browsing data. Everything is 100% offline.</div>
       </section>
     </main>
   </div>
 
-  <script src="src/shared/i18n.js"></script>
-  <script src="src/shared/constants.js"></script>
-  <script src="src/shared/storage.js"></script>
-  <script src="src/features/whitelist.js"></script>
-  <script src="src/features/settings.js"></script>
+  <script src="shared/i18n.js"></script>
+  <script src="shared/constants.js"></script>
+  <script src="shared/storage.js"></script>
+  <script src="features/whitelist.js"></script>
+  <script src="features/settings.js"></script>
 </body>
 
 </html>

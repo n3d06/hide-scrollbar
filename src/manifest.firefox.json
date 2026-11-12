@@ -1,0 +1,19 @@
+{
+  "background": {
+    "scripts": [
+      "shared/constants.js",
+      "shared/storage.js",
+      "features/whitelist.js",
+      "entries/background.js"
+    ]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "hide-scrollbar@n3d06",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}

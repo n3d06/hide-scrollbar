@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "मुझे एक कॉफ़ी पिलाएँ"
+    },
+    "toggleHide": {
+        "message": "छिपाएँ"
+    },
+    "toggleShow": {
+        "message": "दिखाएँ"
+    },
+    "permissionNotice": {
+        "message": "साइट एक्सेस बंद है"
+    },
+    "grantPermission": {
+        "message": "अनुमति दें"
     }
 }

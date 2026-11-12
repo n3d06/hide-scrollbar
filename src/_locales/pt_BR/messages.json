@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Pague um café"
+    },
+    "toggleHide": {
+        "message": "Ocultar"
+    },
+    "toggleShow": {
+        "message": "Mostrar"
+    },
+    "permissionNotice": {
+        "message": "O acesso aos sites está desativado"
+    },
+    "grantPermission": {
+        "message": "Permitir"
     }
 }

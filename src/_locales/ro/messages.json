@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Cumpără-mi o cafea"
+    },
+    "toggleHide": {
+        "message": "Ascunde"
+    },
+    "toggleShow": {
+        "message": "Arată"
+    },
+    "permissionNotice": {
+        "message": "Accesul la site-uri este dezactivat"
+    },
+    "grantPermission": {
+        "message": "Permite"
     }
 }

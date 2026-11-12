@@ -4,14 +4,9 @@
 AGENTS.md
 CLAUDE.md
 
-# Dependencies
-node_modules/
+# Chrome debug profile (VS Code launch)
+.vscode/chrome-debug-profile/
 
-# Build output (load Chrome extension from dist/ folder)
+# Local build/CI staging
 dist/
-
-# TypeScript compiled artifacts in source (esbuild handles compilation to dist/)
-src/**/*.js
-src/**/*.js.map
-src/**/*.d.ts
-
+node_modules/

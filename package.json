@@ -14,12 +14,6 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build.js",
-    "watch": "node scripts/build.js --watch",
     "test": "node test/verify-integrity.js"
-  },
-  "devDependencies": {
-    "@types/chrome": "^0.0.308",
-    "esbuild": "^0.28.2",
-    "typescript": "^5.7.3"
   }
 }

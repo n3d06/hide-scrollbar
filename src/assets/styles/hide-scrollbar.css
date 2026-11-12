@@ -1,0 +1,37 @@
+/*
+ * Injected into pages by chrome.scripting.registerContentScripts (see entries/background.js).
+ * Every rule is gated by html:not([data-scrollhide-off]) so the background can turn hiding
+ * off in already-open tabs without a reload (CSS from a content script cannot be removed).
+ */
+
+/* Standard property (Chrome 121+, Firefox) */
+html:not([data-scrollhide-off]),
+html:not([data-scrollhide-off]) * {
+  scrollbar-width: none !important;
+}
+
+/* Older Chromium */
+html:not([data-scrollhide-off])::-webkit-scrollbar,
+html:not([data-scrollhide-off]) *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Custom scrollbar libraries (Facebook, OverlayScrollbars, SimpleBar, Perfect Scrollbar, ...) */
+html:not([data-scrollhide-off]) div[data-visualcompletion='ignore'][data-thumb='1'],
+html:not([data-scrollhide-off]) .os-scrollbar,
+html:not([data-scrollhide-off]) .simplebar-track,
+html:not([data-scrollhide-off]) .ps__rail-x,
+html:not([data-scrollhide-off]) .ps__rail-y,
+html:not([data-scrollhide-off]) .nicescroll-rails,
+html:not([data-scrollhide-off]) .mCSB_scrollTools,
+html:not([data-scrollhide-off]) .nano-pane,
+html:not([data-scrollhide-off]) .mac-scrollbar {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}

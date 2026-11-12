@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Köp en kaffe"
+    },
+    "toggleHide": {
+        "message": "Dölj"
+    },
+    "toggleShow": {
+        "message": "Visa"
+    },
+    "permissionNotice": {
+        "message": "Webbplatsåtkomst är av"
+    },
+    "grantPermission": {
+        "message": "Tillåt"
     }
 }

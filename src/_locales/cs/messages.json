@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Koupit kávu"
+    },
+    "toggleHide": {
+        "message": "Skrýt"
+    },
+    "toggleShow": {
+        "message": "Zobrazit"
+    },
+    "permissionNotice": {
+        "message": "Přístup k webům je vypnutý"
+    },
+    "grantPermission": {
+        "message": "Povolit"
     }
 }

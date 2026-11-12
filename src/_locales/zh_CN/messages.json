@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "请我喝杯咖啡"
+    },
+    "toggleHide": {
+        "message": "隐藏"
+    },
+    "toggleShow": {
+        "message": "显示"
+    },
+    "permissionNotice": {
+        "message": "网站访问权限已关闭"
+    },
+    "grantPermission": {
+        "message": "允许"
     }
 }

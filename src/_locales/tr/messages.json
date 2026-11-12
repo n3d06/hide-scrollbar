@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Bir kahve ısmarla"
+    },
+    "toggleHide": {
+        "message": "Gizle"
+    },
+    "toggleShow": {
+        "message": "Göster"
+    },
+    "permissionNotice": {
+        "message": "Site erişimi kapalı"
+    },
+    "grantPermission": {
+        "message": "İzin ver"
     }
 }

@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "اشتر لي قهوة"
+    },
+    "toggleHide": {
+        "message": "إخفاء"
+    },
+    "toggleShow": {
+        "message": "إظهار"
+    },
+    "permissionNotice": {
+        "message": "الوصول إلى المواقع متوقف"
+    },
+    "grantPermission": {
+        "message": "السماح"
     }
 }

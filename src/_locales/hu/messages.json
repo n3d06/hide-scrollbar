@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Vegyél nekem egy kávét"
+    },
+    "toggleHide": {
+        "message": "Elrejt"
+    },
+    "toggleShow": {
+        "message": "Mutat"
+    },
+    "permissionNotice": {
+        "message": "A webhely-hozzáférés ki van kapcsolva"
+    },
+    "grantPermission": {
+        "message": "Engedélyezés"
     }
 }

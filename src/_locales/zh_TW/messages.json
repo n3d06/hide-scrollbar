@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "請我喝杯咖啡"
+    },
+    "toggleHide": {
+        "message": "隱藏"
+    },
+    "toggleShow": {
+        "message": "顯示"
+    },
+    "permissionNotice": {
+        "message": "網站存取權限已關閉"
+    },
+    "grantPermission": {
+        "message": "允許"
     }
 }

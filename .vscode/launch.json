@@ -2,27 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "⚡ npm run watch (Tự động build khi lưu file)",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "watch"],
-      "console": "integratedTerminal"
-    },
-    {
-      "name": "🔨 npm run build (Build sang dist/)",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "build"],
-      "console": "integratedTerminal"
-    },
-    {
       "name": "🧪 npm run test (Kiểm tra lỗi & toàn vẹn)",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "test"],
+      "runtimeArgs": [
+        "run",
+        "test"
+      ],
       "console": "integratedTerminal"
     },
     {
@@ -31,7 +18,7 @@
       "request": "launch",
       "url": "https://google.com",
       "runtimeArgs": [
-        "--load-extension=${workspaceFolder}/dist"
+        "--load-extension=${workspaceFolder}/src"
       ],
       "userDataDir": "${workspaceFolder}/.vscode/chrome-debug-profile"
     }

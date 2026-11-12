@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Osta minulle kahvi"
+    },
+    "toggleHide": {
+        "message": "Piilota"
+    },
+    "toggleShow": {
+        "message": "Näytä"
+    },
+    "permissionNotice": {
+        "message": "Sivustojen käyttö on pois päältä"
+    },
+    "grantPermission": {
+        "message": "Salli"
     }
 }

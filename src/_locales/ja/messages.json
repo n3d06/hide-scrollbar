@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "コーヒーをおごる"
+    },
+    "toggleHide": {
+        "message": "非表示"
+    },
+    "toggleShow": {
+        "message": "表示"
+    },
+    "permissionNotice": {
+        "message": "サイトへのアクセスがオフです"
+    },
+    "grantPermission": {
+        "message": "許可"
     }
 }

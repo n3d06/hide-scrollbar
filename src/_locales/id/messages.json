@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Traktir Kopi"
+    },
+    "toggleHide": {
+        "message": "Sembunyikan"
+    },
+    "toggleShow": {
+        "message": "Tampilkan"
+    },
+    "permissionNotice": {
+        "message": "Akses situs nonaktif"
+    },
+    "grantPermission": {
+        "message": "Izinkan"
     }
 }

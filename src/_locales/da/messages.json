@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Køb mig en kaffe"
+    },
+    "toggleHide": {
+        "message": "Skjul"
+    },
+    "toggleShow": {
+        "message": "Vis"
+    },
+    "permissionNotice": {
+        "message": "Adgang til websteder er slået fra"
+    },
+    "grantPermission": {
+        "message": "Tillad"
     }
 }

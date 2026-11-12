@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "커피 한 잔 사주기"
+    },
+    "toggleHide": {
+        "message": "숨기기"
+    },
+    "toggleShow": {
+        "message": "표시"
+    },
+    "permissionNotice": {
+        "message": "사이트 액세스가 꺼져 있음"
+    },
+    "grantPermission": {
+        "message": "허용"
     }
 }

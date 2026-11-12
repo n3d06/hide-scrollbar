@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Угостить кофе"
+    },
+    "toggleHide": {
+        "message": "Скрыть"
+    },
+    "toggleShow": {
+        "message": "Показать"
+    },
+    "permissionNotice": {
+        "message": "Доступ к сайтам отключён"
+    },
+    "grantPermission": {
+        "message": "Разрешить"
     }
 }

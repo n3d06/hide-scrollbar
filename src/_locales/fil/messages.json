@@ -142,5 +142,17 @@
     },
     "buyMeACoffee": {
         "message": "Buy Me a Coffee"
+    },
+    "toggleHide": {
+        "message": "Itago"
+    },
+    "toggleShow": {
+        "message": "Ipakita"
+    },
+    "permissionNotice": {
+        "message": "Naka-off ang access sa site"
+    },
+    "grantPermission": {
+        "message": "Payagan"
     }
 }
