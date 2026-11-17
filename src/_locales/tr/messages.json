@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Alan adlarını buraya girin, her satıra bir tane\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Kaydırma çubuğunu gizle/göster"
     }
 }

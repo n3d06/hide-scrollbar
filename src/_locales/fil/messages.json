@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Ilagay ang mga domain dito, isa bawat linya\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "I-toggle ang pagtatago/pagpapakita ng scrollbar"
     }
 }

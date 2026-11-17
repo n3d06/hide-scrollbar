@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! 在此输入域名，每行一个\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "切换隐藏/显示滚动条"
     }
 }

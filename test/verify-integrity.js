@@ -76,6 +76,14 @@ allDirs.forEach((lang) => {
 });
 console.log(`✅ All ${allDirs.length} locales passed verification with 100% key completeness!`);
 
+// 2a. Every __MSG_key__ referenced in the manifests must exist in en/messages.json
+['manifest.json', 'manifest.firefox.json'].forEach((file) => {
+  const raw = fs.readFileSync(path.join(extRoot, file), 'utf8');
+  for (const m of raw.matchAll(/__MSG_([A-Za-z0-9_@]+)__/g)) {
+    assert(enKeys.includes(m[1]), `${file} references __MSG_${m[1]}__ which exists in messages.json`);
+  }
+});
+
 const srcRoot = path.resolve(__dirname, '..');
 
 // 2b. Check that all data-i18n and getMessage keys in code exist in en/messages.json

@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Введіть домени, по одному в рядку\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Приховати/показати смугу прокручування"
     }
 }

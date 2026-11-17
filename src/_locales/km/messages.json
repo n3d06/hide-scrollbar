@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! បញ្ចូលដែននៅទីនេះ មួយបន្ទាត់ម្ដង\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "បិទ/បើកការលាក់/បង្ហាញរបារអូស"
     }
 }

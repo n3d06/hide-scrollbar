@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Inserisci i domini qui, uno per riga\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Nascondi/mostra barra di scorrimento"
     }
 }

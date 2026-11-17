@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! 도메인을 한 줄에 하나씩 입력\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "스크롤바 숨기기/표시 전환"
     }
 }

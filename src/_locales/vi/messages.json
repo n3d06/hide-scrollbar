@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Nhập tên miền ở đây, mỗi dòng một tên\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Bật/tắt ẩn thanh cuộn"
     }
 }

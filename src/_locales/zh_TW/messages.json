@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! 在此輸入網域，每行一個\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "切換隱藏/顯示捲軸"
     }
 }

@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Введите домены, по одному в строке\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Скрыть/показать полосу прокрутки"
     }
 }

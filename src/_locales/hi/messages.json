@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! डोमेन यहाँ दर्ज करें, प्रति पंक्ति एक\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "स्क्रॉलबार छिपाएँ/दिखाएँ टॉगल करें"
     }
 }

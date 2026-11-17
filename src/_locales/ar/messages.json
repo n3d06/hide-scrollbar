@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! أدخل النطاقات هنا، نطاق في كل سطر\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "تبديل إخفاء/إظهار شريط التمرير"
     }
 }

@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Εισαγάγετε τομείς εδώ, έναν ανά γραμμή\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Εναλλαγή απόκρυψης/εμφάνισης γραμμής κύλισης"
     }
 }

@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Introduce los dominios aquí, uno por línea\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Alternar ocultar/mostrar barra de desplazamiento"
     }
 }

@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Introdu domeniile aici, câte unul pe linie\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Comută ascunderea/afișarea barei de derulare"
     }
 }

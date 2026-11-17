@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Kirjoita verkkotunnukset tähän, yksi riviä kohden\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Vaihda vierityspalkin piilotus/näyttö"
     }
 }

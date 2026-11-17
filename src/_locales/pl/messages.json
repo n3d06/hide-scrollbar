@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Wpisz domeny, po jednej w wierszu\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Przełącz ukrywanie/pokazywanie paska przewijania"
     }
 }

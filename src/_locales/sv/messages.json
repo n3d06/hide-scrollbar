@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Ange domäner här, en per rad\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Dölj/visa rullningslist"
     }
 }

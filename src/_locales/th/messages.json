@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! ใส่โดเมนที่นี่ บรรทัดละหนึ่งโดเมน\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "สลับซ่อน/แสดงแถบเลื่อน"
     }
 }

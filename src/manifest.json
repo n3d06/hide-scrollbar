@@ -42,7 +42,7 @@
       }
     },
     "toggle-scrollbar": {
-      "description": "Toggle Hide/Show Scrollbar"
+      "description": "__MSG_toggleScrollbarCommand__"
     }
   }
 }

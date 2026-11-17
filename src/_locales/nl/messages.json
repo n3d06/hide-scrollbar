@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Voer hier domeinen in, één per regel\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Scrollbalk verbergen/tonen"
     }
 }

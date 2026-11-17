@@ -207,5 +207,8 @@
     },
     "whitelistPlaceholder": {
         "message": "! Saisissez les domaines ici, un par ligne\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Masquer/afficher la barre de défilement"
     }
 }
