@@ -135,7 +135,7 @@
         "message": "Phím tắt"
     },
     "shortcutsDesc": {
-        "message": "Kích hoạt nhanh các tính năng của ScrollHide bằng tổ hợp phím tắt có thể tùy chỉnh."
+        "message": "Kích hoạt nhanh các tính năng của ScrollHide bằng phím tắt có thể tùy chỉnh."
     },
     "btnConfigureShortcuts": {
         "message": "Cấu hình"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Cho phép"
+    },
+    "msgChangesSaved": {
+        "message": "Đã lưu thay đổi"
+    },
+    "msgChangesApplied": {
+        "message": "Đã áp dụng thay đổi"
+    },
+    "msgInvalidConfig": {
+        "message": "Tệp cấu hình không hợp lệ."
+    },
+    "msgSettingsRestored": {
+        "message": "Đã khôi phục cài đặt thành công!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Không thể phân tích tệp JSON sao lưu."
+    },
+    "msgConfirmReset": {
+        "message": "Bạn có chắc muốn đặt lại toàn bộ cài đặt và danh sách ngoại lệ về mặc định không?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Định dạng JSON danh sách ngoại lệ không hợp lệ. Cần một mảng tên miền hoặc một đối tượng chứa mảng \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "Không tìm thấy tên miền hợp lệ nào trong tệp."
+    },
+    "msgImportedDomains": {
+        "message": "Đã nhập $COUNT$ tên miền",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Đã sao chép!"
     }
 }

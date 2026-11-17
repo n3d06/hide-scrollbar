@@ -132,10 +132,10 @@
         "message": "Копировать данные о системе"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Сочетания клавиш"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Быстро запускайте функции ScrollHide с помощью настраиваемых сочетаний клавиш."
     },
     "btnConfigureShortcuts": {
         "message": "Настроить"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Разрешить"
+    },
+    "msgChangesSaved": {
+        "message": "Изменения сохранены"
+    },
+    "msgChangesApplied": {
+        "message": "Изменения применены"
+    },
+    "msgInvalidConfig": {
+        "message": "Недопустимый файл конфигурации."
+    },
+    "msgSettingsRestored": {
+        "message": "Настройки успешно восстановлены!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Не удалось разобрать JSON-файл резервной копии."
+    },
+    "msgConfirmReset": {
+        "message": "Вы действительно хотите сбросить все настройки и белый список до значений по умолчанию?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Недопустимый формат JSON белого списка. Ожидается массив доменов или объект с массивом \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "В файле не найдено допустимых доменов."
+    },
+    "msgImportedDomains": {
+        "message": "Импортировано доменов: $COUNT$",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Скопировано!"
     }
 }

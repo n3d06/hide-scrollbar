@@ -24,7 +24,7 @@
         "message": "Znovu načíst stránku"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Nastavení"
     },
     "statsStatus": {
         "message": "Stav"
@@ -48,94 +48,94 @@
         "message": "Omezeno"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Motiv"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Vyberte vzhled: výchozí systémový, světlý nebo tmavý"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Výchozí systémový"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Světlý"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Tmavý"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Seznam výjimek"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Nahlásit"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide neshromažďuje, neukládá ani nepřenáší žádná data o prohlížení. Vše funguje 100% lokálně."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Obecné nastavení"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Povolit skrývání posuvníků"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Automaticky skrývat posuvníky na všech webech, pokud nejsou na seznamu výjimek."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Statistiky"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Vyčištěné posuvníky"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Celkový počet posuvníků odstraněných rozšířením ve všech relacích."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Resetovat"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Záloha a obnovení"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Exportujte nebo importujte konfiguraci ScrollHide a domény ze seznamu výjimek."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Zálohovat do souboru"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Obnovit ze souboru"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Obnovit výchozí nastavení"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Použít změny"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Vrátit zpět"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Importovat a připojit"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Exportovat"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "Řádky začínající ! nebo # se považují za komentáře."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Našli jste web, kde jsou posuvníky stále vidět, nebo jste narazili na chybu? Odešlete hlášení, abychom mohli přidat podporu a zlepšit kompatibilitu!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Nahlásit na GitHubu"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Kopírovat systémové informace"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Klávesové zkratky"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Rychle spouštějte funkce ScrollHide pomocí konfigurovatelných klávesových zkratek."
     },
     "btnConfigureShortcuts": {
         "message": "Konfigurovat"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Povolit"
+    },
+    "msgChangesSaved": {
+        "message": "Změny uloženy"
+    },
+    "msgChangesApplied": {
+        "message": "Změny použity"
+    },
+    "msgInvalidConfig": {
+        "message": "Neplatný konfigurační soubor."
+    },
+    "msgSettingsRestored": {
+        "message": "Nastavení bylo úspěšně obnoveno!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Nepodařilo se zpracovat záložní soubor JSON."
+    },
+    "msgConfirmReset": {
+        "message": "Opravdu chcete obnovit výchozí hodnoty všech nastavení a seznamu výjimek?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Neplatný formát JSON seznamu výjimek. Očekává se pole domén nebo objekt obsahující pole \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "V souboru nebyly nalezeny žádné platné domény."
+    },
+    "msgImportedDomains": {
+        "message": "Importováno domén: $COUNT$",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Zkopírováno!"
     }
 }

@@ -132,10 +132,10 @@
         "message": "Copiar dados do sistema"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Atalhos de teclado"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Acione rapidamente os recursos do ScrollHide com atalhos de teclado configuráveis."
     },
     "btnConfigureShortcuts": {
         "message": "Configurar"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Permitir"
+    },
+    "msgChangesSaved": {
+        "message": "Alterações salvas"
+    },
+    "msgChangesApplied": {
+        "message": "Alterações aplicadas"
+    },
+    "msgInvalidConfig": {
+        "message": "Arquivo de configuração inválido."
+    },
+    "msgSettingsRestored": {
+        "message": "Configurações restauradas com sucesso!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Falha ao analisar o arquivo JSON de backup."
+    },
+    "msgConfirmReset": {
+        "message": "Tem certeza de que deseja redefinir todas as configurações e a lista de exceções para o padrão?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Formato JSON da lista de exceções inválido. Esperado um array de domínios ou um objeto com um array \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "Nenhuma entrada de domínio válida encontrada no arquivo."
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ domínio(s) importado(s)",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Copiado!"
     }
 }

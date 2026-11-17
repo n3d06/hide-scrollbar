@@ -24,7 +24,7 @@
         "message": "Lataa sivu uudelleen"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Asetukset"
     },
     "statsStatus": {
         "message": "Tila"
@@ -48,94 +48,94 @@
         "message": "Rajoitettu"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Teema"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Valitse ulkoasu: järjestelmän oletus, vaalea tai tumma"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Järjestelmän oletus"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Vaalea"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Tumma"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Poikkeuslista"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Ilmoita"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide ei kerää, tallenna tai lähetä selaustietoja. Kaikki toimii 100-prosenttisesti paikallisesti."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Yleiset asetukset"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Ota vierityspalkkien piilotus käyttöön"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Piilota vierityspalkit automaattisesti kaikilla sivustoilla, ellei niitä ole poikkeuslistalla."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Tilastot"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Siivotut vierityspalkit"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Laajennuksen kaikissa istunnoissa poistamien vierityspalkkien kokonaismäärä."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Nollaa"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Varmuuskopiointi ja palautus"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Vie tai tuo ScrollHide-asetukset ja poikkeuslistan verkkotunnukset."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Varmuuskopioi tiedostoon"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Palauta tiedostosta"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Palauta oletukset"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Käytä muutokset"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Palauta"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Tuo ja lisää"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Vie"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "! tai # -merkillä alkavat rivit käsitellään kommentteina."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Löysitkö sivuston, jolla vierityspalkit näkyvät yhä, tai kohtasitko virheen? Lähetä ilmoitus, niin voimme lisätä tuen ja parantaa yhteensopivuutta!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Ilmoita GitHubissa"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Kopioi järjestelmätiedot"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Pikanäppäimet"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Käynnistä ScrollHiden toiminnot nopeasti muokattavilla pikanäppäimillä."
     },
     "btnConfigureShortcuts": {
         "message": "Määritä"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Salli"
+    },
+    "msgChangesSaved": {
+        "message": "Muutokset tallennettu"
+    },
+    "msgChangesApplied": {
+        "message": "Muutokset otettu käyttöön"
+    },
+    "msgInvalidConfig": {
+        "message": "Virheellinen asetustiedosto."
+    },
+    "msgSettingsRestored": {
+        "message": "Asetukset palautettiin onnistuneesti!"
+    },
+    "msgBackupParseFailed": {
+        "message": "JSON-varmuuskopiotiedoston jäsentäminen epäonnistui."
+    },
+    "msgConfirmReset": {
+        "message": "Haluatko varmasti palauttaa kaikki asetukset ja poikkeuslistan oletusarvoihin?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Virheellinen poikkeuslistan JSON-muoto. Odotettiin verkkotunnusten taulukkoa tai oliota, joka sisältää \"whitelist\"-taulukon."
+    },
+    "msgNoValidDomains": {
+        "message": "Tiedostosta ei löytynyt kelvollisia verkkotunnuksia."
+    },
+    "msgImportedDomains": {
+        "message": "Tuotu $COUNT$ verkkotunnusta",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Kopioitu!"
     }
 }

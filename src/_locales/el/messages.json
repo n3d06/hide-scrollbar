@@ -24,7 +24,7 @@
         "message": "Επαναφόρτωση σελίδας"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Ρυθμίσεις"
     },
     "statsStatus": {
         "message": "Κατάσταση"
@@ -48,94 +48,94 @@
         "message": "Περιορισμένο"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Θέμα"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Επιλέξτε εμφάνιση: προεπιλογή συστήματος, φωτεινό ή σκούρο"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Προεπιλογή συστήματος"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Φωτεινό"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Σκούρο"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Λίστα εξαιρέσεων"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Αναφορά"
     },
     "aboutPrivacyDesc": {
         "message": "Το ScrollHide δεν συλλέγει, δεν αποθηκεύει και δεν μεταδίδει δεδομένα περιήγησης. Όλα λειτουργούν 100% τοπικά."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Γενικές ρυθμίσεις"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Ενεργοποίηση απόκρυψης γραμμών κύλισης"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Αυτόματη απόκρυψη των γραμμών κύλισης σε όλους τους ιστότοπους, εκτός αν βρίσκονται στη λίστα εξαιρέσεων."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Στατιστικά"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Καθαρισμένες γραμμές κύλισης"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Συνολικός αριθμός γραμμών κύλισης που αφαιρέθηκαν από την επέκταση σε όλες τις συνεδρίες."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Επαναφορά"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Αντίγραφο ασφαλείας και επαναφορά"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Εξαγωγή ή εισαγωγή της διαμόρφωσης του ScrollHide και των τομέων της λίστας εξαιρέσεων."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Αντίγραφο σε αρχείο"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Επαναφορά από αρχείο"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Επαναφορά στις προεπιλογές"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Εφαρμογή αλλαγών"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Ανάκληση"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Εισαγωγή και προσθήκη"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Εξαγωγή"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "Οι γραμμές που ξεκινούν με ! ή # θεωρούνται σχόλια."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Βρήκατε ιστότοπο όπου οι γραμμές κύλισης εξακολουθούν να φαίνονται ή προέκυψε σφάλμα; Υποβάλετε αναφορά για να προσθέσουμε υποστήριξη και να βελτιώσουμε τη συμβατότητα!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Αναφορά στο GitHub"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Αντιγραφή πληροφοριών συστήματος"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Συντομεύσεις πληκτρολογίου"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Ενεργοποιήστε γρήγορα τις λειτουργίες του ScrollHide με παραμετροποιήσιμες συντομεύσεις πληκτρολογίου."
     },
     "btnConfigureShortcuts": {
         "message": "Διαμόρφωση"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Να επιτρέπεται"
+    },
+    "msgChangesSaved": {
+        "message": "Οι αλλαγές αποθηκεύτηκαν"
+    },
+    "msgChangesApplied": {
+        "message": "Οι αλλαγές εφαρμόστηκαν"
+    },
+    "msgInvalidConfig": {
+        "message": "Μη έγκυρο αρχείο διαμόρφωσης."
+    },
+    "msgSettingsRestored": {
+        "message": "Οι ρυθμίσεις επαναφέρθηκαν με επιτυχία!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Αποτυχία ανάλυσης του αρχείου JSON αντιγράφου ασφαλείας."
+    },
+    "msgConfirmReset": {
+        "message": "Είστε σίγουροι ότι θέλετε να επαναφέρετε όλες τις ρυθμίσεις και τη λίστα εξαιρέσεων στις προεπιλογές;"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Μη έγκυρη μορφή JSON λίστας εξαιρέσεων. Αναμένεται πίνακας τομέων ή αντικείμενο με πίνακα \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "Δεν βρέθηκαν έγκυρες εγγραφές τομέων στο αρχείο."
+    },
+    "msgImportedDomains": {
+        "message": "Εισήχθησαν $COUNT$ τομείς",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Αντιγράφηκε!"
     }
 }

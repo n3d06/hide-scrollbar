@@ -24,7 +24,7 @@
         "message": "Ladda om sidan"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Inställningar"
     },
     "statsStatus": {
         "message": "Status"
@@ -48,94 +48,94 @@
         "message": "Begränsad"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Tema"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Välj utseende: systemstandard, ljust eller mörkt"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Systemstandard"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Ljust"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Mörkt"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Undantagslista"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Rapportera"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide samlar inte in, lagrar eller överför någon webbläsardata. Allt fungerar 100 % lokalt."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Allmänna inställningar"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Aktivera döljning av rullningslister"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Dölj rullningslister automatiskt på alla webbplatser om de inte finns i undantagslistan."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Statistik"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Rensade rullningslister"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Totalt antal rullningslister som tillägget har tagit bort i alla sessioner."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Återställ"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Säkerhetskopiering och återställning"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Exportera eller importera din ScrollHide-konfiguration och domänerna i undantagslistan."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Säkerhetskopiera till fil"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Återställ från fil"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Återställ till standard"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Verkställ ändringar"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Ångra"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Importera och lägg till"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Exportera"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "Rader som börjar med ! eller # behandlas som kommentarer."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Hittade du en webbplats där rullningslister fortfarande syns, eller stötte du på ett fel? Skicka en rapport så att vi kan lägga till stöd och förbättra kompatibiliteten!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Rapportera på GitHub"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Kopiera systeminformation"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Kortkommandon"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Starta snabbt ScrollHide-funktioner med anpassningsbara kortkommandon."
     },
     "btnConfigureShortcuts": {
         "message": "Konfigurera"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Tillåt"
+    },
+    "msgChangesSaved": {
+        "message": "Ändringar sparade"
+    },
+    "msgChangesApplied": {
+        "message": "Ändringar verkställda"
+    },
+    "msgInvalidConfig": {
+        "message": "Ogiltig konfigurationsfil."
+    },
+    "msgSettingsRestored": {
+        "message": "Inställningarna återställdes!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Det gick inte att tolka JSON-säkerhetskopian."
+    },
+    "msgConfirmReset": {
+        "message": "Är du säker på att du vill återställa alla inställningar och undantagslistan till standard?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Ogiltigt JSON-format för undantagslistan. Förväntade en array med domäner eller ett objekt med en \"whitelist\"-array."
+    },
+    "msgNoValidDomains": {
+        "message": "Inga giltiga domänposter hittades i filen."
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ domän(er) importerade",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Kopierat!"
     }
 }

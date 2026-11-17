@@ -24,7 +24,7 @@
         "message": "Pagina vernieuwen"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Instellingen"
     },
     "statsStatus": {
         "message": "Status"
@@ -48,94 +48,94 @@
         "message": "Beperkt"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Thema"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Kies het uiterlijk: systeemstandaard, licht of donker"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Systeemstandaard"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Licht"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Donker"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Uitzonderingenlijst"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Melden"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide verzamelt, bewaart of verzendt geen browsegegevens. Alles werkt 100% lokaal."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Algemene instellingen"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Scrollbalken verbergen inschakelen"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Verberg scrollbalken automatisch op alle websites, tenzij ze op de uitzonderingenlijst staan."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Statistieken"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Opgeschoonde scrollbalken"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Totaal aantal scrollbalken dat de extensie in alle sessies heeft verwijderd."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Resetten"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Back-up en herstel"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Exporteer of importeer je ScrollHide-configuratie en de domeinen van de uitzonderingenlijst."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Back-up naar bestand"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Herstellen vanuit bestand"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Standaardinstellingen herstellen"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Wijzigingen toepassen"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Ongedaan maken"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Importeren en toevoegen"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Exporteren"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "Regels die beginnen met ! of # worden als opmerkingen behandeld."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Een website gevonden waar scrollbalken nog zichtbaar zijn, of een bug tegengekomen? Dien een melding in, zodat we ondersteuning kunnen toevoegen en de compatibiliteit verbeteren!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Melden op GitHub"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Systeeminfo kopiëren"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Sneltoetsen"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Activeer ScrollHide-functies snel met configureerbare sneltoetsen."
     },
     "btnConfigureShortcuts": {
         "message": "Configureren"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Toestaan"
+    },
+    "msgChangesSaved": {
+        "message": "Wijzigingen opgeslagen"
+    },
+    "msgChangesApplied": {
+        "message": "Wijzigingen toegepast"
+    },
+    "msgInvalidConfig": {
+        "message": "Ongeldig configuratiebestand."
+    },
+    "msgSettingsRestored": {
+        "message": "Instellingen succesvol hersteld!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Kan het JSON-back-upbestand niet verwerken."
+    },
+    "msgConfirmReset": {
+        "message": "Weet je zeker dat je alle instellingen en de uitzonderingenlijst wilt terugzetten naar de standaardwaarden?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Ongeldig JSON-formaat voor de uitzonderingenlijst. Verwacht een array van domeinen of een object met een \"whitelist\"-array."
+    },
+    "msgNoValidDomains": {
+        "message": "Geen geldige domeinen gevonden in het bestand."
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ domein(en) geïmporteerd",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Gekopieerd!"
     }
 }

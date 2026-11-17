@@ -132,10 +132,10 @@
         "message": "Copier les infos système"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Raccourcis clavier"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Lancez rapidement les fonctions de ScrollHide grâce à des raccourcis clavier configurables."
     },
     "btnConfigureShortcuts": {
         "message": "Configurer"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Autoriser"
+    },
+    "msgChangesSaved": {
+        "message": "Modifications enregistrées"
+    },
+    "msgChangesApplied": {
+        "message": "Modifications appliquées"
+    },
+    "msgInvalidConfig": {
+        "message": "Fichier de configuration non valide."
+    },
+    "msgSettingsRestored": {
+        "message": "Paramètres restaurés avec succès !"
+    },
+    "msgBackupParseFailed": {
+        "message": "Impossible d'analyser le fichier JSON de sauvegarde."
+    },
+    "msgConfirmReset": {
+        "message": "Voulez-vous vraiment réinitialiser tous les paramètres et la liste blanche aux valeurs par défaut ?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Format JSON de liste blanche non valide. Un tableau de domaines ou un objet contenant un tableau « whitelist » est attendu."
+    },
+    "msgNoValidDomains": {
+        "message": "Aucune entrée de domaine valide trouvée dans le fichier."
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ domaine(s) importé(s)",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Copié !"
     }
 }

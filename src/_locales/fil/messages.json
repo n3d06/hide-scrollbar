@@ -24,7 +24,7 @@
         "message": "I-reload ang pahina"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Mga Setting"
     },
     "statsStatus": {
         "message": "Katayuan"
@@ -39,109 +39,109 @@
         "message": "Aktibo"
     },
     "statusDisabled": {
-        "message": "Disabled"
+        "message": "Naka-disable"
     },
     "statusWhitelisted": {
         "message": "Naka-whitelist"
     },
     "statusRestricted": {
-        "message": "Restricted"
+        "message": "Pinaghihigpitan"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Tema"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Pumili ng hitsura: default ng system, maliwanag, o madilim"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Default ng system"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Maliwanag"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Madilim"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Listahan ng Exception"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Mag-ulat"
     },
     "aboutPrivacyDesc": {
         "message": "Ang ScrollHide ay hindi nangongolekta, nag-iimbak, o nagpapadala ng data ng pag-browse. Lahat ay 100% lokal."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Pangkalahatang Setting"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "I-enable ang Pagtatago ng Scrollbar"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Awtomatikong itago ang mga scrollbar sa lahat ng website maliban kung nasa listahan ng exception."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Estadistika"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Mga Nilinis na Scrollbar"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Kabuuang bilang ng mga scrollbar na inalis ng extension sa lahat ng session."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "I-reset"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Backup at Pag-restore"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "I-export o i-import ang iyong configuration ng ScrollHide at mga domain sa listahan ng exception."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "I-backup sa file"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "I-restore mula sa file"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "I-reset sa default"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Ilapat ang mga pagbabago"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Ibalik"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "I-import at idagdag"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "I-export"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "Ang mga linyang nagsisimula sa ! o # ay itinuturing na komento."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "May nakita kang website na nakikita pa rin ang mga scrollbar, o nakaranas ng bug? Magsumite ng ulat para madagdagan namin ang suporta at mapabuti ang compatibility!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Mag-ulat sa GitHub"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Kopyahin ang Impormasyon ng System"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Mga Keyboard Shortcut"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Mabilis na gamitin ang mga feature ng ScrollHide gamit ang mga nako-configure na keyboard shortcut."
     },
     "btnConfigureShortcuts": {
         "message": "I-configure"
     },
     "buyMeACoffee": {
-        "message": "Buy Me a Coffee"
+        "message": "Ibili Ako ng Kape"
     },
     "toggleHide": {
         "message": "Itago"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Payagan"
+    },
+    "msgChangesSaved": {
+        "message": "Nai-save ang mga pagbabago"
+    },
+    "msgChangesApplied": {
+        "message": "Nailapat ang mga pagbabago"
+    },
+    "msgInvalidConfig": {
+        "message": "Hindi wastong configuration file."
+    },
+    "msgSettingsRestored": {
+        "message": "Matagumpay na na-restore ang mga setting!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Nabigong i-parse ang backup na JSON file."
+    },
+    "msgConfirmReset": {
+        "message": "Sigurado ka bang gusto mong i-reset ang lahat ng setting at listahan ng exception sa default?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Hindi wastong format ng JSON ng listahan ng exception. Inaasahan ang array ng mga domain o object na may \"whitelist\" array."
+    },
+    "msgNoValidDomains": {
+        "message": "Walang nakitang wastong domain entry sa file."
+    },
+    "msgImportedDomains": {
+        "message": "Na-import ang $COUNT$ domain",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Nakopya!"
     }
 }

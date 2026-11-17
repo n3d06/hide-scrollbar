@@ -24,7 +24,7 @@
         "message": "ផ្ទុកទំព័រឡើងវិញ"
     },
     "settings": {
-        "message": "Settings"
+        "message": "ការកំណត់"
     },
     "statsStatus": {
         "message": "ស្ថានភាព"
@@ -48,94 +48,94 @@
         "message": "បានកម្រិត"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "ស្បែក"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "ជ្រើសរើសរូបរាង៖ លំនាំដើមប្រព័ន្ធ ភ្លឺ ឬងងឹត"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "លំនាំដើមប្រព័ន្ធ"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "ភ្លឺ"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "ងងឹត"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "បញ្ជីលើកលែង"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "រាយការណ៍"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide មិនប្រមូល ផ្ទុក ឬបញ្ជូនទិន្នន័យរុករកណាមួយឡើយ។ អ្វីៗទាំងអស់ដំណើរការក្នុងមូលដ្ឋាន 100%។"
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "ការកំណត់ទូទៅ"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "បើកការលាក់របារអូស"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "លាក់របារអូសដោយស្វ័យប្រវត្តិនៅគ្រប់គេហទំព័រ លុះត្រាតែស្ថិតក្នុងបញ្ជីលើកលែង។"
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "ស្ថិតិ"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "របារអូសដែលបានសម្អាត"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "ចំនួនរបារអូសសរុបដែលផ្នែកបន្ថែមបានលុបក្នុងគ្រប់សម័យ។"
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "កំណត់ឡើងវិញ"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "បម្រុងទុក និងស្ដារ"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "នាំចេញ ឬនាំចូលការកំណត់ ScrollHide និងដែននៅក្នុងបញ្ជីលើកលែងរបស់អ្នក។"
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "បម្រុងទុកទៅឯកសារ"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "ស្ដារពីឯកសារ"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "កំណត់ឡើងវិញទៅលំនាំដើម"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "អនុវត្តការផ្លាស់ប្ដូរ"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "ត្រឡប់"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "នាំចូល និងបន្ថែម"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "នាំចេញ"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "បន្ទាត់ដែលចាប់ផ្ដើមដោយ ! ឬ # ត្រូវបានចាត់ទុកជាមតិយោបល់។"
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "រកឃើញគេហទំព័រដែលនៅតែឃើញរបារអូស ឬជួបបញ្ហា? សូមដាក់ជូនរបាយការណ៍ដើម្បីឱ្យយើងបន្ថែមការគាំទ្រ និងកែលម្អភាពឆបគ្នា!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "រាយការណ៍នៅ GitHub"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "ចម្លងព័ត៌មានប្រព័ន្ធ"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "ផ្លូវកាត់ក្ដារចុច"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "ប្រើមុខងារ ScrollHide យ៉ាងរហ័សដោយប្រើផ្លូវកាត់ក្ដារចុចដែលអាចកំណត់បាន។"
     },
     "btnConfigureShortcuts": {
         "message": "កំណត់រចនាសម្ព័ន្ធ"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "អនុញ្ញាត"
+    },
+    "msgChangesSaved": {
+        "message": "បានរក្សាទុកការផ្លាស់ប្ដូរ"
+    },
+    "msgChangesApplied": {
+        "message": "បានអនុវត្តការផ្លាស់ប្ដូរ"
+    },
+    "msgInvalidConfig": {
+        "message": "ឯកសារកំណត់រចនាសម្ព័ន្ធមិនត្រឹមត្រូវ។"
+    },
+    "msgSettingsRestored": {
+        "message": "បានស្ដារការកំណត់ដោយជោគជ័យ!"
+    },
+    "msgBackupParseFailed": {
+        "message": "មិនអាចវិភាគឯកសារ JSON បម្រុងទុកបានទេ។"
+    },
+    "msgConfirmReset": {
+        "message": "តើអ្នកប្រាកដថាចង់កំណត់ការកំណត់ទាំងអស់ និងបញ្ជីលើកលែងឡើងវិញទៅលំនាំដើមមែនទេ?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "ទម្រង់ JSON នៃបញ្ជីលើកលែងមិនត្រឹមត្រូវ។ ត្រូវការអារេនៃដែន ឬវត្ថុដែលមានអារេ \"whitelist\"។"
+    },
+    "msgNoValidDomains": {
+        "message": "រកមិនឃើញធាតុដែនត្រឹមត្រូវក្នុងឯកសារទេ។"
+    },
+    "msgImportedDomains": {
+        "message": "បាននាំចូលដែនចំនួន $COUNT$",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "បានចម្លង!"
     }
 }

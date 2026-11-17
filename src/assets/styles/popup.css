@@ -163,13 +163,13 @@ body {
   height: 36px;
   padding: 0;
   border: 0;
-  border-right: 1px solid var(--border);
+  border-inline-end: 1px solid var(--border);
   background: transparent;
   color: var(--muted);
   cursor: pointer;
 }
 
-.tool-btn:last-child { border-right: 0; }
+.tool-btn:last-child { border-inline-end: 0; }
 
 .tool-btn:hover:not(:disabled) {
   background: var(--hover);
