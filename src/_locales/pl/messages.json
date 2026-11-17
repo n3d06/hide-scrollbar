@@ -189,5 +189,26 @@
     },
     "msgCopied": {
         "message": "Skopiowano!"
+    },
+    "btnRateExtension": {
+        "message": "Oceń rozszerzenie"
+    },
+    "rateExtensionTitle": {
+        "message": "Oceń w sklepie"
+    },
+    "githubRepoTitle": {
+        "message": "Repozytorium GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "Kliknij, aby zresetować licznik"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Przełącz ukrywanie paska przewijania"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Wpisz domeny, po jednej w wierszu\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Przełącz ukrywanie/pokazywanie paska przewijania"
     }
 }

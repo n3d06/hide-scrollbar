@@ -189,5 +189,26 @@
     },
     "msgCopied": {
         "message": "Copiat!"
+    },
+    "btnRateExtension": {
+        "message": "Evaluează extensia"
+    },
+    "rateExtensionTitle": {
+        "message": "Evaluează în magazin"
+    },
+    "githubRepoTitle": {
+        "message": "Depozit GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "Fă clic pentru a reseta contorul"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Comută ascunderea barei de derulare"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Introdu domeniile aici, câte unul pe linie\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Comută ascunderea/afișarea barei de derulare"
     }
 }

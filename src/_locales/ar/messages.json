@@ -189,5 +189,26 @@
     },
     "msgCopied": {
         "message": "تم النسخ!"
+    },
+    "btnRateExtension": {
+        "message": "قيّم الإضافة"
+    },
+    "rateExtensionTitle": {
+        "message": "قيّمها في المتجر"
+    },
+    "githubRepoTitle": {
+        "message": "مستودع GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "انقر لإعادة ضبط العدّاد"
+    },
+    "toggleScrollbarTitle": {
+        "message": "تبديل إخفاء شريط التمرير"
+    },
+    "whitelistPlaceholder": {
+        "message": "! أدخل النطاقات هنا، نطاق في كل سطر\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "تبديل إخفاء/إظهار شريط التمرير"
     }
 }

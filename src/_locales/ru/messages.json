@@ -189,5 +189,26 @@
     },
     "msgCopied": {
         "message": "Скопировано!"
+    },
+    "btnRateExtension": {
+        "message": "Оценить расширение"
+    },
+    "rateExtensionTitle": {
+        "message": "Оценить в магазине"
+    },
+    "githubRepoTitle": {
+        "message": "Репозиторий GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "Нажмите, чтобы сбросить счётчик"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Переключить скрытие полосы прокрутки"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Введите домены, по одному в строке\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Скрыть/показать полосу прокрутки"
     }
 }

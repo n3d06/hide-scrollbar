@@ -189,5 +189,26 @@
     },
     "msgCopied": {
         "message": "已复制！"
+    },
+    "btnRateExtension": {
+        "message": "评价扩展"
+    },
+    "rateExtensionTitle": {
+        "message": "在商店中评价"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub 仓库"
+    },
+    "resetCounterTitle": {
+        "message": "点击重置计数"
+    },
+    "toggleScrollbarTitle": {
+        "message": "切换隐藏滚动条"
+    },
+    "whitelistPlaceholder": {
+        "message": "! 在此输入域名，每行一个\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "切换隐藏/显示滚动条"
     }
 }

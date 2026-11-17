@@ -189,5 +189,26 @@
     },
     "msgCopied": {
         "message": "Скопійовано!"
+    },
+    "btnRateExtension": {
+        "message": "Оцінити розширення"
+    },
+    "rateExtensionTitle": {
+        "message": "Оцінити в магазині"
+    },
+    "githubRepoTitle": {
+        "message": "Репозиторій GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "Натисніть, щоб скинути лічильник"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Перемкнути приховування смуги прокручування"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Введіть домени, по одному в рядку\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Приховати/показати смугу прокручування"
     }
 }

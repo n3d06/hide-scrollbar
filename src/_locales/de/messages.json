@@ -189,5 +189,26 @@
     },
     "msgCopied": {
         "message": "Kopiert!"
+    },
+    "btnRateExtension": {
+        "message": "Erweiterung bewerten"
+    },
+    "rateExtensionTitle": {
+        "message": "Im Store bewerten"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub-Repository"
+    },
+    "resetCounterTitle": {
+        "message": "Klicken, um den Zähler zurückzusetzen"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Ausblenden der Bildlaufleiste umschalten"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Domains hier eingeben, eine pro Zeile\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Bildlaufleiste aus-/einblenden"
     }
 }

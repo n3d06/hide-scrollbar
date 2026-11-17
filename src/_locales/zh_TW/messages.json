@@ -189,5 +189,26 @@
     },
     "msgCopied": {
         "message": "已複製！"
+    },
+    "btnRateExtension": {
+        "message": "評價擴充功能"
+    },
+    "rateExtensionTitle": {
+        "message": "在商店中評價"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub 儲存庫"
+    },
+    "resetCounterTitle": {
+        "message": "點擊以重設計數"
+    },
+    "toggleScrollbarTitle": {
+        "message": "切換隱藏捲軸"
+    },
+    "whitelistPlaceholder": {
+        "message": "! 在此輸入網域，每行一個\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "切換隱藏/顯示捲軸"
     }
 }

@@ -189,5 +189,26 @@
     },
     "msgCopied": {
         "message": "Zkopírováno!"
+    },
+    "btnRateExtension": {
+        "message": "Ohodnotit rozšíření"
+    },
+    "rateExtensionTitle": {
+        "message": "Ohodnotit v obchodě"
+    },
+    "githubRepoTitle": {
+        "message": "Repozitář GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "Kliknutím vynulujete počítadlo"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Přepnout skrývání posuvníku"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Zadejte domény, jednu na řádek\nexample.com\n*.youtube.com"
+    },
+    "toggleScrollbarCommand": {
+        "message": "Přepnout skrytí/zobrazení posuvníku"
     }
 }
