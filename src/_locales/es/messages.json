@@ -132,10 +132,10 @@
         "message": "Copiar información del sistema"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Atajos de teclado"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Activa rápidamente las funciones de ScrollHide con atajos de teclado configurables."
     },
     "btnConfigureShortcuts": {
         "message": "Configurar"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Permitir"
+    },
+    "msgChangesSaved": {
+        "message": "Cambios guardados"
+    },
+    "msgChangesApplied": {
+        "message": "Cambios aplicados"
+    },
+    "msgInvalidConfig": {
+        "message": "Archivo de configuración no válido."
+    },
+    "msgSettingsRestored": {
+        "message": "¡Configuración restaurada correctamente!"
+    },
+    "msgBackupParseFailed": {
+        "message": "No se pudo analizar el archivo JSON de copia de seguridad."
+    },
+    "msgConfirmReset": {
+        "message": "¿Seguro que quieres restablecer todos los ajustes y la lista blanca a los valores predeterminados?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Formato JSON de lista blanca no válido. Se esperaba una matriz de dominios o un objeto con una matriz \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "No se encontraron dominios válidos en el archivo."
+    },
+    "msgImportedDomains": {
+        "message": "Se importaron $COUNT$ dominio(s)",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "¡Copiado!"
     }
 }

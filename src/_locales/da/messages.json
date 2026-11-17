@@ -24,7 +24,7 @@
         "message": "Genindlæs side"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Indstillinger"
     },
     "statsStatus": {
         "message": "Status"
@@ -48,94 +48,94 @@
         "message": "Begrænset"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Tema"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Vælg udseende: systemstandard, lys eller mørk"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Systemstandard"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Lys"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Mørk"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Undtagelsesliste"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Rapportér"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide indsamler, gemmer eller overfører ikke browserdata. Alt fungerer 100 % lokalt."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Generelle indstillinger"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Aktivér skjulning af rullebjælker"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Skjul automatisk rullebjælker på alle websteder, medmindre de er på undtagelseslisten."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Statistik"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Ryddede rullebjælker"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Samlet antal rullebjælker fjernet af udvidelsen i alle sessioner."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Nulstil"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Sikkerhedskopiering og gendannelse"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Eksportér eller importér din ScrollHide-konfiguration og undtagelsesdomæner."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Sikkerhedskopiér til fil"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Gendan fra fil"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Nulstil til standard"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Anvend ændringer"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Fortryd"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Importér og tilføj"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Eksportér"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "Linjer, der starter med ! eller #, behandles som kommentarer."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Har du fundet et websted, hvor rullebjælker stadig er synlige, eller en fejl? Send en rapport, så vi kan tilføje understøttelse og forbedre kompatibiliteten!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Rapportér på GitHub"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Kopiér systemoplysninger"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Tastaturgenveje"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Aktivér hurtigt ScrollHide-funktioner med konfigurerbare tastaturgenveje."
     },
     "btnConfigureShortcuts": {
         "message": "Konfigurer"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Tillad"
+    },
+    "msgChangesSaved": {
+        "message": "Ændringer gemt"
+    },
+    "msgChangesApplied": {
+        "message": "Ændringer anvendt"
+    },
+    "msgInvalidConfig": {
+        "message": "Ugyldig konfigurationsfil."
+    },
+    "msgSettingsRestored": {
+        "message": "Indstillingerne blev gendannet!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Kunne ikke læse JSON-sikkerhedskopien."
+    },
+    "msgConfirmReset": {
+        "message": "Er du sikker på, at du vil nulstille alle indstillinger og undtagelseslisten til standard?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Ugyldigt JSON-format for undtagelsesliste. Forventer en liste af domæner eller et objekt med en \"whitelist\"-liste."
+    },
+    "msgNoValidDomains": {
+        "message": "Ingen gyldige domæneposter fundet i filen."
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ domæne(r) importeret",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Kopieret!"
     }
 }

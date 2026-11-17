@@ -54,6 +54,23 @@ allDirs.forEach((lang) => {
     dictKeys.length === enKeys.length,
     `Locale [${lang}] key count (${dictKeys.length}) matches EN (${enKeys.length})`,
   );
+  const emptyMsgs = enKeys.filter((k) => dict[k] && !String(dict[k].message || '').trim());
+  assert(emptyMsgs.length === 0, `No empty messages in [${lang}] (Empty: ${emptyMsgs.join(', ') || 'none'})`);
+  const badPlaceholders = enKeys.filter(
+    (k) =>
+      dict[k] &&
+      JSON.stringify(Object.keys(en[k].placeholders || {})) !== JSON.stringify(Object.keys(dict[k].placeholders || {})),
+  );
+  assert(
+    badPlaceholders.length === 0,
+    `Placeholders match EN in [${lang}] (Mismatch: ${badPlaceholders.join(', ') || 'none'})`,
+  );
+  if (lang !== 'en') {
+    const untranslated = enKeys.filter(
+      (k) => dict[k] && dict[k].message === en[k].message && !['extName', 'buyMeACoffee'].includes(k) && /[a-z]{4,}/i.test(en[k].message) && en[k].message.includes(' '),
+    );
+    assert(untranslated.length === 0, `No untranslated (English) messages in [${lang}] (Found: ${untranslated.join(', ') || 'none'})`);
+  }
   const missing = enKeys.filter((k) => !dict[k]);
   assert(missing.length === 0, `All EN keys present in [${lang}] (Missing: ${missing.join(', ') || 'none'})`);
 });
@@ -79,6 +96,7 @@ function scanKeysInDir(dir) {
       }
       const msgMatches = src.matchAll(/getMessage\(\s*["']([^"']+)["']/g);
       for (const m of msgMatches) {
+        if (m[1].startsWith('@@')) continue; // predefined Chrome i18n messages
         assert(
           enKeySet.has(m[1]),
           `Code getMessage [${m[1]}] in ${path.relative(srcRoot, full)} exists in messages.json`,

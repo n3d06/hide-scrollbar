@@ -24,7 +24,7 @@
         "message": "Перезавантажити сторінку"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Налаштування"
     },
     "statsStatus": {
         "message": "Статус"
@@ -48,94 +48,94 @@
         "message": "Обмежено"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Тема"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Виберіть вигляд: системний за замовчуванням, світлий або темний"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Системний за замовчуванням"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Світла"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Темна"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Список винятків"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Повідомити"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide не збирає, не зберігає та не передає жодних даних перегляду. Усе працює на 100% локально."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Загальні налаштування"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Увімкнути приховування смуг прокручування"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Автоматично приховувати смуги прокручування на всіх сайтах, якщо їх немає у списку винятків."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Статистика"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Очищені смуги прокручування"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Загальна кількість смуг прокручування, видалених розширенням за всі сеанси."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Скинути"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Резервне копіювання та відновлення"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Експортуйте або імпортуйте конфігурацію ScrollHide та домени зі списку винятків."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Зберегти в файл"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Відновити з файлу"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Скинути до стандартних"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Застосувати зміни"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Скасувати"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Імпортувати та додати"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Експортувати"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "Рядки, що починаються з ! або #, вважаються коментарями."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Знайшли сайт, де смуги прокручування досі видно, або натрапили на помилку? Надішліть звіт, щоб ми додали підтримку та покращили сумісність!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Повідомити на GitHub"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Копіювати відомості про систему"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Клавіатурні скорочення"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Швидко запускайте функції ScrollHide за допомогою настроюваних клавіатурних скорочень."
     },
     "btnConfigureShortcuts": {
         "message": "Налаштувати"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Дозволити"
+    },
+    "msgChangesSaved": {
+        "message": "Зміни збережено"
+    },
+    "msgChangesApplied": {
+        "message": "Зміни застосовано"
+    },
+    "msgInvalidConfig": {
+        "message": "Недійсний файл конфігурації."
+    },
+    "msgSettingsRestored": {
+        "message": "Налаштування успішно відновлено!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Не вдалося обробити JSON-файл резервної копії."
+    },
+    "msgConfirmReset": {
+        "message": "Ви впевнені, що хочете скинути всі налаштування та список винятків до стандартних?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Недійсний формат JSON списку винятків. Очікується масив доменів або об'єкт із масивом \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "У файлі не знайдено дійсних доменів."
+    },
+    "msgImportedDomains": {
+        "message": "Імпортовано доменів: $COUNT$",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Скопійовано!"
     }
 }

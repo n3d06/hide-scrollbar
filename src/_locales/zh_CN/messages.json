@@ -132,10 +132,10 @@
         "message": "复制系统信息"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "键盘快捷键"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "使用可配置的键盘快捷键，快速触发 ScrollHide 功能。"
     },
     "btnConfigureShortcuts": {
         "message": "配置"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "允许"
+    },
+    "msgChangesSaved": {
+        "message": "更改已保存"
+    },
+    "msgChangesApplied": {
+        "message": "更改已应用"
+    },
+    "msgInvalidConfig": {
+        "message": "配置文件无效。"
+    },
+    "msgSettingsRestored": {
+        "message": "设置已成功恢复！"
+    },
+    "msgBackupParseFailed": {
+        "message": "无法解析备份 JSON 文件。"
+    },
+    "msgConfirmReset": {
+        "message": "确定要将所有设置和白名单重置为默认值吗？"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "白名单 JSON 格式无效。应为域名数组，或包含 \"whitelist\" 数组的对象。"
+    },
+    "msgNoValidDomains": {
+        "message": "文件中未找到有效的域名条目。"
+    },
+    "msgImportedDomains": {
+        "message": "已导入 $COUNT$ 个域名",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "已复制！"
     }
 }

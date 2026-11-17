@@ -132,10 +132,10 @@
         "message": "คัดลอกข้อมูลระบบ"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "แป้นพิมพ์ลัด"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "เรียกใช้ฟีเจอร์ ScrollHide ได้อย่างรวดเร็วด้วยแป้นพิมพ์ลัดที่กำหนดเองได้"
     },
     "btnConfigureShortcuts": {
         "message": "กำหนดค่า"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "อนุญาต"
+    },
+    "msgChangesSaved": {
+        "message": "บันทึกการเปลี่ยนแปลงแล้ว"
+    },
+    "msgChangesApplied": {
+        "message": "ใช้การเปลี่ยนแปลงแล้ว"
+    },
+    "msgInvalidConfig": {
+        "message": "ไฟล์การกำหนดค่าไม่ถูกต้อง"
+    },
+    "msgSettingsRestored": {
+        "message": "กู้คืนการตั้งค่าสำเร็จ!"
+    },
+    "msgBackupParseFailed": {
+        "message": "แยกวิเคราะห์ไฟล์ JSON สำรองไม่สำเร็จ"
+    },
+    "msgConfirmReset": {
+        "message": "แน่ใจหรือไม่ว่าต้องการรีเซ็ตการตั้งค่าทั้งหมดและรายการยกเว้นเป็นค่าเริ่มต้น"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "รูปแบบ JSON ของรายการยกเว้นไม่ถูกต้อง ต้องเป็นอาร์เรย์ของโดเมนหรืออ็อบเจกต์ที่มีอาร์เรย์ \"whitelist\""
+    },
+    "msgNoValidDomains": {
+        "message": "ไม่พบโดเมนที่ถูกต้องในไฟล์"
+    },
+    "msgImportedDomains": {
+        "message": "นำเข้า $COUNT$ โดเมนแล้ว",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "คัดลอกแล้ว!"
     }
 }

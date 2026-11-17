@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Allow"
+    },
+    "msgChangesSaved": {
+        "message": "Changes saved"
+    },
+    "msgChangesApplied": {
+        "message": "Changes applied"
+    },
+    "msgInvalidConfig": {
+        "message": "Invalid configuration file."
+    },
+    "msgSettingsRestored": {
+        "message": "Settings restored successfully!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Failed to parse backup JSON file."
+    },
+    "msgConfirmReset": {
+        "message": "Are you sure you want to reset all settings and whitelist to default?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Invalid whitelist JSON format. Expected an array of domains or an object containing a \"whitelist\" array."
+    },
+    "msgNoValidDomains": {
+        "message": "No valid domain entries found in the file."
+    },
+    "msgImportedDomains": {
+        "message": "Imported $COUNT$ domain(s)",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Copied!"
     }
 }

@@ -132,10 +132,10 @@
         "message": "सिस्टम जानकारी कॉपी करें"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "कीबोर्ड शॉर्टकट"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "कॉन्फ़िगर करने योग्य कीबोर्ड शॉर्टकट से ScrollHide की सुविधाएँ तेज़ी से चलाएँ।"
     },
     "btnConfigureShortcuts": {
         "message": "कॉन्फ़िगर करें"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "अनुमति दें"
+    },
+    "msgChangesSaved": {
+        "message": "बदलाव सहेजे गए"
+    },
+    "msgChangesApplied": {
+        "message": "बदलाव लागू किए गए"
+    },
+    "msgInvalidConfig": {
+        "message": "अमान्य कॉन्फ़िगरेशन फ़ाइल।"
+    },
+    "msgSettingsRestored": {
+        "message": "सेटिंग सफलतापूर्वक पुनर्स्थापित हुईं!"
+    },
+    "msgBackupParseFailed": {
+        "message": "बैकअप JSON फ़ाइल पढ़ने में विफल।"
+    },
+    "msgConfirmReset": {
+        "message": "क्या आप वाकई सभी सेटिंग और व्हाइटलिस्ट को डिफ़ॉल्ट पर रीसेट करना चाहते हैं?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "अमान्य व्हाइटलिस्ट JSON प्रारूप। डोमेन की सरणी या \"whitelist\" सरणी वाला ऑब्जेक्ट अपेक्षित है।"
+    },
+    "msgNoValidDomains": {
+        "message": "फ़ाइल में कोई मान्य डोमेन प्रविष्टि नहीं मिली।"
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ डोमेन आयात किए गए",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "कॉपी हो गया!"
     }
 }

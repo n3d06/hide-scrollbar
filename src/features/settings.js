@@ -7,7 +7,8 @@
     const isFirefox =
       typeof chrome !== 'undefined' && !!chrome.runtime?.getURL && chrome.runtime.getURL('').startsWith('moz-extension:');
 
-    const { applyI18n } = globalThis.ScrollHideI18n || {};
+    const { applyI18n, getMessage } = globalThis.ScrollHideI18n || {};
+    const t = (key, fallback, subs) => (getMessage ? getMessage(key, fallback, subs) : fallback);
     const { BACKUP_FILENAME, DEFAULT_SYNC_STATE } = globalThis.ScrollHideConstants || {};
     const { getSyncState, setSyncValue, applyTheme } = globalThis.ScrollHideStorage || {};
     const { normalizeWhitelist, sanitizeDomain } = globalThis.ScrollHideWhitelist || {};
@@ -46,7 +47,7 @@
 
     let lastSavedWhitelistText = '';
 
-    function showSavedToast(msg = 'Changes saved') {
+    function showSavedToast(msg = t('msgChangesSaved', 'Changes saved')) {
       if (!saveIndicator) return;
       saveIndicator.textContent = msg;
       saveIndicator.classList.add('visible');
@@ -216,7 +217,7 @@
           try {
             const data = JSON.parse(event.target?.result);
             if (!data || typeof data !== 'object') {
-              alert('Invalid configuration file.');
+              alert(t('msgInvalidConfig', 'Invalid configuration file.'));
               return;
             }
             const nextState = {};
@@ -232,10 +233,10 @@
 
             setSyncValue(nextState).then(() => {
               loadAllState();
-              alert('Settings restored successfully!');
+              alert(t('msgSettingsRestored', 'Settings restored successfully!'));
             });
           } catch (_) {
-            alert('Failed to parse backup JSON file.');
+            alert(t('msgBackupParseFailed', 'Failed to parse backup JSON file.'));
           }
         };
         reader.readAsText(file);
@@ -245,7 +246,7 @@
 
     if (btnResetDefaults && setSyncValue) {
       btnResetDefaults.addEventListener('click', () => {
-        if (confirm('Are you sure you want to reset all settings and whitelist to default?')) {
+        if (confirm(t('msgConfirmReset', 'Are you sure you want to reset all settings and whitelist to default?'))) {
           setSyncValue(DEFAULT_SYNC_STATE).then(() => {
             loadAllState();
           });
@@ -262,7 +263,7 @@
       setSyncValue({ whitelist: domains }).then(() => {
         lastSavedWhitelistText = currentText;
         checkWhitelistDirty();
-        showSavedToast('Changes applied');
+        showSavedToast(t('msgChangesApplied', 'Changes applied'));
       });
     }
 
@@ -330,7 +331,10 @@
                 importedLines = parsed;
               } else {
                 alert(
-                  'Invalid whitelist JSON format. Expected an array of domains or an object containing a "whitelist" array.',
+                  t(
+                    'msgInvalidWhitelistJson',
+                    'Invalid whitelist JSON format. Expected an array of domains or an object containing a "whitelist" array.',
+                  ),
                 );
                 return;
               }
@@ -343,7 +347,7 @@
 
           const validLines = importedLines.map((l) => String(l).trim()).filter(Boolean);
           if (validLines.length === 0) {
-            alert('No valid domain entries found in the file.');
+            alert(t('msgNoValidDomains', 'No valid domain entries found in the file.'));
             return;
           }
 
@@ -353,7 +357,9 @@
           const nextVal = currentVal ? `${currentVal}\n${appendText}` : appendText;
           setEditorText(nextVal);
           checkWhitelistDirty();
-          showSavedToast(`Imported ${validLines.length} domain(s)`);
+          showSavedToast(
+            t('msgImportedDomains', `Imported ${validLines.length} domain(s)`, [String(validLines.length)]),
+          );
         };
 
         reader.readAsText(file);
@@ -395,7 +401,7 @@
         const setCopiedUI = () => {
           if (copyReportInfoText) {
             const original = copyReportInfoText.textContent;
-            copyReportInfoText.textContent = 'Copied!';
+            copyReportInfoText.textContent = t('msgCopied', 'Copied!');
             setTimeout(() => {
               if (copyReportInfoText) copyReportInfoText.textContent = original;
             }, 2000);

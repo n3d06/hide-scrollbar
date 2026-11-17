@@ -24,7 +24,7 @@
         "message": "Sayfayı yenile"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Ayarlar"
     },
     "statsStatus": {
         "message": "Durum"
@@ -48,94 +48,94 @@
         "message": "Kısıtlı"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Tema"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Görünümü seçin: sistem varsayılanı, açık veya koyu"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Sistem varsayılanı"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Açık"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Koyu"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "İstisna listesi"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Bildir"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide hiçbir tarama verisini toplamaz, saklamaz veya iletmez. Her şey %100 yerel olarak çalışır."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Genel ayarlar"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Kaydırma çubuğu gizlemeyi etkinleştir"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "İstisna listesinde olmayan tüm sitelerde kaydırma çubuklarını otomatik olarak gizle."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "İstatistikler"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Temizlenen kaydırma çubukları"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Uzantının tüm oturumlarda kaldırdığı toplam kaydırma çubuğu sayısı."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Sıfırla"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Yedekle ve geri yükle"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "ScrollHide yapılandırmanızı ve istisna listesi alan adlarını dışa veya içe aktarın."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Dosyaya yedekle"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Dosyadan geri yükle"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Varsayılanlara sıfırla"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Değişiklikleri uygula"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Geri al"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "İçe aktar ve ekle"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Dışa aktar"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "! veya # ile başlayan satırlar yorum olarak değerlendirilir."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Kaydırma çubuklarının hâlâ göründüğü bir site mi buldunuz ya da bir hatayla mı karşılaştınız? Destek ekleyip uyumluluğu iyileştirebilmemiz için bir bildirim gönderin!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "GitHub'da bildir"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Sistem bilgilerini kopyala"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Klavye kısayolları"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Yapılandırılabilir klavye kısayollarıyla ScrollHide özelliklerini hızla başlatın."
     },
     "btnConfigureShortcuts": {
         "message": "Yapılandır"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "İzin ver"
+    },
+    "msgChangesSaved": {
+        "message": "Değişiklikler kaydedildi"
+    },
+    "msgChangesApplied": {
+        "message": "Değişiklikler uygulandı"
+    },
+    "msgInvalidConfig": {
+        "message": "Geçersiz yapılandırma dosyası."
+    },
+    "msgSettingsRestored": {
+        "message": "Ayarlar başarıyla geri yüklendi!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Yedek JSON dosyası ayrıştırılamadı."
+    },
+    "msgConfirmReset": {
+        "message": "Tüm ayarları ve istisna listesini varsayılana sıfırlamak istediğinizden emin misiniz?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Geçersiz istisna listesi JSON biçimi. Alan adlarından oluşan bir dizi veya \"whitelist\" dizisi içeren bir nesne bekleniyor."
+    },
+    "msgNoValidDomains": {
+        "message": "Dosyada geçerli alan adı girdisi bulunamadı."
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ alan adı içe aktarıldı",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Kopyalandı!"
     }
 }

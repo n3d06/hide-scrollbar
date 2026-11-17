@@ -24,7 +24,7 @@
         "message": "Reîncărcați pagina"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Setări"
     },
     "statsStatus": {
         "message": "Status"
@@ -48,94 +48,94 @@
         "message": "Restricționat"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Temă"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Alege aspectul: implicit sistem, luminos sau întunecat"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Implicit sistem"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Luminos"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Întunecat"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Listă de excepții"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Raportează"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide nu colectează, nu stochează și nu transmite date de navigare. Totul funcționează 100% local."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Setări generale"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Activează ascunderea barei de derulare"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Ascunde automat barele de derulare pe toate site-urile, cu excepția celor din lista de excepții."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Statistici"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Bare de derulare curățate"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Numărul total de bare de derulare eliminate de extensie în toate sesiunile."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Resetează"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Copie de rezervă și restaurare"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Exportă sau importă configurația ScrollHide și domeniile din lista de excepții."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Copie de rezervă în fișier"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Restaurează din fișier"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Resetează la valorile implicite"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Aplică modificările"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Anulează"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Importă și adaugă"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Exportă"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "Rândurile care încep cu ! sau # sunt tratate ca comentarii."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Ai găsit un site unde barele de derulare sunt încă vizibile sau ai întâmpinat o eroare? Trimite un raport ca să putem adăuga suport și să îmbunătățim compatibilitatea!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Raportează pe GitHub"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Copiază informațiile despre sistem"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Comenzi rapide de la tastatură"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Pornește rapid funcțiile ScrollHide cu comenzi rapide configurabile."
     },
     "btnConfigureShortcuts": {
         "message": "Configurează"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Permite"
+    },
+    "msgChangesSaved": {
+        "message": "Modificări salvate"
+    },
+    "msgChangesApplied": {
+        "message": "Modificări aplicate"
+    },
+    "msgInvalidConfig": {
+        "message": "Fișier de configurare nevalid."
+    },
+    "msgSettingsRestored": {
+        "message": "Setările au fost restaurate cu succes!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Fișierul JSON de rezervă nu a putut fi analizat."
+    },
+    "msgConfirmReset": {
+        "message": "Sigur vrei să resetezi toate setările și lista de excepții la valorile implicite?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Format JSON nevalid pentru lista de excepții. Se așteaptă o matrice de domenii sau un obiect cu o matrice \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "Nu s-au găsit intrări de domeniu valide în fișier."
+    },
+    "msgImportedDomains": {
+        "message": "Au fost importate $COUNT$ domenii",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Copiat!"
     }
 }

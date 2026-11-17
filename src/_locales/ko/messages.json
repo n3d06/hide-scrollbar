@@ -132,10 +132,10 @@
         "message": "시스템 정보 복사"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "키보드 단축키"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "설정 가능한 키보드 단축키로 ScrollHide 기능을 빠르게 실행하세요."
     },
     "btnConfigureShortcuts": {
         "message": "설정"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "허용"
+    },
+    "msgChangesSaved": {
+        "message": "변경 사항이 저장되었습니다"
+    },
+    "msgChangesApplied": {
+        "message": "변경 사항이 적용되었습니다"
+    },
+    "msgInvalidConfig": {
+        "message": "잘못된 설정 파일입니다."
+    },
+    "msgSettingsRestored": {
+        "message": "설정을 복원했습니다!"
+    },
+    "msgBackupParseFailed": {
+        "message": "백업 JSON 파일을 분석하지 못했습니다."
+    },
+    "msgConfirmReset": {
+        "message": "모든 설정과 화이트리스트를 기본값으로 초기화하시겠습니까?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "잘못된 화이트리스트 JSON 형식입니다. 도메인 배열 또는 \"whitelist\" 배열을 포함한 객체가 필요합니다."
+    },
+    "msgNoValidDomains": {
+        "message": "파일에서 유효한 도메인 항목을 찾지 못했습니다."
+    },
+    "msgImportedDomains": {
+        "message": "도메인 $COUNT$개를 가져왔습니다",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "복사됨!"
     }
 }

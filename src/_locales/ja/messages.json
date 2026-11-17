@@ -132,10 +132,10 @@
         "message": "システム情報をコピー"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "キーボードショートカット"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "設定可能なキーボードショートカットで ScrollHide の機能をすばやく実行できます。"
     },
     "btnConfigureShortcuts": {
         "message": "設定"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "許可"
+    },
+    "msgChangesSaved": {
+        "message": "変更を保存しました"
+    },
+    "msgChangesApplied": {
+        "message": "変更を適用しました"
+    },
+    "msgInvalidConfig": {
+        "message": "無効な設定ファイルです。"
+    },
+    "msgSettingsRestored": {
+        "message": "設定を復元しました。"
+    },
+    "msgBackupParseFailed": {
+        "message": "バックアップのJSONファイルを解析できませんでした。"
+    },
+    "msgConfirmReset": {
+        "message": "すべての設定とホワイトリストを初期状態にリセットしてもよろしいですか？"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "ホワイトリストのJSON形式が無効です。ドメインの配列、または「whitelist」配列を含むオブジェクトが必要です。"
+    },
+    "msgNoValidDomains": {
+        "message": "ファイルに有効なドメインがありません。"
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ 件のドメインをインポートしました",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "コピーしました！"
     }
 }

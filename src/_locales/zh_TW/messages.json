@@ -132,10 +132,10 @@
         "message": "複製系統資訊"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "鍵盤快速鍵"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "使用可設定的鍵盤快速鍵，快速觸發 ScrollHide 功能。"
     },
     "btnConfigureShortcuts": {
         "message": "設定"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "允許"
+    },
+    "msgChangesSaved": {
+        "message": "變更已儲存"
+    },
+    "msgChangesApplied": {
+        "message": "變更已套用"
+    },
+    "msgInvalidConfig": {
+        "message": "設定檔無效。"
+    },
+    "msgSettingsRestored": {
+        "message": "設定已成功還原！"
+    },
+    "msgBackupParseFailed": {
+        "message": "無法解析備份 JSON 檔案。"
+    },
+    "msgConfirmReset": {
+        "message": "確定要將所有設定與白名單重設為預設值嗎？"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "白名單 JSON 格式無效。應為網域陣列，或包含 \"whitelist\" 陣列的物件。"
+    },
+    "msgNoValidDomains": {
+        "message": "檔案中找不到有效的網域項目。"
+    },
+    "msgImportedDomains": {
+        "message": "已匯入 $COUNT$ 個網域",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "已複製！"
     }
 }

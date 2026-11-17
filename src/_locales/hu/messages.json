@@ -24,7 +24,7 @@
         "message": "Oldal újratöltése"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Beállítások"
     },
     "statsStatus": {
         "message": "Státusz"
@@ -48,94 +48,94 @@
         "message": "Korlátozott"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Téma"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Válassza ki a megjelenést: rendszer alapértelmezett, világos vagy sötét"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Rendszer alapértelmezett"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Világos"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Sötét"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Kivételek listája"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Hibajelentés"
     },
     "aboutPrivacyDesc": {
         "message": "A ScrollHide nem gyűjt, nem tárol és nem továbbít böngészési adatokat. Minden 100%-ban helyben működik."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Általános beállítások"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Görgetősáv elrejtésének engedélyezése"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "A görgetősávok automatikus elrejtése minden webhelyen, kivéve a kivételek listájára felvetteket."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Statisztika"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Eltávolított görgetősávok"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "A bővítmény által az összes munkamenetben eltávolított görgetősávok teljes száma."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Visszaállítás"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Mentés és visszaállítás"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "A ScrollHide konfigurációjának és a kivételek listájának exportálása vagy importálása."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Mentés fájlba"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Visszaállítás fájlból"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Alapértelmezések visszaállítása"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Módosítások alkalmazása"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Visszavonás"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Importálás és hozzáfűzés"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Exportálás"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "A ! vagy # jellel kezdődő sorok megjegyzésnek számítanak."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Talált olyan webhelyet, ahol még látszanak a görgetősávok, vagy hibába ütközött? Küldjön jelentést, hogy támogatást adhassunk hozzá és javíthassuk a kompatibilitást!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Jelentés a GitHubon"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Rendszerinformációk másolása"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Billentyűparancsok"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Gyorsan indítsa el a ScrollHide funkcióit testreszabható billentyűparancsokkal."
     },
     "btnConfigureShortcuts": {
         "message": "Konfigurálás"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Engedélyezés"
+    },
+    "msgChangesSaved": {
+        "message": "Módosítások mentve"
+    },
+    "msgChangesApplied": {
+        "message": "Módosítások alkalmazva"
+    },
+    "msgInvalidConfig": {
+        "message": "Érvénytelen konfigurációs fájl."
+    },
+    "msgSettingsRestored": {
+        "message": "A beállítások sikeresen visszaállítva!"
+    },
+    "msgBackupParseFailed": {
+        "message": "A JSON biztonsági mentés fájl feldolgozása sikertelen."
+    },
+    "msgConfirmReset": {
+        "message": "Biztosan visszaállítja az összes beállítást és a kivételek listáját az alapértelmezettre?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Érvénytelen kivétellista JSON-formátum. Domének tömbje vagy \"whitelist\" tömböt tartalmazó objektum szükséges."
+    },
+    "msgNoValidDomains": {
+        "message": "A fájlban nem található érvényes domainbejegyzés."
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ domain importálva",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Másolva!"
     }
 }

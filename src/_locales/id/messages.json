@@ -132,10 +132,10 @@
         "message": "Salin Info Sistem"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Pintasan Keyboard"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Jalankan fitur ScrollHide dengan cepat menggunakan pintasan keyboard yang dapat dikonfigurasi."
     },
     "btnConfigureShortcuts": {
         "message": "Konfigurasi"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Izinkan"
+    },
+    "msgChangesSaved": {
+        "message": "Perubahan disimpan"
+    },
+    "msgChangesApplied": {
+        "message": "Perubahan diterapkan"
+    },
+    "msgInvalidConfig": {
+        "message": "File konfigurasi tidak valid."
+    },
+    "msgSettingsRestored": {
+        "message": "Pengaturan berhasil dipulihkan!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Gagal membaca file JSON cadangan."
+    },
+    "msgConfirmReset": {
+        "message": "Yakin ingin mengatur ulang semua pengaturan dan daftar putih ke default?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Format JSON daftar putih tidak valid. Diharapkan array domain atau objek berisi array \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "Tidak ada entri domain yang valid di file."
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ domain diimpor",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Tersalin!"
     }
 }

@@ -24,7 +24,7 @@
         "message": "Recarregar página"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Definições"
     },
     "statsStatus": {
         "message": "Estado"
@@ -48,94 +48,94 @@
         "message": "Restrito"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Tema"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Escolha a aparência: predefinição do sistema, claro ou escuro"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Predefinição do sistema"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Claro"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Escuro"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Lista de exceções"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Reportar"
     },
     "aboutPrivacyDesc": {
         "message": "O ScrollHide não recolhe, armazena ou transmite quaisquer dados de navegação. Tudo funciona 100% localmente."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Definições gerais"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Ativar ocultação da barra de deslocação"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Ocultar automaticamente as barras de deslocação em todos os sites, exceto os que estiverem na lista de exceções."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Estatísticas"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Barras de deslocação limpas"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Total de barras de deslocação removidas pela extensão em todas as sessões."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Repor"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Cópia de segurança e restauro"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Exporte ou importe a configuração do ScrollHide e os domínios da lista de exceções."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Copiar para ficheiro"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Restaurar a partir de ficheiro"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Repor predefinições"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Aplicar alterações"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Reverter"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Importar e acrescentar"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Exportar"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "As linhas que começam por ! ou # são tratadas como comentários."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Encontrou um site onde as barras de deslocação continuam visíveis ou deparou-se com um erro? Envie um relatório para podermos adicionar suporte e melhorar a compatibilidade!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Reportar no GitHub"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Copiar informações do sistema"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Atalhos de teclado"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Aceda rapidamente às funcionalidades do ScrollHide com atalhos de teclado configuráveis."
     },
     "btnConfigureShortcuts": {
         "message": "Configurar"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Permitir"
+    },
+    "msgChangesSaved": {
+        "message": "Alterações guardadas"
+    },
+    "msgChangesApplied": {
+        "message": "Alterações aplicadas"
+    },
+    "msgInvalidConfig": {
+        "message": "Ficheiro de configuração inválido."
+    },
+    "msgSettingsRestored": {
+        "message": "Definições restauradas com sucesso!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Falha ao analisar o ficheiro JSON da cópia de segurança."
+    },
+    "msgConfirmReset": {
+        "message": "Tem a certeza de que pretende repor todas as definições e a lista de exceções para os valores predefinidos?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Formato JSON da lista de exceções inválido. Era esperada uma matriz de domínios ou um objeto com uma matriz \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "Não foram encontradas entradas de domínio válidas no ficheiro."
+    },
+    "msgImportedDomains": {
+        "message": "$COUNT$ domínio(s) importado(s)",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Copiado!"
     }
 }

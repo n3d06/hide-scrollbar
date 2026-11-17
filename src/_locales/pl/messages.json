@@ -24,7 +24,7 @@
         "message": "Odśwież stronę"
     },
     "settings": {
-        "message": "Settings"
+        "message": "Ustawienia"
     },
     "statsStatus": {
         "message": "Status"
@@ -48,94 +48,94 @@
         "message": "Ograniczony"
     },
     "themeTitle": {
-        "message": "Theme"
+        "message": "Motyw"
     },
     "themeDesc": {
-        "message": "Choose appearance theme: System default, Light, or Dark"
+        "message": "Wybierz wygląd: domyślny systemowy, jasny lub ciemny"
     },
     "themeSystem": {
-        "message": "System default"
+        "message": "Domyślny systemowy"
     },
     "themeLight": {
-        "message": "Light"
+        "message": "Jasny"
     },
     "themeDark": {
-        "message": "Dark"
+        "message": "Ciemny"
     },
     "tabWhitelist": {
-        "message": "Whitelist"
+        "message": "Lista wyjątków"
     },
     "tabReport": {
-        "message": "Report"
+        "message": "Zgłoś"
     },
     "aboutPrivacyDesc": {
         "message": "ScrollHide nie zbiera, nie przechowuje ani nie przesyła żadnych danych przeglądania. Wszystko działa w 100% lokalnie."
     },
     "generalSettingsGroup": {
-        "message": "General Settings"
+        "message": "Ustawienia ogólne"
     },
     "enableHideScrollbar": {
-        "message": "Enable Scrollbar Hiding"
+        "message": "Włącz ukrywanie pasków przewijania"
     },
     "enableHideScrollbarDesc": {
-        "message": "Automatically hide scrollbars across all websites unless whitelisted."
+        "message": "Automatycznie ukrywaj paski przewijania na wszystkich stronach, chyba że są na liście wyjątków."
     },
     "statsGroup": {
-        "message": "Statistics"
+        "message": "Statystyki"
     },
     "statsCleanedTitle": {
-        "message": "Cleaned Scrollbars"
+        "message": "Wyczyszczone paski przewijania"
     },
     "statsCleanedDesc": {
-        "message": "Total scrollbars removed by extension across all sessions."
+        "message": "Łączna liczba pasków przewijania usuniętych przez rozszerzenie we wszystkich sesjach."
     },
     "btnReset": {
-        "message": "Reset"
+        "message": "Resetuj"
     },
     "backupGroup": {
-        "message": "Backup and Restore"
+        "message": "Kopia zapasowa i przywracanie"
     },
     "backupDesc": {
-        "message": "Export or import your ScrollHide configuration and whitelist domains."
+        "message": "Eksportuj lub importuj konfigurację ScrollHide i domeny z listy wyjątków."
     },
     "backupExport": {
-        "message": "Backup to file"
+        "message": "Utwórz kopię do pliku"
     },
     "backupImport": {
-        "message": "Restore from file"
+        "message": "Przywróć z pliku"
     },
     "backupReset": {
-        "message": "Reset to defaults"
+        "message": "Przywróć ustawienia domyślne"
     },
     "btnApply": {
-        "message": "Apply changes"
+        "message": "Zastosuj zmiany"
     },
     "btnRevert": {
-        "message": "Revert"
+        "message": "Cofnij"
     },
     "btnImportAppend": {
-        "message": "Import and append"
+        "message": "Importuj i dołącz"
     },
     "btnExport": {
-        "message": "Export"
+        "message": "Eksportuj"
     },
     "whitelistWarning": {
-        "message": "Lines starting with ! or # are treated as comments."
+        "message": "Wiersze zaczynające się od ! lub # są traktowane jako komentarze."
     },
     "reportDesc": {
-        "message": "Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!"
+        "message": "Znalazłeś stronę, na której paski przewijania nadal są widoczne, lub napotkałeś błąd? Wyślij zgłoszenie, abyśmy mogli dodać obsługę i poprawić zgodność!"
     },
     "btnReportGitHub": {
-        "message": "Report on GitHub"
+        "message": "Zgłoś na GitHubie"
     },
     "btnCopySystemInfo": {
-        "message": "Copy System Info"
+        "message": "Kopiuj informacje o systemie"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Skróty klawiszowe"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Szybko uruchamiaj funkcje ScrollHide za pomocą konfigurowalnych skrótów klawiszowych."
     },
     "btnConfigureShortcuts": {
         "message": "Konfiguruj"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Zezwól"
+    },
+    "msgChangesSaved": {
+        "message": "Zmiany zapisane"
+    },
+    "msgChangesApplied": {
+        "message": "Zmiany zastosowane"
+    },
+    "msgInvalidConfig": {
+        "message": "Nieprawidłowy plik konfiguracji."
+    },
+    "msgSettingsRestored": {
+        "message": "Ustawienia zostały przywrócone!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Nie udało się przetworzyć pliku JSON kopii zapasowej."
+    },
+    "msgConfirmReset": {
+        "message": "Czy na pewno chcesz przywrócić domyślne wartości wszystkich ustawień i listy wyjątków?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Nieprawidłowy format JSON listy wyjątków. Oczekiwano tablicy domen lub obiektu zawierającego tablicę \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "W pliku nie znaleziono prawidłowych domen."
+    },
+    "msgImportedDomains": {
+        "message": "Zaimportowano domen: $COUNT$",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Skopiowano!"
     }
 }

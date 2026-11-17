@@ -132,10 +132,10 @@
         "message": "Copia info di sistema"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "Scorciatoie da tastiera"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "Attiva rapidamente le funzioni di ScrollHide con scorciatoie da tastiera configurabili."
     },
     "btnConfigureShortcuts": {
         "message": "Configura"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "Consenti"
+    },
+    "msgChangesSaved": {
+        "message": "Modifiche salvate"
+    },
+    "msgChangesApplied": {
+        "message": "Modifiche applicate"
+    },
+    "msgInvalidConfig": {
+        "message": "File di configurazione non valido."
+    },
+    "msgSettingsRestored": {
+        "message": "Impostazioni ripristinate con successo!"
+    },
+    "msgBackupParseFailed": {
+        "message": "Impossibile analizzare il file JSON di backup."
+    },
+    "msgConfirmReset": {
+        "message": "Vuoi davvero ripristinare tutte le impostazioni e la whitelist ai valori predefiniti?"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "Formato JSON della whitelist non valido. Previsto un array di domini o un oggetto contenente un array \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "Nessun dominio valido trovato nel file."
+    },
+    "msgImportedDomains": {
+        "message": "Importati $COUNT$ domini",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "Copiato!"
     }
 }

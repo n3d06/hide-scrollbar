@@ -132,10 +132,10 @@
         "message": "نسخ معلومات النظام"
     },
     "shortcutsGroup": {
-        "message": "Keyboard Shortcuts"
+        "message": "اختصارات لوحة المفاتيح"
     },
     "shortcutsDesc": {
-        "message": "Quickly trigger ScrollHide features using configurable keyboard shortcuts."
+        "message": "شغّل ميزات ScrollHide بسرعة باستخدام اختصارات لوحة مفاتيح قابلة للتخصيص."
     },
     "btnConfigureShortcuts": {
         "message": "تكوين"
@@ -154,5 +154,40 @@
     },
     "grantPermission": {
         "message": "السماح"
+    },
+    "msgChangesSaved": {
+        "message": "تم حفظ التغييرات"
+    },
+    "msgChangesApplied": {
+        "message": "تم تطبيق التغييرات"
+    },
+    "msgInvalidConfig": {
+        "message": "ملف الإعدادات غير صالح."
+    },
+    "msgSettingsRestored": {
+        "message": "تمت استعادة الإعدادات بنجاح!"
+    },
+    "msgBackupParseFailed": {
+        "message": "فشل تحليل ملف النسخة الاحتياطية JSON."
+    },
+    "msgConfirmReset": {
+        "message": "هل أنت متأكد أنك تريد إعادة ضبط جميع الإعدادات والقائمة البيضاء إلى الوضع الافتراضي؟"
+    },
+    "msgInvalidWhitelistJson": {
+        "message": "تنسيق JSON للقائمة البيضاء غير صالح. المتوقع مصفوفة نطاقات أو كائن يحتوي على مصفوفة \"whitelist\"."
+    },
+    "msgNoValidDomains": {
+        "message": "لم يتم العثور على أي نطاقات صالحة في الملف."
+    },
+    "msgImportedDomains": {
+        "message": "تم استيراد $COUNT$ نطاق",
+        "placeholders": {
+            "count": {
+                "content": "$1"
+            }
+        }
+    },
+    "msgCopied": {
+        "message": "تم النسخ!"
     }
 }
