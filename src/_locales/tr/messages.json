@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Kopyalandı!"
+    },
+    "btnRateExtension": {
+        "message": "Uzantıyı değerlendir"
+    },
+    "rateExtensionTitle": {
+        "message": "Mağazada değerlendir"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub deposu"
+    },
+    "resetCounterTitle": {
+        "message": "Sayacı sıfırlamak için tıklayın"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Kaydırma çubuğunu gizlemeyi aç/kapat"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Alan adlarını buraya girin, her satıra bir tane\nexample.com\n*.youtube.com"
     }
 }

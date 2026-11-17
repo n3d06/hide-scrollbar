@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Αντιγράφηκε!"
+    },
+    "btnRateExtension": {
+        "message": "Αξιολόγηση επέκτασης"
+    },
+    "rateExtensionTitle": {
+        "message": "Αξιολόγηση στο κατάστημα"
+    },
+    "githubRepoTitle": {
+        "message": "Αποθετήριο GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "Κάντε κλικ για μηδενισμό του μετρητή"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Εναλλαγή απόκρυψης γραμμής κύλισης"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Εισαγάγετε τομείς εδώ, έναν ανά γραμμή\nexample.com\n*.youtube.com"
     }
 }

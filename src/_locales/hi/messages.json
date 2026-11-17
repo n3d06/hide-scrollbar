@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "कॉपी हो गया!"
+    },
+    "btnRateExtension": {
+        "message": "एक्सटेंशन को रेट करें"
+    },
+    "rateExtensionTitle": {
+        "message": "स्टोर पर रेट करें"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub रिपॉज़िटरी"
+    },
+    "resetCounterTitle": {
+        "message": "काउंटर रीसेट करने के लिए क्लिक करें"
+    },
+    "toggleScrollbarTitle": {
+        "message": "स्क्रॉलबार छिपाना चालू/बंद करें"
+    },
+    "whitelistPlaceholder": {
+        "message": "! डोमेन यहाँ दर्ज करें, प्रति पंक्ति एक\nexample.com\n*.youtube.com"
     }
 }

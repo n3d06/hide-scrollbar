@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Copied!"
+    },
+    "btnRateExtension": {
+        "message": "Rate extension"
+    },
+    "rateExtensionTitle": {
+        "message": "Rate on Web Store"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub Repository"
+    },
+    "resetCounterTitle": {
+        "message": "Click to reset counter"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Toggle hiding scrollbar"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Enter domains here, one per line\nexample.com\n*.youtube.com"
     }
 }

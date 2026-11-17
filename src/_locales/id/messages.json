@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Tersalin!"
+    },
+    "btnRateExtension": {
+        "message": "Beri ulasan ekstensi"
+    },
+    "rateExtensionTitle": {
+        "message": "Beri ulasan di toko"
+    },
+    "githubRepoTitle": {
+        "message": "Repositori GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "Klik untuk mengatur ulang penghitung"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Aktifkan/nonaktifkan penyembunyian scrollbar"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Masukkan domain di sini, satu per baris\nexample.com\n*.youtube.com"
     }
 }

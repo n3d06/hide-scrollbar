@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Gekopieerd!"
+    },
+    "btnRateExtension": {
+        "message": "Extensie beoordelen"
+    },
+    "rateExtensionTitle": {
+        "message": "Beoordelen in de store"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub-repository"
+    },
+    "resetCounterTitle": {
+        "message": "Klik om de teller te resetten"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Scrollbalk verbergen aan/uit"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Voer hier domeinen in, één per regel\nexample.com\n*.youtube.com"
     }
 }

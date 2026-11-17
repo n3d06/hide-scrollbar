@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Kopioitu!"
+    },
+    "btnRateExtension": {
+        "message": "Arvioi laajennus"
+    },
+    "rateExtensionTitle": {
+        "message": "Arvioi kaupassa"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub-repositorio"
+    },
+    "resetCounterTitle": {
+        "message": "Nollaa laskuri napsauttamalla"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Vaihda vierityspalkin piilotusta"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Kirjoita verkkotunnukset tähän, yksi riviä kohden\nexample.com\n*.youtube.com"
     }
 }

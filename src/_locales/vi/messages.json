@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Đã sao chép!"
+    },
+    "btnRateExtension": {
+        "message": "Đánh giá tiện ích"
+    },
+    "rateExtensionTitle": {
+        "message": "Đánh giá trên cửa hàng"
+    },
+    "githubRepoTitle": {
+        "message": "Kho GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "Nhấp để đặt lại bộ đếm"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Bật/tắt ẩn thanh cuộn"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Nhập tên miền ở đây, mỗi dòng một tên\nexample.com\n*.youtube.com"
     }
 }

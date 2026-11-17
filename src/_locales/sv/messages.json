@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Kopierat!"
+    },
+    "btnRateExtension": {
+        "message": "Betygsätt tillägget"
+    },
+    "rateExtensionTitle": {
+        "message": "Betygsätt i butiken"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub-arkiv"
+    },
+    "resetCounterTitle": {
+        "message": "Klicka för att nollställa räknaren"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Slå på/av döljning av rullningslist"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Ange domäner här, en per rad\nexample.com\n*.youtube.com"
     }
 }

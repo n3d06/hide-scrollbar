@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "コピーしました！"
+    },
+    "btnRateExtension": {
+        "message": "拡張機能を評価"
+    },
+    "rateExtensionTitle": {
+        "message": "ストアで評価"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub リポジトリ"
+    },
+    "resetCounterTitle": {
+        "message": "クリックしてカウンターをリセット"
+    },
+    "toggleScrollbarTitle": {
+        "message": "スクロールバーの非表示を切り替え"
+    },
+    "whitelistPlaceholder": {
+        "message": "! ドメインを1行に1つずつ入力\nexample.com\n*.youtube.com"
     }
 }

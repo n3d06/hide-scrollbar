@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Copiato!"
+    },
+    "btnRateExtension": {
+        "message": "Valuta l'estensione"
+    },
+    "rateExtensionTitle": {
+        "message": "Valuta nello store"
+    },
+    "githubRepoTitle": {
+        "message": "Repository GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "Fai clic per azzerare il contatore"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Attiva/disattiva nascondi barra di scorrimento"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Inserisci i domini qui, uno per riga\nexample.com\n*.youtube.com"
     }
 }

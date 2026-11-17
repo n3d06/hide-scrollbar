@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Nakopya!"
+    },
+    "btnRateExtension": {
+        "message": "I-rate ang extension"
+    },
+    "rateExtensionTitle": {
+        "message": "I-rate sa store"
+    },
+    "githubRepoTitle": {
+        "message": "Repositoryo ng GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "I-click para i-reset ang counter"
+    },
+    "toggleScrollbarTitle": {
+        "message": "I-toggle ang pagtatago ng scrollbar"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Ilagay ang mga domain dito, isa bawat linya\nexample.com\n*.youtube.com"
     }
 }

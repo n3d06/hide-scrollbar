@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "복사됨!"
+    },
+    "btnRateExtension": {
+        "message": "확장 프로그램 평가"
+    },
+    "rateExtensionTitle": {
+        "message": "스토어에서 평가"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub 저장소"
+    },
+    "resetCounterTitle": {
+        "message": "클릭하여 카운터 초기화"
+    },
+    "toggleScrollbarTitle": {
+        "message": "스크롤바 숨기기 전환"
+    },
+    "whitelistPlaceholder": {
+        "message": "! 도메인을 한 줄에 하나씩 입력\nexample.com\n*.youtube.com"
     }
 }

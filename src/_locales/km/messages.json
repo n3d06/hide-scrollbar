@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "បានចម្លង!"
+    },
+    "btnRateExtension": {
+        "message": "វាយតម្លៃផ្នែកបន្ថែម"
+    },
+    "rateExtensionTitle": {
+        "message": "វាយតម្លៃនៅហាង"
+    },
+    "githubRepoTitle": {
+        "message": "ឃ្លាំង GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "ចុចដើម្បីកំណត់ខ្ទង់រាប់ឡើងវិញ"
+    },
+    "toggleScrollbarTitle": {
+        "message": "បិទ/បើកការលាក់របារអូស"
+    },
+    "whitelistPlaceholder": {
+        "message": "! បញ្ចូលដែននៅទីនេះ មួយបន្ទាត់ម្ដង\nexample.com\n*.youtube.com"
     }
 }

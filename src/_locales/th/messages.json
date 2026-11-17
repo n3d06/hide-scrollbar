@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "คัดลอกแล้ว!"
+    },
+    "btnRateExtension": {
+        "message": "ให้คะแนนส่วนขยาย"
+    },
+    "rateExtensionTitle": {
+        "message": "ให้คะแนนในสโตร์"
+    },
+    "githubRepoTitle": {
+        "message": "ที่เก็บ GitHub"
+    },
+    "resetCounterTitle": {
+        "message": "คลิกเพื่อรีเซ็ตตัวนับ"
+    },
+    "toggleScrollbarTitle": {
+        "message": "สลับการซ่อนแถบเลื่อน"
+    },
+    "whitelistPlaceholder": {
+        "message": "! ใส่โดเมนที่นี่ บรรทัดละหนึ่งโดเมน\nexample.com\n*.youtube.com"
     }
 }

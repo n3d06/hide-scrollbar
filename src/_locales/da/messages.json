@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Kopieret!"
+    },
+    "btnRateExtension": {
+        "message": "Bedøm udvidelsen"
+    },
+    "rateExtensionTitle": {
+        "message": "Bedøm i butikken"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub-lager"
+    },
+    "resetCounterTitle": {
+        "message": "Klik for at nulstille tælleren"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Slå skjulning af rullebjælke til/fra"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Indtast domæner her, ét pr. linje\nexample.com\n*.youtube.com"
     }
 }

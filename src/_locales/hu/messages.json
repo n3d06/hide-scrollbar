@@ -189,5 +189,23 @@
     },
     "msgCopied": {
         "message": "Másolva!"
+    },
+    "btnRateExtension": {
+        "message": "Bővítmény értékelése"
+    },
+    "rateExtensionTitle": {
+        "message": "Értékelés az áruházban"
+    },
+    "githubRepoTitle": {
+        "message": "GitHub-tároló"
+    },
+    "resetCounterTitle": {
+        "message": "Kattintson a számláló nullázásához"
+    },
+    "toggleScrollbarTitle": {
+        "message": "Görgetősáv elrejtésének váltása"
+    },
+    "whitelistPlaceholder": {
+        "message": "! Írja be a doméneket, soronként egyet\nexample.com\n*.youtube.com"
     }
 }
