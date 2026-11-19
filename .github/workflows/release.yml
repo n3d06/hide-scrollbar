@@ -1,11 +1,11 @@
-name: Test and Release
+name: Test and Release (manual)
 
 on:
   push:
     branches:
       - main
       - master
-    # Only release when the extension itself changes (not docs-only commits)
+    # Pushes only run the tests; releases are started manually (Actions > Run workflow)
     paths:
       - 'src/**'
       - 'scripts/**'
@@ -43,8 +43,8 @@ jobs:
 
   release:
     needs: test
-    # Pull requests only run the tests
-    if: github.event_name != 'pull_request'
+    # Releases only run when started manually; pushes and pull requests just run the tests
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
       contents: write
