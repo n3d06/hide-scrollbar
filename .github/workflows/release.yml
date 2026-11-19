@@ -3,6 +3,11 @@ name: Test and Release (manual)
 on:
   # Nothing runs automatically. Run manually: Actions > Run workflow (test + release).
   workflow_dispatch:
+    inputs:
+      notes:
+        description: 'Release notes (optional, shown above the commit list)'
+        required: false
+        default: ''
 
 # One release at a time; a newer push waits instead of racing for the same tag
 concurrency:
@@ -40,6 +45,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -79,13 +86,30 @@ jobs:
           done
           ls -lh extension-*.zip
 
+      - name: Generate release notes
+        env:
+          NOTES: ${{ github.event.inputs.notes }}
+        run: |
+          PREV=$(git describe --tags --abbrev=0 2>/dev/null || true)
+          {
+            if [ -n "$NOTES" ]; then printf '%s\n\n' "$NOTES"; fi
+            echo "## Changes"
+            if [ -n "$PREV" ]; then RANGE="$PREV..HEAD"; else RANGE="HEAD"; fi
+            git log --no-merges --pretty='- %s' $RANGE
+            if [ -n "$PREV" ]; then
+              echo
+              echo "**Full Changelog**: https://github.com/${{ github.repository }}/compare/$PREV...v$VERSION"
+            fi
+          } > release-notes.md
+          cat release-notes.md
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ env.VERSION }}
           name: Release v${{ env.VERSION }}
           target_commitish: ${{ github.sha }}
-          generate_release_notes: true
+          body_path: release-notes.md
           files: |
             extension-chrome-v${{ env.VERSION }}.zip
             extension-firefox-v${{ env.VERSION }}.zip
