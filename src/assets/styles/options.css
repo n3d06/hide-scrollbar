@@ -308,3 +308,20 @@ body {
   font-size: 12px;
   color: var(--muted);
 }
+
+/* ── Hidden scrollbars (page and editor still scroll) ── */
+html,
+body,
+.whitelist-textarea,
+.editor-gutter {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.whitelist-textarea::-webkit-scrollbar,
+.editor-gutter::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
