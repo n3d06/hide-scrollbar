@@ -1,17 +1,7 @@
 name: Test and Release (manual)
 
 on:
-  push:
-    branches:
-      - main
-      - master
-    # Pushes only run the tests; releases are started manually (Actions > Run workflow)
-    paths:
-      - 'src/**'
-      - 'scripts/**'
-      - 'test/**'
-      - 'package.json'
-      - '.github/workflows/release.yml'
+  # Pushes do not run anything. Run manually: Actions > Run workflow (test + release).
   pull_request:
   workflow_dispatch:
 
@@ -43,7 +33,7 @@ jobs:
 
   release:
     needs: test
-    # Releases only run when started manually; pushes and pull requests just run the tests
+    # Releases only run when started manually; pull requests just run the tests
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
