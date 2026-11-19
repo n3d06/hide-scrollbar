@@ -19,8 +19,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
+  padding-bottom: 4px;
 }
 
 .brand {
@@ -104,7 +103,6 @@ body {
 
 .setting-row {
   padding: 8px 0;
-  border-top: 1px solid var(--border);
 }
 
 .section-title + .setting-row { margin-top: 6px; }
