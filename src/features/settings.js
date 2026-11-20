@@ -5,7 +5,9 @@
     'use strict';
 
     const isFirefox =
-      typeof chrome !== 'undefined' && !!chrome.runtime?.getURL && chrome.runtime.getURL('').startsWith('moz-extension:');
+      typeof chrome !== 'undefined' &&
+      !!chrome.runtime?.getURL &&
+      chrome.runtime.getURL('').startsWith('moz-extension:');
 
     const { applyI18n, getMessage } = globalThis.ScrollHideI18n || {};
     const t = (key, fallback, subs) => (getMessage ? getMessage(key, fallback, subs) : fallback);
@@ -141,9 +143,8 @@
       }
 
       // Version display
-      const version =
-        typeof chrome !== 'undefined' && chrome.runtime?.getManifest ? chrome.runtime.getManifest().version : '2.1';
-      const versionText = `v${version}`;
+      const version = typeof chrome !== 'undefined' ? chrome.runtime?.getManifest?.().version : '';
+      const versionText = version ? `v${version}` : '';
       const extVersionEl = document.getElementById('extVersion');
       if (extVersionEl) extVersionEl.textContent = versionText;
       document.querySelectorAll('.ext-version-badge').forEach((el) => {
@@ -320,7 +321,7 @@
         const reader = new FileReader();
         reader.onload = (event) => {
           const text = (event.target?.result || '').trim();
-          let importedLines = [];
+          let importedLines;
 
           if (text.startsWith('{') || text.startsWith('[')) {
             try {

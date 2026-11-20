@@ -78,7 +78,9 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.section-card:last-child { border-bottom: 0; }
+.section-card:last-child {
+  border-bottom: 0;
+}
 
 .section-title {
   margin-bottom: 2px;
@@ -90,9 +92,13 @@ body {
 }
 
 .section-title + .setting-hint,
-.section-header-flex .setting-hint { margin-bottom: 8px; }
+.section-header-flex .setting-hint {
+  margin-bottom: 8px;
+}
 
-.section-title.spaced { margin-top: 14px; }
+.section-title.spaced {
+  margin-top: 14px;
+}
 
 .section-header-flex {
   display: flex;
@@ -105,9 +111,13 @@ body {
   padding: 8px 0;
 }
 
-.section-title + .setting-row { margin-top: 6px; }
+.section-title + .setting-row {
+  margin-top: 6px;
+}
 
-.setting-row:last-child { padding-bottom: 0; }
+.setting-row:last-child {
+  padding-bottom: 0;
+}
 
 .setting-flex {
   display: flex;
@@ -123,7 +133,7 @@ body {
   cursor: pointer;
 }
 
-.setting-checkbox-label input[type="checkbox"] {
+.setting-checkbox-label input[type='checkbox'] {
   width: 15px;
   height: 15px;
   margin-top: 3px;
@@ -131,7 +141,9 @@ body {
   cursor: pointer;
 }
 
-.setting-name { font-weight: 500; }
+.setting-name {
+  font-weight: 500;
+}
 
 .setting-hint {
   margin-top: 1px;
@@ -151,7 +163,9 @@ body {
   cursor: pointer;
 }
 
-.select-input:hover { border-color: var(--muted); }
+.select-input:hover {
+  border-color: var(--muted);
+}
 
 /* ── Whitelist editor ── */
 .whitelist-toolbar {
@@ -168,7 +182,9 @@ body {
   color: var(--accent);
 }
 
-.save-indicator.visible { display: inline-block; }
+.save-indicator.visible {
+  display: inline-block;
+}
 
 .whitelist-editor-wrap {
   position: relative;
@@ -180,7 +196,9 @@ body {
   overflow: hidden;
 }
 
-.whitelist-editor-wrap:focus-within { border-color: var(--text); }
+.whitelist-editor-wrap:focus-within {
+  border-color: var(--text);
+}
 
 .editor-gutter {
   flex-shrink: 0;
@@ -216,9 +234,13 @@ body {
 }
 
 .whitelist-textarea:focus,
-.whitelist-textarea:focus-visible { outline: none; }
+.whitelist-textarea:focus-visible {
+  outline: none;
+}
 
-.whitelist-textarea::placeholder { color: var(--muted); }
+.whitelist-textarea::placeholder {
+  color: var(--muted);
+}
 
 /* ── Buttons ── */
 .btn {
@@ -241,7 +263,9 @@ body {
   cursor: pointer;
 }
 
-.btn:hover:not(:disabled) { background: var(--hover); }
+.btn:hover:not(:disabled) {
+  background: var(--hover);
+}
 
 .btn-primary {
   border-color: var(--accent);
@@ -254,7 +278,9 @@ body {
   opacity: 0.85;
 }
 
-.btn-danger-outline { color: var(--danger); }
+.btn-danger-outline {
+  color: var(--danger);
+}
 
 .btn:disabled {
   opacity: 0.4;

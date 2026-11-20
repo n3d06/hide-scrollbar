@@ -28,6 +28,13 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '22'
+          cache: npm
+
+      - name: Install dev tools
+        run: npm ci
+
+      - name: Lint and check formatting
+        run: npm run lint
 
       - name: Run tests
         run: npm test

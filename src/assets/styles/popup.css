@@ -49,7 +49,9 @@ body {
   text-overflow: ellipsis;
 }
 
-.seg:hover { color: var(--text); }
+.seg:hover {
+  color: var(--text);
+}
 
 .segmented.active .seg-hide,
 .segmented:not(.active) .seg-show {
@@ -62,7 +64,9 @@ body {
   color: var(--bg);
 }
 
-.segmented:disabled { cursor: not-allowed; }
+.segmented:disabled {
+  cursor: not-allowed;
+}
 
 .domain-display {
   max-width: 100%;
@@ -89,7 +93,9 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.stat-label { color: var(--muted); }
+.stat-label {
+  color: var(--muted);
+}
 
 .stat-val {
   font-weight: 500;
@@ -103,10 +109,18 @@ body {
   border-radius: 50%;
 }
 
-.status-dot.active { background: var(--accent); }
-.status-dot.disabled { background: var(--border-strong); }
-.status-dot.whitelisted { background: var(--warning); }
-.status-dot.restricted { background: var(--danger); }
+.status-dot.active {
+  background: var(--accent);
+}
+.status-dot.disabled {
+  background: var(--border-strong);
+}
+.status-dot.whitelisted {
+  background: var(--warning);
+}
+.status-dot.restricted {
+  background: var(--danger);
+}
 
 /* ── Notices ── */
 .whitelisted-notice,
@@ -120,8 +134,14 @@ body {
   text-align: center;
 }
 
-.whitelisted-notice { color: var(--warning); background: color-mix(in srgb, var(--warning) 10%, var(--bg)); }
-.restricted-notice { color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, var(--bg)); }
+.whitelisted-notice {
+  color: var(--warning);
+  background: color-mix(in srgb, var(--warning) 10%, var(--bg));
+}
+.restricted-notice {
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 10%, var(--bg));
+}
 
 /* Shown when the browser hasn't granted access to all sites (Firefox, or Chrome "on click") */
 .permission-notice {
@@ -136,7 +156,9 @@ body {
   font-size: 12px;
 }
 
-.permission-notice.visible { display: flex; }
+.permission-notice.visible {
+  display: flex;
+}
 
 .notice-btn {
   flex-shrink: 0;
@@ -169,11 +191,16 @@ body {
   cursor: pointer;
 }
 
-.tool-btn:last-child { border-inline-end: 0; }
+.tool-btn:last-child {
+  border-inline-end: 0;
+}
 
 .tool-btn:hover:not(:disabled) {
   background: var(--hover);
   color: var(--text);
 }
 
-.tool-btn:disabled { opacity: 0.4; cursor: default; }
+.tool-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

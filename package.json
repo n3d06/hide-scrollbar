@@ -1,6 +1,6 @@
 {
   "name": "hide-scrollbar-extension",
-  "version": "1.0.0",
+  "version": "2.2.0",
   "description": "Clean up scrollbars and improve web aesthetics seamlessly",
   "author": "n3d06",
   "repository": {
@@ -14,6 +14,14 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build.js",
-    "test": "node test/verify-integrity.js"
+    "test": "node test/verify-integrity.js && node --test \"test/unit/*.test.js\"",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write . && eslint --fix ."
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.15.0",
+    "globals": "17.14.0",
+    "prettier": "3.10.1"
   }
 }

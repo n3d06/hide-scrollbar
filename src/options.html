@@ -1,247 +1,415 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hide Scrollbar - Settings</title>
+    <link rel="stylesheet" href="assets/styles/tokens.css" />
+    <link rel="stylesheet" href="assets/styles/options.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hide Scrollbar - Settings</title>
-  <link rel="stylesheet" href="assets/styles/tokens.css">
-  <link rel="stylesheet" href="assets/styles/options.css">
-</head>
-
-<body>
-  <div class="settings-container">
-    <!-- Header -->
-    <header class="settings-header">
-      <div class="brand">
-        <img src="assets/icons/icon48.png" alt="Hide Scrollbar" class="logo">
-        <div>
-          <h1 class="title" data-i18n="extName">Hide Scrollbar</h1>
-          <span class="version" id="extVersion">v2.2</span>
-        </div>
-      </div>
-      <div class="header-links">
-        <a href="https://buymeacoffee.com/n3d06" target="_blank" rel="noopener noreferrer" class="link-btn" title="Buy me a coffee" data-i18n-title="buyMeACoffee">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
-            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
-            <line x1="6" y1="2" x2="6" y2="4"/>
-            <line x1="10" y1="2" x2="10" y2="4"/>
-            <line x1="14" y1="2" x2="14" y2="4"/>
-          </svg>
-          <span data-i18n="buyMeACoffee">Buy me a coffee</span>
-        </a>
-        <a href="https://github.com/n3d06/hide-scrollbar" target="_blank" rel="noopener noreferrer" class="link-btn" title="GitHub Repository" data-i18n-title="githubRepoTitle">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-          <span>GitHub</span>
-        </a>
-      </div>
-    </header>
-
-    <main class="settings-content">
-      <!-- Section 1: General Settings -->
-      <section class="section-card">
-        <h2 class="section-title" data-i18n="generalSettingsGroup">General Settings</h2>
-        
-        <div class="setting-row">
-          <label class="setting-checkbox-label">
-            <input type="checkbox" id="settingHideScrollbar">
-            <div>
-              <div class="setting-name" data-i18n="enableHideScrollbar">Enable Scrollbar Hiding</div>
-              <div class="setting-hint" data-i18n="enableHideScrollbarDesc">Automatically hide scrollbars across all websites unless whitelisted.</div>
-            </div>
-          </label>
-        </div>
-
-        <div class="setting-row setting-flex">
+  <body>
+    <div class="settings-container">
+      <!-- Header -->
+      <header class="settings-header">
+        <div class="brand">
+          <img src="assets/icons/icon48.png" alt="Hide Scrollbar" class="logo" />
           <div>
-            <div class="setting-name" data-i18n="themeTitle">Theme</div>
-            <div class="setting-hint" data-i18n="themeDesc">Choose appearance theme: System default, Light, or Dark.</div>
+            <h1 class="title" data-i18n="extName">Hide Scrollbar</h1>
+            <span class="version" id="extVersion">v2.2</span>
           </div>
-          <select id="settingTheme" class="select-input">
-            <option value="system" data-i18n="themeSystem">System default</option>
-            <option value="light" data-i18n="themeLight">Light</option>
-            <option value="dark" data-i18n="themeDark">Dark</option>
-          </select>
         </div>
-
-        <div class="setting-row setting-flex">
-          <div>
-            <div class="setting-name" data-i18n="shortcutsGroup">Keyboard Shortcuts</div>
-            <div class="setting-hint" data-i18n="shortcutsDesc">Quickly trigger ScrollHide features using configurable keyboard shortcuts.</div>
-          </div>
-          <button id="btnConfigureShortcuts" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
-              <line x1="6" y1="8" x2="6" y2="8"></line>
-              <line x1="10" y1="8" x2="10" y2="8"></line>
-              <line x1="14" y1="8" x2="14" y2="8"></line>
-              <line x1="18" y1="8" x2="18" y2="8"></line>
-              <line x1="6" y1="12" x2="6" y2="12"></line>
-              <line x1="10" y1="12" x2="10" y2="12"></line>
-              <line x1="14" y1="12" x2="14" y2="12"></line>
-              <line x1="18" y1="12" x2="18" y2="12"></line>
-              <line x1="7" y1="16" x2="17" y2="16"></line>
+        <div class="header-links">
+          <a
+            href="https://buymeacoffee.com/n3d06"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn"
+            title="Buy me a coffee"
+            data-i18n-title="buyMeACoffee"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+              <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+              <line x1="6" y1="2" x2="6" y2="4" />
+              <line x1="10" y1="2" x2="10" y2="4" />
+              <line x1="14" y1="2" x2="14" y2="4" />
             </svg>
-            <span data-i18n="btnConfigureShortcuts">Configure</span>
-          </button>
-        </div>
-      </section>
-
-      <!-- Section 2: Whitelist / Exceptions Editor -->
-      <section class="section-card">
-        <div class="section-header-flex">
-          <div>
-            <h2 class="section-title" data-i18n="tabWhitelist">Whitelist</h2>
-            <div class="setting-hint" data-i18n="whitelistWarning">Sites listed here will keep their original scrollbars (one domain per line). Lines starting with ! or # are comments.</div>
-          </div>
-          <span id="saveIndicator" class="save-indicator"></span>
-        </div>
-
-        <div class="whitelist-toolbar">
-          <button id="btnApplyWhitelist" class="btn btn-primary" disabled>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            <span data-i18n="btnApply">Apply changes</span>
-          </button>
-
-          <button id="btnRevertWhitelist" class="btn btn-secondary" disabled>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="1 4 1 10 7 10"></polyline>
-              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-            </svg>
-            <span data-i18n="btnRevert">Revert</span>
-          </button>
-
-          <button id="btnImportWhitelist" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            <span data-i18n="btnImportAppend">Import and append</span>
-          </button>
-          <input type="file" id="whitelistFileInput" accept=".txt,.json" hidden>
-
-          <button id="btnExportWhitelist" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="17 8 12 3 7 8"></polyline>
-              <line x1="12" y1="3" x2="12" y2="15"></line>
-            </svg>
-            <span data-i18n="btnExport">Export</span>
-          </button>
-        </div>
-
-        <div class="whitelist-editor-wrap">
-          <div class="editor-gutter" id="whitelistGutter" aria-hidden="true">1</div>
-          <textarea id="whitelistInput"
-            class="whitelist-textarea"
-            spellcheck="false"
-            autocomplete="off"
-            autocorrect="off"
-            autocapitalize="off"
-            data-i18n="whitelistPlaceholder"
-            placeholder="! Enter domains here, one per line&#10;example.com&#10;*.youtube.com"></textarea>
-        </div>
-      </section>
-
-      <!-- Section 3: Statistics & Backup -->
-      <section class="section-card">
-        <h2 class="section-title" data-i18n="statsGroup">Statistics</h2>
-        <div class="setting-row setting-flex">
-          <div>
-            <div class="setting-name" data-i18n="statsCleanedTitle">Cleaned Scrollbars</div>
-            <div class="setting-hint" data-i18n="statsCleanedDesc">Total scrollbars removed by extension across all sessions.</div>
-          </div>
-          <button id="btnResetCleaned" class="stat-badge-btn" title="Click to reset counter" data-i18n-title="resetCounterTitle">
-            <span id="statCleanedCount" class="stat-count">0</span>
-            <span class="stat-label" data-i18n="btnReset">Reset</span>
-          </button>
-        </div>
-
-        <h2 class="section-title spaced" data-i18n="backupGroup">Backup and Restore</h2>
-        <div class="setting-hint" data-i18n="backupDesc">Export or import your ScrollHide configuration and whitelist domains.</div>
-        <div class="btn-group">
-          <button id="btnExportSettings" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="17 8 12 3 7 8"></polyline>
-              <line x1="12" y1="3" x2="12" y2="15"></line>
-            </svg>
-            <span data-i18n="backupExport">Backup to file</span>
-          </button>
-          <button id="btnImportSettings" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            <span data-i18n="backupImport">Restore from file</span>
-          </button>
-          <input type="file" id="settingsFileInput" accept=".json" hidden>
-          <button id="btnResetDefaults" class="btn btn-danger-outline">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="1 4 1 10 7 10"></polyline>
-              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-            </svg>
-            <span data-i18n="backupReset">Reset to defaults</span>
-          </button>
-        </div>
-      </section>
-
-      <!-- Section 4: Report & Privacy -->
-      <section class="section-card">
-        <h2 class="section-title" data-i18n="tabReport">Report</h2>
-        <div class="setting-hint" data-i18n="reportDesc">Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add support and improve compatibility!</div>
-        <div class="btn-group">
-          <a href="https://github.com/n3d06/hide-scrollbar/issues/new" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-              <line x1="4" y1="22" x2="4" y2="15"></line>
-            </svg>
-            <span data-i18n="btnReportGitHub">Report on GitHub</span>
+            <span data-i18n="buyMeACoffee">Buy me a coffee</span>
           </a>
-          <button id="btnCopyReportInfo" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          <a
+            href="https://github.com/n3d06/hide-scrollbar"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn"
+            title="GitHub Repository"
+            data-i18n-title="githubRepoTitle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              ></path>
             </svg>
-            <span id="copyReportInfoText" data-i18n="btnCopySystemInfo">Copy System Info</span>
-          </button>
-          <button id="btnRateExtension" class="btn btn-secondary" title="Rate on Web Store" data-i18n-title="rateExtensionTitle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
-            <span data-i18n="btnRateExtension">Rate extension</span>
-          </button>
+            <span>GitHub</span>
+          </a>
         </div>
-        <div class="privacy-note" data-i18n="aboutPrivacyDesc">ScrollHide does not collect, store, or transmit any browsing data. Everything is 100% offline.</div>
-      </section>
-    </main>
-  </div>
+      </header>
 
-  <script src="shared/i18n.js"></script>
-  <script src="shared/constants.js"></script>
-  <script src="shared/storage.js"></script>
-  <script src="features/whitelist.js"></script>
-  <script src="features/settings.js"></script>
-</body>
+      <main class="settings-content">
+        <!-- Section 1: General Settings -->
+        <section class="section-card">
+          <h2 class="section-title" data-i18n="generalSettingsGroup">General Settings</h2>
 
+          <div class="setting-row">
+            <label class="setting-checkbox-label">
+              <input type="checkbox" id="settingHideScrollbar" />
+              <div>
+                <div class="setting-name" data-i18n="enableHideScrollbar">Enable Scrollbar Hiding</div>
+                <div class="setting-hint" data-i18n="enableHideScrollbarDesc">
+                  Automatically hide scrollbars across all websites unless whitelisted.
+                </div>
+              </div>
+            </label>
+          </div>
+
+          <div class="setting-row setting-flex">
+            <div>
+              <div class="setting-name" data-i18n="themeTitle">Theme</div>
+              <div class="setting-hint" data-i18n="themeDesc">
+                Choose appearance theme: System default, Light, or Dark.
+              </div>
+            </div>
+            <select id="settingTheme" class="select-input">
+              <option value="system" data-i18n="themeSystem">System default</option>
+              <option value="light" data-i18n="themeLight">Light</option>
+              <option value="dark" data-i18n="themeDark">Dark</option>
+            </select>
+          </div>
+
+          <div class="setting-row setting-flex">
+            <div>
+              <div class="setting-name" data-i18n="shortcutsGroup">Keyboard Shortcuts</div>
+              <div class="setting-hint" data-i18n="shortcutsDesc">
+                Quickly trigger ScrollHide features using configurable keyboard shortcuts.
+              </div>
+            </div>
+            <button id="btnConfigureShortcuts" class="btn btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                <line x1="6" y1="8" x2="6" y2="8"></line>
+                <line x1="10" y1="8" x2="10" y2="8"></line>
+                <line x1="14" y1="8" x2="14" y2="8"></line>
+                <line x1="18" y1="8" x2="18" y2="8"></line>
+                <line x1="6" y1="12" x2="6" y2="12"></line>
+                <line x1="10" y1="12" x2="10" y2="12"></line>
+                <line x1="14" y1="12" x2="14" y2="12"></line>
+                <line x1="18" y1="12" x2="18" y2="12"></line>
+                <line x1="7" y1="16" x2="17" y2="16"></line>
+              </svg>
+              <span data-i18n="btnConfigureShortcuts">Configure</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Section 2: Whitelist / Exceptions Editor -->
+        <section class="section-card">
+          <div class="section-header-flex">
+            <div>
+              <h2 class="section-title" data-i18n="tabWhitelist">Whitelist</h2>
+              <div class="setting-hint" data-i18n="whitelistWarning">
+                Sites listed here will keep their original scrollbars (one domain per line). Lines starting with ! or #
+                are comments.
+              </div>
+            </div>
+            <span id="saveIndicator" class="save-indicator"></span>
+          </div>
+
+          <div class="whitelist-toolbar">
+            <button id="btnApplyWhitelist" class="btn btn-primary" disabled>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span data-i18n="btnApply">Apply changes</span>
+            </button>
+
+            <button id="btnRevertWhitelist" class="btn btn-secondary" disabled>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+              </svg>
+              <span data-i18n="btnRevert">Revert</span>
+            </button>
+
+            <button id="btnImportWhitelist" class="btn btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span data-i18n="btnImportAppend">Import and append</span>
+            </button>
+            <input type="file" id="whitelistFileInput" accept=".txt,.json" hidden />
+
+            <button id="btnExportWhitelist" class="btn btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span data-i18n="btnExport">Export</span>
+            </button>
+          </div>
+
+          <div class="whitelist-editor-wrap">
+            <div class="editor-gutter" id="whitelistGutter" aria-hidden="true">1</div>
+            <textarea
+              id="whitelistInput"
+              class="whitelist-textarea"
+              spellcheck="false"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              data-i18n="whitelistPlaceholder"
+              placeholder="! Enter domains here, one per line&#10;example.com&#10;*.youtube.com"
+            ></textarea>
+          </div>
+        </section>
+
+        <!-- Section 3: Statistics & Backup -->
+        <section class="section-card">
+          <h2 class="section-title" data-i18n="statsGroup">Statistics</h2>
+          <div class="setting-row setting-flex">
+            <div>
+              <div class="setting-name" data-i18n="statsCleanedTitle">Cleaned Scrollbars</div>
+              <div class="setting-hint" data-i18n="statsCleanedDesc">
+                Total scrollbars removed by extension across all sessions.
+              </div>
+            </div>
+            <button
+              id="btnResetCleaned"
+              class="stat-badge-btn"
+              title="Click to reset counter"
+              data-i18n-title="resetCounterTitle"
+            >
+              <span id="statCleanedCount" class="stat-count">0</span>
+              <span class="stat-label" data-i18n="btnReset">Reset</span>
+            </button>
+          </div>
+
+          <h2 class="section-title spaced" data-i18n="backupGroup">Backup and Restore</h2>
+          <div class="setting-hint" data-i18n="backupDesc">
+            Export or import your ScrollHide configuration and whitelist domains.
+          </div>
+          <div class="btn-group">
+            <button id="btnExportSettings" class="btn btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span data-i18n="backupExport">Backup to file</span>
+            </button>
+            <button id="btnImportSettings" class="btn btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span data-i18n="backupImport">Restore from file</span>
+            </button>
+            <input type="file" id="settingsFileInput" accept=".json" hidden />
+            <button id="btnResetDefaults" class="btn btn-danger-outline">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+              </svg>
+              <span data-i18n="backupReset">Reset to defaults</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Section 4: Report & Privacy -->
+        <section class="section-card">
+          <h2 class="section-title" data-i18n="tabReport">Report</h2>
+          <div class="setting-hint" data-i18n="reportDesc">
+            Found a website where scrollbars are still visible, or encountered a bug? Submit a report so we can add
+            support and improve compatibility!
+          </div>
+          <div class="btn-group">
+            <a
+              href="https://github.com/n3d06/hide-scrollbar/issues/new"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                <line x1="4" y1="22" x2="4" y2="15"></line>
+              </svg>
+              <span data-i18n="btnReportGitHub">Report on GitHub</span>
+            </a>
+            <button id="btnCopyReportInfo" class="btn btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copyReportInfoText" data-i18n="btnCopySystemInfo">Copy System Info</span>
+            </button>
+            <button
+              id="btnRateExtension"
+              class="btn btn-secondary"
+              title="Rate on Web Store"
+              data-i18n-title="rateExtensionTitle"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                ></polygon>
+              </svg>
+              <span data-i18n="btnRateExtension">Rate extension</span>
+            </button>
+          </div>
+          <div class="privacy-note" data-i18n="aboutPrivacyDesc">
+            ScrollHide does not collect, store, or transmit any browsing data. Everything is 100% offline.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="shared/i18n.js"></script>
+    <script src="shared/constants.js"></script>
+    <script src="shared/storage.js"></script>
+    <script src="features/whitelist.js"></script>
+    <script src="features/settings.js"></script>
+  </body>
 </html>

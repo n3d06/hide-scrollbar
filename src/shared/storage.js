@@ -1,68 +1,21 @@
 (() => {
-  const getDefaultSyncState = () => {
-    const g = globalThis;
-    return g.ScrollHideConstants?.DEFAULT_SYNC_STATE ?? {};
+  // chrome.storage returns Promises in MV3 (Chrome and Firefox). Outside an extension
+  // context, or after the extension was reloaded under an open page (runtime.id is gone),
+  // fall back to the defaults instead of throwing.
+  const hasSyncStorage = () => typeof chrome !== 'undefined' && !!chrome.runtime?.id && !!chrome.storage?.sync;
+
+  const getDefaultSyncState = () => globalThis.ScrollHideConstants?.DEFAULT_SYNC_STATE ?? {};
+
+  const getSyncState = async () => {
+    const defaults = getDefaultSyncState();
+    return hasSyncStorage() ? chrome.storage.sync.get(defaults) : { ...defaults };
   };
 
-  const toPromise = (executor) =>
-    new Promise((resolve, reject) => {
-      try {
-        if (typeof chrome === 'undefined' || !chrome.runtime || !chrome.runtime.id) {
-          resolve({});
-          return;
-        }
-        executor((result) => {
-          if (chrome.runtime && chrome.runtime.lastError) {
-            reject(chrome.runtime.lastError);
-            return;
-          }
-          resolve(result);
-        });
-      } catch (_) {
-        resolve({});
-      }
-    });
+  const setSyncValue = async (value) => {
+    if (hasSyncStorage()) await chrome.storage.sync.set(value);
+  };
 
-  const getSyncState = () =>
-    toPromise((done) => {
-      try {
-        if (typeof chrome !== 'undefined' && chrome.runtime?.id && chrome.storage?.sync) {
-          chrome.storage.sync.get(getDefaultSyncState(), done);
-        } else {
-          done(getDefaultSyncState());
-        }
-      } catch (_) {
-        done(getDefaultSyncState());
-      }
-    });
-
-  const getSyncValue = (defaults) =>
-    toPromise((done) => {
-      try {
-        if (typeof chrome !== 'undefined' && chrome.runtime?.id && chrome.storage?.sync) {
-          chrome.storage.sync.get(defaults, done);
-        } else {
-          done(defaults && typeof defaults === 'object' ? defaults : {});
-        }
-      } catch (_) {
-        done(defaults && typeof defaults === 'object' ? defaults : {});
-      }
-    });
-
-  const setSyncValue = (value) =>
-    toPromise((done) => {
-      try {
-        if (typeof chrome !== 'undefined' && chrome.runtime?.id && chrome.storage?.sync) {
-          chrome.storage.sync.set(value, done);
-        } else {
-          done();
-        }
-      } catch (_) {
-        done();
-      }
-    });
-
-  const applyTheme = (theme, target = document.documentElement) => {
+  const applyTheme = (theme, target = globalThis.document?.documentElement) => {
     if (!target) return;
     if (theme === 'light' || theme === 'dark') {
       target.setAttribute('data-theme', theme);
@@ -73,11 +26,10 @@
 
   const ScrollHideStorage = {
     getSyncState,
-    getSyncValue,
     setSyncValue,
     applyTheme,
   };
 
-  // Global assignment for HTML script tags
+  // Global assignment for the service worker & HTML script tags
   globalThis.ScrollHideStorage = ScrollHideStorage;
 })();

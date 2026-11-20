@@ -6,21 +6,7 @@ if (typeof importScripts === 'function') {
 
 const { getSyncState } = globalThis.ScrollHideStorage;
 const { buildMatcher, isRestrictedUrl, isWhitelisted, whitelistToExcludeMatches } = globalThis.ScrollHideWhitelist;
-const { CSS_FILE, OFF_ATTR, SCRIPT_ID, STYLE_ID } = globalThis.ScrollHideConstants;
-
-const ICONS_ACTIVE = {
-  16: '/assets/icons/icon16.png',
-  32: '/assets/icons/icon32.png',
-  48: '/assets/icons/icon48.png',
-  128: '/assets/icons/icon128.png',
-};
-
-const ICONS_INACTIVE = {
-  16: '/assets/icons/icon16-off.png',
-  32: '/assets/icons/icon32-off.png',
-  48: '/assets/icons/icon48-off.png',
-  128: '/assets/icons/icon128-off.png',
-};
+const { CSS_FILE, ICONS, OFF_ATTR, SCRIPT_ID, STYLE_ID } = globalThis.ScrollHideConstants;
 
 const ignore = () => {};
 
@@ -61,11 +47,11 @@ const setIcon = (details) => chrome.action.setIcon(details).catch(ignore);
 
 const updateTabIcon = (tab, state) => {
   if (tab?.id === undefined || tab.id < 0) return;
-  setIcon({ tabId: tab.id, path: isActiveFor(tab.url, state) ? ICONS_ACTIVE : ICONS_INACTIVE });
+  setIcon({ tabId: tab.id, path: isActiveFor(tab.url, state) ? ICONS.active : ICONS.inactive });
 };
 
 const updateAllIcons = async (state) => {
-  setIcon({ path: state.scrollbarHidden ? ICONS_ACTIVE : ICONS_INACTIVE });
+  setIcon({ path: state.scrollbarHidden ? ICONS.active : ICONS.inactive });
   const tabs = await chrome.tabs.query({});
   tabs.forEach((tab) => updateTabIcon(tab, state));
 };
@@ -143,11 +129,10 @@ const syncOpenTabs = async ({ scrollbarHidden, whitelist }) => {
   );
 };
 
+// The toolbar icon is the only feedback the popup gets, so update it without
+// waiting for the content-script registration to finish
 const applyState = (state) =>
-  enqueue(async () => {
-    await syncRegisteredCss(state);
-    await Promise.all([syncOpenTabs(state), updateAllIcons(state)]);
-  });
+  enqueue(() => Promise.all([updateAllIcons(state), syncRegisteredCss(state).then(() => syncOpenTabs(state))]));
 
 /* ── Statistics ───────────────────────────────────────────── */
 

@@ -22,49 +22,6 @@
     let canWhitelist = false; // only real hostnames (http/https) can be added
     let currentWhitelist = [];
     let currentScrollbarHidden = true;
-    let currentTabId;
-
-    const ICONS_ACTIVE = {
-      16: '/assets/icons/icon16.png',
-      32: '/assets/icons/icon32.png',
-      48: '/assets/icons/icon48.png',
-      128: '/assets/icons/icon128.png',
-    };
-
-    const ICONS_INACTIVE = {
-      16: '/assets/icons/icon16-off.png',
-      32: '/assets/icons/icon32-off.png',
-      48: '/assets/icons/icon48-off.png',
-      128: '/assets/icons/icon128-off.png',
-    };
-
-    const applyImmediateToolbarIcon = (hidden, inWhitelist) => {
-      if (typeof chrome === 'undefined' || !chrome.action?.setIcon) return;
-      const isTabActive = hidden && !inWhitelist && !isRestricted;
-      if (currentTabId !== undefined && currentTabId >= 0) {
-        try {
-          chrome.action.setIcon(
-            {
-              path: isTabActive ? ICONS_ACTIVE : ICONS_INACTIVE,
-              tabId: currentTabId,
-            },
-            () => {
-              void chrome.runtime?.lastError;
-            },
-          );
-        } catch (_) {}
-      }
-      try {
-        chrome.action.setIcon(
-          {
-            path: hidden ? ICONS_ACTIVE : ICONS_INACTIVE,
-          },
-          () => {
-            void chrome.runtime?.lastError;
-          },
-        );
-      } catch (_) {}
-    };
 
     if (applyI18n) {
       applyI18n();
@@ -102,7 +59,7 @@
         statusVal.className = 'status-dot';
         statusVal.textContent = '';
 
-        let statusText = '';
+        let statusText;
         if (isRestricted) {
           statusText = (chrome?.i18n?.getMessage && chrome.i18n.getMessage('statusRestricted')) || 'Restricted';
           statusVal.classList.add('restricted');
@@ -161,7 +118,6 @@
       if (currentWhitelist.includes(domain)) return;
       const newList = [...currentWhitelist, domain].sort();
       currentWhitelist = newList;
-      applyImmediateToolbarIcon(currentScrollbarHidden, true);
       updateNotice(newList, currentScrollbarHidden);
 
       try {
@@ -178,7 +134,6 @@
       const newList = currentWhitelist.filter((item) => !isWhitelisted(host, [item]));
       if (newList.length === currentWhitelist.length) return;
       currentWhitelist = newList;
-      applyImmediateToolbarIcon(currentScrollbarHidden, false);
       updateNotice(newList, currentScrollbarHidden);
 
       try {
@@ -197,8 +152,6 @@
         const hidden = toggle.classList.contains('active');
         toggle.setAttribute('aria-checked', String(hidden));
         currentScrollbarHidden = hidden;
-        const inList = isWhitelisted ? isWhitelisted(currentHostname, currentWhitelist) : false;
-        applyImmediateToolbarIcon(hidden, inList);
         updateStats(currentWhitelist, hidden);
 
         if (setSyncValue) {
@@ -345,8 +298,6 @@
       });
 
     Promise.all([fetchActiveTab(), fetchSyncData(), fetchLocalCount()]).then(([tab, syncData, hideCount]) => {
-      currentTabId = tab?.id;
-
       if (cleanedCnt) {
         cleanedCnt.textContent = hideCount.toLocaleString();
       }
@@ -387,9 +338,6 @@
       if (isRestricted) {
         applyRestrictedState();
       }
-
-      const inList = isWhitelisted ? isWhitelisted(currentHostname, currentWhitelist) : false;
-      applyImmediateToolbarIcon(currentScrollbarHidden, inList);
 
       updateNotice(currentWhitelist, currentScrollbarHidden);
     });

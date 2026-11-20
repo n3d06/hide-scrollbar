@@ -15,6 +15,21 @@
     BACKUP_FILENAME: 'scrollhide-backup.json',
     CSS_FILE: 'assets/styles/hide-scrollbar.css',
     DEFAULT_SYNC_STATE,
+    // Toolbar icons: colored while hiding is active, grey otherwise
+    ICONS: {
+      active: {
+        16: '/assets/icons/icon16.png',
+        32: '/assets/icons/icon32.png',
+        48: '/assets/icons/icon48.png',
+        128: '/assets/icons/icon128.png',
+      },
+      inactive: {
+        16: '/assets/icons/icon16-off.png',
+        32: '/assets/icons/icon32-off.png',
+        48: '/assets/icons/icon48-off.png',
+        128: '/assets/icons/icon128-off.png',
+      },
+    },
     // Pages where the browser blocks all extensions (CSS can't be injected).
     // Chrome has no official list; this follows Chromium source + Firefox's
     // extensions.webextensions.restrictedDomains pref.

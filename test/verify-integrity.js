@@ -67,9 +67,17 @@ allDirs.forEach((lang) => {
   );
   if (lang !== 'en') {
     const untranslated = enKeys.filter(
-      (k) => dict[k] && dict[k].message === en[k].message && !['extName', 'buyMeACoffee'].includes(k) && /[a-z]{4,}/i.test(en[k].message) && en[k].message.includes(' '),
+      (k) =>
+        dict[k] &&
+        dict[k].message === en[k].message &&
+        !['extName', 'buyMeACoffee'].includes(k) &&
+        /[a-z]{4,}/i.test(en[k].message) &&
+        en[k].message.includes(' '),
     );
-    assert(untranslated.length === 0, `No untranslated (English) messages in [${lang}] (Found: ${untranslated.join(', ') || 'none'})`);
+    assert(
+      untranslated.length === 0,
+      `No untranslated (English) messages in [${lang}] (Found: ${untranslated.join(', ') || 'none'})`,
+    );
   }
   const missing = enKeys.filter((k) => !dict[k]);
   assert(missing.length === 0, `All EN keys present in [${lang}] (Missing: ${missing.join(', ') || 'none'})`);
@@ -157,114 +165,26 @@ manifestFiles.forEach((f) => assert(fs.existsSync(path.join(extRoot, f)), `Manif
     });
 });
 
-// 3c. CSS injected via registerContentScripts must exist
+// 3c. CSS injected via registerContentScripts and toolbar icons must exist
 require('../src/shared/constants.js');
+const { CSS_FILE, ICONS } = global.ScrollHideConstants;
+assert(fs.existsSync(path.join(extRoot, CSS_FILE)), `Injected CSS exists: ${CSS_FILE}`);
+Object.entries(ICONS).forEach(([state, sizes]) => {
+  Object.values(sizes).forEach((iconPath) => {
+    assert(fs.existsSync(path.join(extRoot, iconPath)), `Toolbar icon (${state}) exists: ${iconPath}`);
+  });
+});
+
+// 3d. package.json and manifest.json must carry the same version ("2.2" == "2.2.0")
+const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8'));
+const trimVersion = (v) => String(v).replace(/(\.0)+$/, '');
 assert(
-  fs.existsSync(path.join(extRoot, global.ScrollHideConstants.CSS_FILE)),
-  `Injected CSS exists: ${global.ScrollHideConstants.CSS_FILE}`,
+  trimVersion(pkg.version) === trimVersion(manifest.version),
+  `package.json version (${pkg.version}) matches manifest.json (${manifest.version})`,
 );
 
-// 4. Whitelist Service logic
-console.log('\n--- 4. Testing Whitelist & Sanitization logic ---');
-global.globalThis = global;
-require('../src/shared/constants.js');
-require('../src/features/whitelist.js');
-const service = global.ScrollHideWhitelist;
-
-assert(service.sanitizeDomain('https://example.com/path?query=1') === 'example.com', 'Sanitize URL to domain');
-assert(service.sanitizeDomain('! This is a comment') === '', 'Ignore comment starting with !');
-assert(service.sanitizeDomain('# This is a comment') === '', 'Ignore comment starting with #');
-assert(service.sanitizeDomain('   sub.domain.co.uk/   ') === 'sub.domain.co.uk', 'Sanitize subdomain with whitespace');
-assert(service.sanitizeDomain('http://localhost:3000/test') === 'localhost', 'Sanitize localhost with port');
-assert(service.sanitizeDomain('127.0.0.1:8080') === '127.0.0.1', 'Sanitize IP with port');
-assert(service.sanitizeDomain('*.google.com') === '*.google.com', 'Sanitize preserves wildcard prefix *.domain');
-assert(
-  service.sanitizeDomain('https://admin:pass@example.com/test') === 'example.com',
-  'Sanitize strips credentials from URL',
-);
-
-const list = service.normalizeWhitelist([
-  'example.com',
-  '  ! note',
-  '  YOUTUBE.COM  ',
-  'example.com',
-  '# note 2',
-  '*.github.com',
-  'localhost:3000',
-]);
-assert(
-  list.length === 4 &&
-    list.includes('example.com') &&
-    list.includes('youtube.com') &&
-    list.includes('*.github.com') &&
-    list.includes('localhost'),
-  'Normalize whitelist deduplicates, strips comments, ports & wildcards',
-);
-
-assert(service.isWhitelisted('example.com', list) === true, 'isWhitelisted finds domain');
-assert(service.isWhitelisted('www.example.com', list) === true, 'isWhitelisted finds www alias');
-assert(service.isWhitelisted('sub.example.com', list) === false, 'Subdomain is NOT matched without wildcard rule');
-assert(service.isWhitelisted('github.com', list) === true, 'Wildcard matches apex domain');
-assert(service.isWhitelisted('gist.github.com', list) === true, 'isWhitelisted matches subdomain of wildcard domain');
-assert(service.isWhitelisted('localhost', list) === true, 'isWhitelisted finds localhost');
-assert(service.isWhitelisted('localhost:3000', list) === true, 'isWhitelisted matches localhost with port');
-assert(service.isWhitelisted('https://example.com/some/path', list) === true, 'isWhitelisted matches full URL');
-assert(service.isWhitelisted('other.com', list) === false, 'isWhitelisted returns false for non-listed site');
-
-const matchPatterns = service.domainToMatchPatterns('example.com');
-assert(
-  matchPatterns.includes('*://example.com/*') && matchPatterns.includes('*://www.example.com/*'),
-  'domainToMatchPatterns generates exact and www match patterns',
-);
-
-const wildcardPatterns = service.domainToMatchPatterns('*.google.com');
-assert(
-  wildcardPatterns.includes('*://*.google.com/*') && wildcardPatterns.includes('*://google.com/*'),
-  'domainToMatchPatterns generates wildcard and apex match patterns',
-);
-
-assert(service.isWhitelisted('a.b.github.com', list) === true, 'Wildcard matches nested subdomain');
-assert(service.isWhitelisted('notgithub.com', list) === false, 'Wildcard does not match lookalike domain');
-assert(
-  JSON.stringify(service.domainToMatchPatterns('127.0.0.1')) === '["*://127.0.0.1/*"]',
-  'IP address gets no www. pattern',
-);
-assert(service.domainToMatchPatterns('bad host!.com').length === 0, 'Invalid host produces no match pattern');
-assert(service.domainToMatchPatterns('bücher.de').includes('*://xn--bcher-kva.de/*'), 'IDN host converted to punycode');
-const matcher = service.buildMatcher(['*.github.com', 'www.example.com']);
-assert(
-  matcher.exact.includes('example.com') &&
-    matcher.exact.includes('www.example.com') &&
-    matcher.wildcards[0] === 'github.com',
-  'buildMatcher splits exact & wildcard',
-);
-
-const excludeMatches = service.whitelistToExcludeMatches(['example.com', '*.google.com']);
-assert(excludeMatches.length === 4, 'whitelistToExcludeMatches creates full list of exclude matches');
-
-assert(service.isRestrictedUrl('chrome://settings') === true, 'Restricted on chrome://');
-assert(service.isRestrictedUrl('edge://extensions') === true, 'Restricted on edge://');
-assert(service.isRestrictedUrl('about:blank') === true, 'Restricted on about:');
-assert(service.isRestrictedUrl('https://chromewebstore.google.com/detail/x') === true, 'Restricted on Chrome Web Store');
-assert(
-  service.isRestrictedUrl('https://chrome.google.com/webstore/devconsole/') === true,
-  'Restricted on chrome.google.com/webstore (devconsole)',
-);
-assert(service.isRestrictedUrl('https://chrome.google.com/webstore') === true, 'Restricted on chrome.google.com/webstore root');
-assert(service.isRestrictedUrl('https://chrome.google.com/intl/en/chrome/') === false, 'Other chrome.google.com pages NOT restricted');
-assert(service.isRestrictedUrl('https://chrome.google.com/webstorefront') === false, 'Path prefix needs a "/" boundary');
-assert(
-  service.isRestrictedUrl('https://microsoftedge.microsoft.com/addons/detail/x') === true,
-  'Restricted on Edge Add-ons',
-);
-assert(service.isRestrictedUrl('chrome-search://local-ntp/') === true, 'Restricted on chrome-search://');
-assert(service.isRestrictedUrl('https://sync.services.mozilla.com/') === true, 'Restricted on sync.services.mozilla.com');
-assert(service.isRestrictedUrl('https://google.com') === false, 'google.com is NOT restricted');
-assert(service.isRestrictedUrl('moz-extension://abc/popup.html') === true, 'Restricted on moz-extension://');
-assert(service.isRestrictedUrl('https://addons.mozilla.org/firefox/') === true, 'Restricted on addons.mozilla.org');
-
-// 5. Firefox manifest override
-console.log('\n--- 5. Testing Firefox manifest override ---');
+// 4. Firefox manifest override
+console.log('\n--- 4. Testing Firefox manifest override ---');
 const ffPath = path.join(extRoot, 'manifest.firefox.json');
 assert(fs.existsSync(ffPath), 'src/manifest.firefox.json exists');
 const ff = JSON.parse(fs.readFileSync(ffPath, 'utf8'));

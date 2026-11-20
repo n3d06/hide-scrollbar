@@ -1,0 +1,8 @@
+dist/
+node_modules/
+package-lock.json
+docs/store/
+# Translations keep their 4-space style; prose is not auto-formatted
+src/_locales/
+*.md
+.vscode/

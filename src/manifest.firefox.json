@@ -1,11 +1,6 @@
 {
   "background": {
-    "scripts": [
-      "shared/constants.js",
-      "shared/storage.js",
-      "features/whitelist.js",
-      "entries/background.js"
-    ]
+    "scripts": ["shared/constants.js", "shared/storage.js", "features/whitelist.js", "entries/background.js"]
   },
   "browser_specific_settings": {
     "gecko": {

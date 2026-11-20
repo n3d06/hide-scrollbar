@@ -10,14 +10,8 @@
     "48": "assets/icons/icon48.png",
     "128": "assets/icons/icon128.png"
   },
-  "permissions": [
-    "storage",
-    "tabs",
-    "scripting"
-  ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
