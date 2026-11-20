@@ -4,8 +4,8 @@ if (typeof importScripts === 'function') {
   importScripts('/shared/constants.js', '/shared/storage.js', '/features/whitelist.js');
 }
 
-const { getSyncState } = globalThis.ScrollHideStorage;
-const { buildMatcher, isRestrictedUrl, isWhitelisted, whitelistToExcludeMatches } = globalThis.ScrollHideWhitelist;
+const { getHideCount, getSyncState, normalizeSyncState, setHideCount } = globalThis.ScrollHideStorage;
+const { buildMatcher, isRestrictedUrl, shouldHideOn, whitelistToExcludeMatches } = globalThis.ScrollHideWhitelist;
 const { CSS_FILE, ICONS, OFF_ATTR, SCRIPT_ID, STYLE_ID } = globalThis.ScrollHideConstants;
 
 const ignore = () => {};
@@ -13,26 +13,10 @@ const ignore = () => {};
 /* ── State ────────────────────────────────────────────────── */
 
 // In-memory cache for the service worker lifetime
+/** @type {SyncState | null} */
 let cachedState = null;
 
-const getState = async () => {
-  if (cachedState) return cachedState;
-  const state = await getSyncState();
-  cachedState = {
-    scrollbarHidden: state.scrollbarHidden !== false,
-    whitelist: Array.isArray(state.whitelist) ? state.whitelist : [],
-  };
-  return cachedState;
-};
-
-const isActiveFor = (url, { scrollbarHidden, whitelist }) => {
-  if (!scrollbarHidden || !url || isRestrictedUrl(url)) return false;
-  try {
-    return !isWhitelisted(new URL(url).hostname, whitelist);
-  } catch (_) {
-    return false;
-  }
-};
+const getState = async () => (cachedState ??= await getSyncState());
 
 // Run async jobs one after another (avoids register/unregister races on fast toggles)
 let queue = Promise.resolve();
@@ -47,7 +31,7 @@ const setIcon = (details) => chrome.action.setIcon(details).catch(ignore);
 
 const updateTabIcon = (tab, state) => {
   if (tab?.id === undefined || tab.id < 0) return;
-  setIcon({ tabId: tab.id, path: isActiveFor(tab.url, state) ? ICONS.active : ICONS.inactive });
+  setIcon({ tabId: tab.id, path: shouldHideOn(tab.url, state) ? ICONS.active : ICONS.inactive });
 };
 
 const updateAllIcons = async (state) => {
@@ -69,7 +53,7 @@ const syncRegisteredCss = async ({ scrollbarHidden, whitelist }) => {
   const excludeMatches = whitelistToExcludeMatches(whitelist);
   if (existing) {
     // Atomic update: no window where new pages load without the stylesheet
-    await chrome.scripting.updateContentScripts([{ id: SCRIPT_ID, excludeMatches }]);
+    await chrome.scripting.updateContentScripts([{ id: SCRIPT_ID, css: [CSS_FILE], excludeMatches }]);
     return;
   }
 
@@ -138,8 +122,7 @@ const applyState = (state) =>
 
 const incrementHideCount = () =>
   enqueue(async () => {
-    const { hideCount = 0 } = await chrome.storage.local.get({ hideCount: 0 });
-    await chrome.storage.local.set({ hideCount: hideCount + 1 });
+    await setHideCount((await getHideCount()) + 1);
   });
 
 /* ── Events ───────────────────────────────────────────────── */
@@ -165,7 +148,7 @@ chrome.tabs.onUpdated.addListener(async (_tabId, info, tab) => {
   if (info.url || info.status === 'loading') {
     updateTabIcon(tab, state);
   }
-  if (info.status === 'complete' && isActiveFor(tab.url, state)) {
+  if (info.status === 'complete' && shouldHideOn(tab.url, state)) {
     incrementHideCount();
   }
 });
@@ -180,14 +163,9 @@ chrome.tabs.onActivated.addListener(async ({ tabId }) => {
 chrome.storage.onChanged.addListener(async (changes, namespace) => {
   if (namespace !== 'sync' || (!changes.scrollbarHidden && !changes.whitelist)) return;
   const state = { ...(await getState()) };
-  if (changes.scrollbarHidden) {
-    state.scrollbarHidden = changes.scrollbarHidden.newValue !== false;
-  }
-  if (changes.whitelist) {
-    state.whitelist = Array.isArray(changes.whitelist.newValue) ? changes.whitelist.newValue : [];
-  }
-  cachedState = state;
-  applyState(state);
+  for (const [key, { newValue }] of Object.entries(changes)) state[key] = newValue;
+  cachedState = normalizeSyncState(state);
+  applyState(cachedState);
 });
 
 /* ── Keyboard shortcut ────────────────────────────────────── */

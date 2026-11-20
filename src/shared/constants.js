@@ -1,14 +1,12 @@
 (() => {
-  const STORAGE_KEYS = {
-    scrollbarHidden: 'scrollbarHidden',
-    whitelist: 'whitelist',
-    theme: 'theme',
-  };
+  /** @type {Theme[]} */
+  const THEMES = ['system', 'light', 'dark'];
 
+  /** @type {SyncState} */
   const DEFAULT_SYNC_STATE = {
-    [STORAGE_KEYS.scrollbarHidden]: true,
-    [STORAGE_KEYS.whitelist]: [],
-    [STORAGE_KEYS.theme]: 'system',
+    scrollbarHidden: true,
+    whitelist: [],
+    theme: 'system',
   };
 
   const ScrollHideConstants = {
@@ -64,7 +62,7 @@
     ],
     // host + path prefix, for stores that live under a shared domain
     RESTRICTED_PATHS: ['chrome.google.com/webstore', 'microsoftedge.microsoft.com/addons'],
-    STORAGE_KEYS,
+    THEMES,
     OFF_ATTR: 'data-scrollhide-off',
     SCRIPT_ID: 'scrollhide-css',
     STYLE_ID: 'hide-scrollbar-style', // legacy <style> id (before 2.2), removed on update

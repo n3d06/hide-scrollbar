@@ -65,7 +65,8 @@ body {
 }
 
 .segmented:disabled {
-  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 .domain-display {
@@ -141,6 +142,11 @@ body {
 .restricted-notice {
   color: var(--danger);
   background: color-mix(in srgb, var(--danger) 10%, var(--bg));
+}
+
+.whitelisted-notice.visible,
+.restricted-notice.visible {
+  display: flex;
 }
 
 /* Shown when the browser hasn't granted access to all sites (Firefox, or Chrome "on click") */

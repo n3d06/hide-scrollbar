@@ -147,6 +147,19 @@ function checkHtmlFile(relPath) {
 checkHtmlFile('popup.html');
 checkHtmlFile('options.html');
 
+// 3a. Page scripts look up elements without null checks, so every id they use must exist
+[
+  ['features/popup.js', 'popup.html'],
+  ['features/settings.js', 'options.html'],
+].forEach(([script, page]) => {
+  const code = fs.readFileSync(path.join(extRoot, script), 'utf8');
+  const html = fs.readFileSync(path.join(extRoot, page), 'utf8');
+  const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]));
+  for (const m of code.matchAll(/(?:\$|getElementById)\(\s*'([^']+)'/g)) {
+    assert(ids.has(m[1]), `${script} uses #${m[1]}, which exists in ${page}`);
+  }
+});
+
 // 3b. Verify files referenced by manifest
 const manifestFiles = [
   manifest.background.service_worker,

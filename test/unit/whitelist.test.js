@@ -6,12 +6,15 @@ require('../../src/features/whitelist.js');
 
 const {
   buildMatcher,
+  describeUrl,
   domainToMatchPatterns,
   isRestrictedUrl,
   isWhitelisted,
   normalizeWhitelist,
+  parseWhitelistFile,
   sanitizeDomain,
   serializeDomains,
+  shouldHideOn,
   whitelistToExcludeMatches,
 } = globalThis.ScrollHideWhitelist;
 
@@ -26,6 +29,9 @@ describe('sanitizeDomain', () => {
     ['example.com#frag', 'example.com', 'strips fragment'],
     ['*.google.com', '*.google.com', 'keeps a *. wildcard'],
     ['*google.com', '*.google.com', 'normalizes a bare * wildcard'],
+    ['https://*.google.com/x', '*.google.com', 'keeps a wildcard after a scheme'],
+    ['example.com/login@other', 'example.com', 'an @ in the path is not a credential'],
+    ['git+ssh://example.com', 'example.com', 'scheme with + and digits'],
     ['! This is a comment', '', 'ignores ! comments'],
     ['# This is a comment', '', 'ignores # comments'],
     ['', '', 'empty string'],
@@ -194,5 +200,84 @@ describe('isRestrictedUrl', () => {
     assert.equal(isRestrictedUrl(''), true);
     assert.equal(isRestrictedUrl(undefined), true);
     assert.equal(isRestrictedUrl('not a url'), true);
+  });
+});
+
+describe('shouldHideOn', () => {
+  const on = { scrollbarHidden: true, whitelist: ['example.com'] };
+
+  test('hides on a normal page', () => assert.equal(shouldHideOn('https://other.com/', on), true));
+  test('not when hiding is off', () =>
+    assert.equal(shouldHideOn('https://other.com/', { ...on, scrollbarHidden: false }), false));
+  test('not on a whitelisted page', () => assert.equal(shouldHideOn('https://www.example.com/a', on), false));
+  test('not on a restricted page', () => assert.equal(shouldHideOn('chrome://settings', on), false));
+  test('not without a URL', () => assert.equal(shouldHideOn(undefined, on), false));
+});
+
+describe('describeUrl', () => {
+  test('web page: hostname, can be whitelisted', () => {
+    assert.deepEqual(describeUrl('https://www.example.com/a?b'), {
+      label: 'www.example.com',
+      host: 'www.example.com',
+      restricted: false,
+    });
+  });
+
+  test('browser page: scheme and host, restricted', () => {
+    assert.deepEqual(describeUrl('chrome://settings/privacy'), {
+      label: 'chrome://settings',
+      host: '',
+      restricted: true,
+    });
+  });
+
+  test('about: page keeps the full URL', () => {
+    assert.equal(describeUrl('about:blank').label, 'about:blank');
+  });
+
+  test('local file shows the file name only, cannot be whitelisted', () => {
+    assert.deepEqual(describeUrl('file:///home/me/secret/report.html'), {
+      label: 'file://.../report.html',
+      host: '',
+      restricted: false,
+    });
+    assert.equal(describeUrl('file:///').label, 'file://local-file');
+  });
+
+  test('store page has a host but is restricted', () => {
+    const page = describeUrl('https://chromewebstore.google.com/detail/x');
+    assert.equal(page.restricted, true);
+  });
+
+  test('no URL (tab without permission or new tab)', () => {
+    assert.deepEqual(describeUrl(''), { label: '', host: '', restricted: true });
+    assert.deepEqual(describeUrl(undefined), { label: '', host: '', restricted: true });
+  });
+});
+
+describe('parseWhitelistFile', () => {
+  test('plain text, one domain per line', () => {
+    assert.deepEqual(parseWhitelistFile('a.com\n\n  b.com  \r\n'), ['a.com', 'b.com']);
+  });
+
+  test('JSON array', () => {
+    assert.deepEqual(parseWhitelistFile('["a.com", "b.com"]'), ['a.com', 'b.com']);
+  });
+
+  test('settings backup object', () => {
+    assert.deepEqual(parseWhitelistFile('{"scrollbarHidden": true, "whitelist": ["a.com"]}'), ['a.com']);
+  });
+
+  test('JSON object without a whitelist is rejected', () => {
+    assert.equal(parseWhitelistFile('{"foo": 1}'), null);
+  });
+
+  test('text that only looks like JSON is read as lines', () => {
+    assert.deepEqual(parseWhitelistFile('[comment\na.com'), ['[comment', 'a.com']);
+  });
+
+  test('empty file gives no lines', () => {
+    assert.deepEqual(parseWhitelistFile(''), []);
+    assert.deepEqual(parseWhitelistFile('   \n  '), []);
   });
 });

@@ -1,20 +1,21 @@
 (() => {
   // Lists live in shared/constants.js, which every context loads first
-  const getConstants = () => globalThis.ScrollHideConstants || {};
+  const getConstants = () => globalThis.ScrollHideConstants;
 
   const sanitizeDomain = (raw) => {
-    let str = String(raw || '')
+    let str = String(raw ?? '')
       .trim()
       .toLowerCase();
     if (!str || str.startsWith('!') || str.startsWith('#')) return '';
 
-    const hasWildcard = str.startsWith('*.') || str.startsWith('*');
     str = str
-      .replace(/^[a-zA-Z]+:\/\//, '')
-      .replace(/^.*@/, '')
-      .replace(/[/?#].*$/, '')
-      .replace(/:\d+$/, '');
+      .replace(/^[a-z][a-z0-9+.-]*:\/\//, '') // scheme
+      .replace(/[/?#].*$/, '') // path, query, fragment
+      .replace(/^.*@/, '') // credentials
+      .replace(/:\d+$/, ''); // port
 
+    // Checked after the scheme is gone so "https://*.example.com" keeps its wildcard
+    const hasWildcard = str.startsWith('*');
     str = str.replace(/^\*+\.?/, '');
     if (!str) return '';
     return hasWildcard ? `*.${str}` : str;
@@ -94,7 +95,9 @@
   const matchHost = (host, exact, wildcards) =>
     exact.includes(host) || wildcards.some((apex) => host.endsWith(`.${apex}`));
 
+  /** @type {string[] | null} */
   let cachedWhitelist = null;
+  /** @type {{ exact: string[], wildcards: string[] }} */
   let cachedMatcher = { exact: [], wildcards: [] };
 
   /**
@@ -132,17 +135,76 @@
     }
   };
 
+  /** Whether the stylesheet should be active on `url` for the given sync state. */
+  const shouldHideOn = (url, { scrollbarHidden, whitelist }) => {
+    if (!scrollbarHidden || isRestrictedUrl(url)) return false;
+    try {
+      return !isWhitelisted(new URL(url).hostname, whitelist);
+    } catch (_) {
+      return false;
+    }
+  };
+
+  /**
+   * What the popup shows for a tab URL.
+   * `host` is set only for pages that can go on the whitelist (http, https, ...).
+   */
+  const describeUrl = (url) => {
+    const restricted = isRestrictedUrl(url);
+    let parsed;
+    try {
+      parsed = new URL(url);
+    } catch (_) {
+      return { label: '', host: '', restricted };
+    }
+
+    const { RESTRICTED_PROTOCOLS = [] } = getConstants();
+    if (parsed.protocol === 'about:') return { label: parsed.href, host: '', restricted };
+    if (parsed.protocol === 'file:') {
+      const fileName = parsed.pathname.split('/').filter(Boolean).pop();
+      return { label: fileName ? `file://.../${fileName}` : 'file://local-file', host: '', restricted };
+    }
+    if (RESTRICTED_PROTOCOLS.includes(parsed.protocol)) {
+      return { label: `${parsed.protocol}//${parsed.hostname}`, host: '', restricted };
+    }
+    return { label: parsed.hostname, host: parsed.hostname, restricted };
+  };
+
+  /**
+   * Lines from an imported whitelist file: plain text (one domain per line),
+   * a JSON array, or a JSON object with a "whitelist" array (a settings backup).
+   * Returns null for JSON that has neither shape.
+   */
+  const parseWhitelistFile = (text) => {
+    const trimmed = String(text ?? '').trim();
+    let lines = trimmed.split('\n');
+    if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
+      try {
+        const parsed = JSON.parse(trimmed);
+        if (Array.isArray(parsed)) lines = parsed;
+        else if (Array.isArray(parsed?.whitelist)) lines = parsed.whitelist;
+        else return null;
+      } catch (_) {
+        // Not JSON after all: treat as plain text
+      }
+    }
+    return lines.map((line) => String(line).trim()).filter(Boolean);
+  };
+
   const ScrollHideWhitelist = {
     buildMatcher,
+    describeUrl,
     domainToMatchPatterns,
     isRestrictedUrl,
     isWhitelisted,
     normalizeWhitelist,
+    parseWhitelistFile,
     sanitizeDomain,
     serializeDomains,
+    shouldHideOn,
     whitelistToExcludeMatches,
   };
 
-  // Global assignment for HTML script tags
+  // Global assignment for the service worker & HTML script tags
   globalThis.ScrollHideWhitelist = ScrollHideWhitelist;
 })();
