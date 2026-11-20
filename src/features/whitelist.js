@@ -71,20 +71,30 @@
     return [...patterns].sort();
   };
 
+  // Browsers report hostnames in ASCII (punycode), so compare in that form: "bücher.de" -> "xn--bcher-kva.de"
+  const toAsciiHost = (host) => {
+    try {
+      return new URL(`http://${host}`).hostname;
+    } catch (_) {
+      return host;
+    }
+  };
+
   /**
-   * Split a whitelist into exact hosts and wildcard apexes.
+   * Split a whitelist into exact hosts and wildcard apexes, in ASCII form.
    * Plain serializable data, so it can be passed to scripting.executeScript.
+   * @returns {{ exact: string[], wildcards: string[] }}
    */
   const buildMatcher = (whitelist) => {
     const exact = new Set();
     const wildcards = [];
     for (const item of normalizeWhitelist(whitelist)) {
       if (item.startsWith('*.')) {
-        const apex = item.slice(2);
+        const apex = toAsciiHost(item.slice(2));
         exact.add(apex);
         wildcards.push(apex);
       } else {
-        const base = item.startsWith('www.') ? item.slice(4) : item;
+        const base = toAsciiHost(item.startsWith('www.') ? item.slice(4) : item);
         exact.add(base);
         exact.add(`www.${base}`);
       }
@@ -92,6 +102,7 @@
     return { exact: [...exact], wildcards };
   };
 
+  // Keep in sync with the copy inside applyInFrame (tests check they agree)
   const matchHost = (host, exact, wildcards) =>
     exact.includes(host) || wildcards.some((apex) => host.endsWith(`.${apex}`));
 
@@ -111,7 +122,7 @@
         host = new URL(host).hostname;
       } catch (_) {}
     }
-    host = host.replace(/:\d+$/, '');
+    host = toAsciiHost(host.replace(/:\d+$/, ''));
     if (!host) return false;
 
     if (whitelist !== cachedWhitelist) {
@@ -134,6 +145,29 @@
       return true;
     }
   };
+
+  /**
+   * Runs inside every frame of an open tab (scripting.executeScript), so it must be
+   * self-contained: no outside variables, only its arguments and the page's globals.
+   * Turns hiding on or off for this frame by its own hostname (an embedded frame follows
+   * its own whitelist rule) and returns true if the frame should hide but lacks the
+   * stylesheet: it was loaded while hiding was off, or while its site was whitelisted.
+   * @param {boolean} hidden global on/off
+   * @param {{ exact: string[], wildcards: string[] }} matcher from buildMatcher
+   * @param {{ offAttr: string, marker: string, legacyStyleId: string }} names
+   */
+  function applyInFrame(hidden, matcher, names) {
+    const root = document.documentElement;
+    if (!root) return false;
+    const host = location.hostname;
+    const whitelisted =
+      !!host && (matcher.exact.includes(host) || matcher.wildcards.some((apex) => host.endsWith(`.${apex}`)));
+    const hide = hidden && !whitelisted;
+    root.toggleAttribute(names.offAttr, !hide);
+    // Clean up the <style> injected by versions before 2.2
+    document.getElementById(names.legacyStyleId)?.remove();
+    return hide && !getComputedStyle(root).getPropertyValue(names.marker);
+  }
 
   /** Whether the stylesheet should be active on `url` for the given sync state. */
   const shouldHideOn = (url, { scrollbarHidden, whitelist }) => {
@@ -192,6 +226,7 @@
   };
 
   const ScrollHideWhitelist = {
+    applyInFrame,
     buildMatcher,
     describeUrl,
     domainToMatchPatterns,

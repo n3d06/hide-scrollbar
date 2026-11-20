@@ -36,6 +36,11 @@ interface PageInfo {
 }
 
 interface ScrollHideWhitelistApi {
+  applyInFrame(
+    hidden: boolean,
+    matcher: { exact: string[]; wildcards: string[] },
+    names: { offAttr: string; marker: string; legacyStyleId: string },
+  ): boolean;
   buildMatcher(whitelist: string[]): { exact: string[]; wildcards: string[] };
   describeUrl(url: string | undefined): PageInfo;
   domainToMatchPatterns(domain: string): string[];

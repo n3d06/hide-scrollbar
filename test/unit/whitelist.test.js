@@ -1,10 +1,13 @@
 const { describe, test } = require('node:test');
 const assert = require('node:assert/strict');
+const vm = require('node:vm');
+const { frameGlobals } = require('../helpers/fake-browser.js');
 
 require('../../src/shared/constants.js');
 require('../../src/features/whitelist.js');
 
 const {
+  applyInFrame,
   buildMatcher,
   describeUrl,
   domainToMatchPatterns,
@@ -279,5 +282,102 @@ describe('parseWhitelistFile', () => {
   test('empty file gives no lines', () => {
     assert.deepEqual(parseWhitelistFile(''), []);
     assert.deepEqual(parseWhitelistFile('   \n  '), []);
+  });
+});
+
+describe('internationalized domains (IDN)', () => {
+  // Browsers report hostnames in punycode; users type the Unicode form
+  test('a Unicode rule matches the punycode hostname', () => {
+    assert.equal(isWhitelisted('xn--bcher-kva.de', ['bücher.de']), true);
+    assert.equal(isWhitelisted('www.xn--bcher-kva.de', ['bücher.de']), true);
+    assert.equal(isWhitelisted('shop.xn--bcher-kva.de', ['*.bücher.de']), true);
+  });
+
+  test('a Unicode host matches too', () => {
+    assert.equal(isWhitelisted('bücher.de', ['bücher.de']), true);
+    assert.equal(isWhitelisted('https://bücher.de/x', ['xn--bcher-kva.de']), true);
+  });
+
+  test('buildMatcher stores ASCII hosts (what executeScript frames compare against)', () => {
+    assert.deepEqual(buildMatcher(['*.bücher.de']), { exact: ['xn--bcher-kva.de'], wildcards: ['xn--bcher-kva.de'] });
+  });
+
+  test('popup, open tabs and new page loads agree', () => {
+    const url = 'https://xn--bcher-kva.de/';
+    const state = { scrollbarHidden: true, whitelist: ['bücher.de'] };
+    assert.equal(shouldHideOn(url, state), false);
+    assert.ok(whitelistToExcludeMatches(state.whitelist).includes('*://xn--bcher-kva.de/*'));
+  });
+});
+
+describe('applyInFrame', () => {
+  const NAMES = { offAttr: 'data-scrollhide-off', marker: '--scrollhide-css', legacyStyleId: 'hide-scrollbar-style' };
+
+  // Compile the function on its own in an empty context, as executeScript does:
+  // any reference to an outside variable fails with a ReferenceError.
+  const runInFrame = (frame, hidden, whitelist) => {
+    const context = vm.createContext(frameGlobals(frame, NAMES));
+    const isolated = vm.runInContext(`(${applyInFrame})`, context);
+    return isolated(hidden, buildMatcher(whitelist), NAMES);
+  };
+  const newFrame = (hostname, hasCss = true) => ({ hostname, hasCss, off: false });
+
+  test('is self-contained', () => {
+    assert.doesNotThrow(() => runInFrame(newFrame('a.com'), true, ['*.b.com']));
+  });
+
+  test('turns hiding on or off by the frame host', () => {
+    const shown = newFrame('a.com');
+    runInFrame(shown, true, ['a.com']);
+    assert.equal(shown.off, true);
+    const hidden = newFrame('b.com');
+    runInFrame(hidden, true, ['a.com']);
+    assert.equal(hidden.off, false);
+    const globalOff = newFrame('b.com');
+    runInFrame(globalOff, false, []);
+    assert.equal(globalOff.off, true);
+  });
+
+  test('asks for the stylesheet only when it should hide and the marker is missing', () => {
+    assert.equal(runInFrame(newFrame('a.com', false), true, []), true);
+    assert.equal(runInFrame(newFrame('a.com', true), true, []), false);
+    assert.equal(runInFrame(newFrame('a.com', false), false, []), false);
+    assert.equal(runInFrame(newFrame('a.com', false), true, ['a.com']), false);
+  });
+
+  test('frames without a document element are left alone', () => {
+    const context = vm.createContext({ document: { documentElement: null } });
+    assert.equal(vm.runInContext(`(${applyInFrame})`, context)(true, buildMatcher([]), NAMES), false);
+  });
+
+  // The frame code carries its own copy of the matching rule; it must never drift from isWhitelisted
+  test('agrees with isWhitelisted on every host', () => {
+    const whitelist = ['example.com', 'www.site.org', '*.github.com', 'localhost', '10.0.0.1', 'bücher.de', '*.co.uk'];
+    const hosts = [
+      'example.com',
+      'www.example.com',
+      'sub.example.com',
+      'example.com.evil.org',
+      'notexample.com',
+      'site.org',
+      'www.site.org',
+      'github.com',
+      'gist.github.com',
+      'a.b.github.com',
+      'notgithub.com',
+      'localhost',
+      '10.0.0.1',
+      '10.0.0.10',
+      'xn--bcher-kva.de',
+      'www.xn--bcher-kva.de',
+      'bbc.co.uk',
+      'co.uk',
+      '',
+    ];
+    for (const host of hosts) {
+      const frame = newFrame(host);
+      runInFrame(frame, true, whitelist);
+      assert.equal(frame.off, isWhitelisted(host, whitelist), `host "${host}"`);
+    }
   });
 });

@@ -5,7 +5,8 @@ if (typeof importScripts === 'function') {
 }
 
 const { getHideCount, getSyncState, normalizeSyncState, setHideCount } = globalThis.ScrollHideStorage;
-const { buildMatcher, isRestrictedUrl, shouldHideOn, whitelistToExcludeMatches } = globalThis.ScrollHideWhitelist;
+const { applyInFrame, buildMatcher, isRestrictedUrl, shouldHideOn, whitelistToExcludeMatches } =
+  globalThis.ScrollHideWhitelist;
 const { CSS_FILE, CSS_MARKER, ICONS, OFF_ATTR, SCRIPT_ID, STYLE_ID } = globalThis.ScrollHideConstants;
 
 const ignore = () => {};
@@ -27,16 +28,61 @@ const enqueue = (job) => {
 
 /* ── Toolbar icon ─────────────────────────────────────────── */
 
-const setIcon = (details) => chrome.action.setIcon(details).catch(ignore);
-
-const updateTabIcon = (tab, state) => {
-  if (tab?.id === undefined || tab.id < 0) return;
-  setIcon({ tabId: tab.id, path: shouldHideOn(tab.url, state) ? ICONS.active : ICONS.inactive });
+// setIcon({ path }) makes the browser fetch and decode every PNG on every call. Decode the
+// two icon sets once and pass the pixels instead; fall back to paths if decoding fails.
+const decodeIconSet = async (paths) => {
+  const entries = await Promise.all(
+    Object.entries(paths).map(async ([size, path]) => {
+      const blob = await (await fetch(chrome.runtime.getURL(path))).blob();
+      const bitmap = await createImageBitmap(blob);
+      const context = new OffscreenCanvas(bitmap.width, bitmap.height).getContext('2d');
+      if (!context) throw new Error('No 2D canvas');
+      context.drawImage(bitmap, 0, 0);
+      return [size, context.getImageData(0, 0, bitmap.width, bitmap.height)];
+    }),
+  );
+  return Object.fromEntries(entries);
 };
 
-const updateAllIcons = async (state) => {
-  setIcon({ path: state.scrollbarHidden ? ICONS.active : ICONS.inactive });
-  const tabs = await chrome.tabs.query({});
+/** @type {Promise<{ active: Record<string, ImageData>, inactive: Record<string, ImageData> } | null> | null} */
+let decodedIcons = null;
+
+const iconDetails = async (active) => {
+  decodedIcons ??= Promise.all([decodeIconSet(ICONS.active), decodeIconSet(ICONS.inactive)])
+    .then(([activeSet, inactiveSet]) => ({ active: activeSet, inactive: inactiveSet }))
+    .catch(() => null);
+  const icons = await decodedIcons;
+  if (icons) return { imageData: active ? icons.active : icons.inactive };
+  return { path: active ? ICONS.active : ICONS.inactive };
+};
+
+// Icon last set per tab (and for the default), so unchanged tabs are skipped.
+// Lost when the service worker stops; the next update then simply sets every tab again.
+/** @type {Map<number, boolean>} */
+const tabIcons = new Map();
+/** @type {boolean | null} */
+let defaultIcon = null;
+
+const setTabIcon = async (tabId, active, { force = false } = {}) => {
+  if (!force && tabIcons.get(tabId) === active) return;
+  tabIcons.set(tabId, active); // before the await, so overlapping calls don't repeat it
+  try {
+    await chrome.action.setIcon({ tabId, ...(await iconDetails(active)) });
+  } catch (_) {
+    tabIcons.delete(tabId); // tab closed meanwhile
+  }
+};
+
+const updateTabIcon = (tab, state, options) => {
+  if (tab?.id === undefined || tab.id < 0) return;
+  setTabIcon(tab.id, shouldHideOn(tab.url, state), options);
+};
+
+const updateAllIcons = async (state, tabs) => {
+  if (defaultIcon !== state.scrollbarHidden) {
+    defaultIcon = state.scrollbarHidden;
+    await chrome.action.setIcon(await iconDetails(state.scrollbarHidden)).catch(ignore);
+  }
   tabs.forEach((tab) => updateTabIcon(tab, state));
 };
 
@@ -72,27 +118,12 @@ const syncRegisteredCss = async ({ scrollbarHidden, whitelist }) => {
 
 /* ── Already-open tabs (no reload needed) ─────────────────── */
 
-// Runs inside every frame. Must be self-contained: executeScript serializes it.
-// Turns hiding on or off for this frame (by its own hostname, so embedded frames follow
-// their own whitelist rule) and returns true if the frame should hide but has no stylesheet:
-// it was loaded while hiding was off, or while its site was on the whitelist.
-function applyInFrame(hidden, exact, wildcards, offAttr, marker, legacyStyleId) {
-  const root = document.documentElement;
-  if (!root) return false;
-  const host = location.hostname;
-  const whitelisted = !!host && (exact.includes(host) || wildcards.some((apex) => host.endsWith(`.${apex}`)));
-  const hide = hidden && !whitelisted;
-  root.toggleAttribute(offAttr, !hide);
-  // Clean up the <style> injected by versions before 2.2
-  document.getElementById(legacyStyleId)?.remove();
-  return hide && !getComputedStyle(root).getPropertyValue(marker);
-}
+const FRAME_NAMES = { offAttr: OFF_ATTR, marker: CSS_MARKER, legacyStyleId: STYLE_ID };
 
 // Brings already-open tabs in line with the state, without a reload. The stylesheet is
 // inserted only into frames that lack it, so pages that already have it are not restyled.
-const syncOpenTabs = async ({ scrollbarHidden, whitelist }) => {
-  const { exact, wildcards } = buildMatcher(whitelist);
-  const tabs = await chrome.tabs.query({});
+const syncOpenTabs = async ({ scrollbarHidden, whitelist }, tabs) => {
+  const matcher = buildMatcher(whitelist);
 
   await Promise.all(
     tabs.map(async (tab) => {
@@ -101,7 +132,7 @@ const syncOpenTabs = async ({ scrollbarHidden, whitelist }) => {
         const results = await chrome.scripting.executeScript({
           target: { tabId: tab.id, allFrames: true },
           func: applyInFrame,
-          args: [scrollbarHidden, exact, wildcards, OFF_ATTR, CSS_MARKER, STYLE_ID],
+          args: [scrollbarHidden, matcher, FRAME_NAMES],
         });
         const frameIds = results.filter((r) => r.result === true).map((r) => r.frameId);
         if (frameIds.length) {
@@ -115,7 +146,10 @@ const syncOpenTabs = async ({ scrollbarHidden, whitelist }) => {
 };
 
 const applyState = (state) =>
-  enqueue(() => Promise.all([updateAllIcons(state), syncRegisteredCss(state).then(() => syncOpenTabs(state))]));
+  enqueue(async () => {
+    const tabs = await chrome.tabs.query({});
+    await Promise.all([updateAllIcons(state, tabs), syncRegisteredCss(state).then(() => syncOpenTabs(state, tabs))]);
+  });
 
 /* ── Statistics ───────────────────────────────────────────── */
 
@@ -133,7 +167,7 @@ chrome.runtime.onInstalled.addListener(async () => {
 chrome.runtime.onStartup.addListener(async () => {
   const state = await getState();
   enqueue(() => syncRegisteredCss(state));
-  updateAllIcons(state).catch(ignore);
+  updateAllIcons(state, await chrome.tabs.query({})).catch(ignore);
 });
 
 // Firefox lets users revoke site access; re-apply once it is granted again
@@ -145,11 +179,16 @@ chrome.tabs.onUpdated.addListener(async (_tabId, info, tab) => {
   if (!info.url && !info.status) return;
   const state = await getState();
   if (info.url || info.status === 'loading') {
-    updateTabIcon(tab, state);
+    // Firefox resets a tab's icon when it navigates, so don't trust what was set before
+    updateTabIcon(tab, state, { force: true });
   }
   if (info.status === 'complete' && shouldHideOn(tab.url, state)) {
     incrementHideCount();
   }
+});
+
+chrome.tabs.onRemoved.addListener((tabId) => {
+  tabIcons.delete(tabId);
 });
 
 chrome.tabs.onActivated.addListener(async ({ tabId }) => {
