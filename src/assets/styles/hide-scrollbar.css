@@ -4,6 +4,11 @@
  * off in already-open tabs without a reload (CSS from a content script cannot be removed).
  */
 
+/* Marker: lets the background tell which frames already have this stylesheet (keep in sync with CSS_MARKER) */
+:root {
+  --scrollhide-css: 1;
+}
+
 /* Standard property (Chrome 121+, Firefox) */
 html:not([data-scrollhide-off]),
 html:not([data-scrollhide-off]) * {

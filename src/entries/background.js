@@ -6,7 +6,7 @@ if (typeof importScripts === 'function') {
 
 const { getHideCount, getSyncState, normalizeSyncState, setHideCount } = globalThis.ScrollHideStorage;
 const { buildMatcher, isRestrictedUrl, shouldHideOn, whitelistToExcludeMatches } = globalThis.ScrollHideWhitelist;
-const { CSS_FILE, ICONS, OFF_ATTR, SCRIPT_ID, STYLE_ID } = globalThis.ScrollHideConstants;
+const { CSS_FILE, CSS_MARKER, ICONS, OFF_ATTR, SCRIPT_ID, STYLE_ID } = globalThis.ScrollHideConstants;
 
 const ignore = () => {};
 
@@ -73,20 +73,23 @@ const syncRegisteredCss = async ({ scrollbarHidden, whitelist }) => {
 /* ── Already-open tabs (no reload needed) ─────────────────── */
 
 // Runs inside every frame. Must be self-contained: executeScript serializes it.
-function applyInFrame(hidden, exact, wildcards, offAttr, legacyStyleId) {
+// Turns hiding on or off for this frame (by its own hostname, so embedded frames follow
+// their own whitelist rule) and returns true if the frame should hide but has no stylesheet:
+// it was loaded while hiding was off, or while its site was on the whitelist.
+function applyInFrame(hidden, exact, wildcards, offAttr, marker, legacyStyleId) {
+  const root = document.documentElement;
+  if (!root) return false;
   const host = location.hostname;
   const whitelisted = !!host && (exact.includes(host) || wildcards.some((apex) => host.endsWith(`.${apex}`)));
-  const root = document.documentElement;
-  if (!root) return;
-  if (hidden && !whitelisted) {
-    root.removeAttribute(offAttr);
-  } else {
-    root.setAttribute(offAttr, '');
-  }
+  const hide = hidden && !whitelisted;
+  root.toggleAttribute(offAttr, !hide);
   // Clean up the <style> injected by versions before 2.2
   document.getElementById(legacyStyleId)?.remove();
+  return hide && !getComputedStyle(root).getPropertyValue(marker);
 }
 
+// Brings already-open tabs in line with the state, without a reload. The stylesheet is
+// inserted only into frames that lack it, so pages that already have it are not restyled.
 const syncOpenTabs = async ({ scrollbarHidden, whitelist }) => {
   const { exact, wildcards } = buildMatcher(whitelist);
   const tabs = await chrome.tabs.query({});
@@ -94,18 +97,16 @@ const syncOpenTabs = async ({ scrollbarHidden, whitelist }) => {
   await Promise.all(
     tabs.map(async (tab) => {
       if (tab.id === undefined || tab.id < 0 || !tab.url || isRestrictedUrl(tab.url)) return;
-      const target = { tabId: tab.id, allFrames: true };
       try {
-        if (scrollbarHidden) {
-          // Frames loaded while hiding was off have no stylesheet yet; remove first to avoid duplicates
-          await chrome.scripting.removeCSS({ target, files: [CSS_FILE] }).catch(ignore);
-          await chrome.scripting.insertCSS({ target, files: [CSS_FILE] });
-        }
-        await chrome.scripting.executeScript({
-          target,
+        const results = await chrome.scripting.executeScript({
+          target: { tabId: tab.id, allFrames: true },
           func: applyInFrame,
-          args: [scrollbarHidden, exact, wildcards, OFF_ATTR, STYLE_ID],
+          args: [scrollbarHidden, exact, wildcards, OFF_ATTR, CSS_MARKER, STYLE_ID],
         });
+        const frameIds = results.filter((r) => r.result === true).map((r) => r.frameId);
+        if (frameIds.length) {
+          await chrome.scripting.insertCSS({ target: { tabId: tab.id, frameIds }, files: [CSS_FILE] });
+        }
       } catch (_) {
         // Tab not scriptable (Web Store, PDF viewer, discarded tab, ...)
       }
@@ -113,8 +114,6 @@ const syncOpenTabs = async ({ scrollbarHidden, whitelist }) => {
   );
 };
 
-// The toolbar icon is the only feedback the popup gets, so update it without
-// waiting for the content-script registration to finish
 const applyState = (state) =>
   enqueue(() => Promise.all([updateAllIcons(state), syncRegisteredCss(state).then(() => syncOpenTabs(state))]));
 

@@ -180,8 +180,13 @@ manifestFiles.forEach((f) => assert(fs.existsSync(path.join(extRoot, f)), `Manif
 
 // 3c. CSS injected via registerContentScripts and toolbar icons must exist
 require('../src/shared/constants.js');
-const { CSS_FILE, ICONS } = global.ScrollHideConstants;
+const { CSS_FILE, CSS_MARKER, ICONS } = global.ScrollHideConstants;
 assert(fs.existsSync(path.join(extRoot, CSS_FILE)), `Injected CSS exists: ${CSS_FILE}`);
+// The background detects frames that already have the stylesheet by this custom property
+assert(
+  new RegExp(`:root\\s*\\{[^}]*${CSS_MARKER}\\s*:`).test(fs.readFileSync(path.join(extRoot, CSS_FILE), 'utf8')),
+  `${CSS_FILE} sets the ${CSS_MARKER} marker on :root`,
+);
 Object.entries(ICONS).forEach(([state, sizes]) => {
   Object.values(sizes).forEach((iconPath) => {
     assert(fs.existsSync(path.join(extRoot, iconPath)), `Toolbar icon (${state}) exists: ${iconPath}`);

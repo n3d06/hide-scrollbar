@@ -15,6 +15,7 @@ type IconSet = Record<16 | 32 | 48 | 128, string>;
 interface ScrollHideConstantsApi {
   BACKUP_FILENAME: string;
   CSS_FILE: string;
+  CSS_MARKER: string;
   DEFAULT_SYNC_STATE: SyncState;
   ICONS: { active: IconSet; inactive: IconSet };
   RESTRICTED_PROTOCOLS: string[];

@@ -12,6 +12,8 @@
   const ScrollHideConstants = {
     BACKUP_FILENAME: 'scrollhide-backup.json',
     CSS_FILE: 'assets/styles/hide-scrollbar.css',
+    // Custom property set by CSS_FILE; present in a frame once the stylesheet is applied
+    CSS_MARKER: '--scrollhide-css',
     DEFAULT_SYNC_STATE,
     // Toolbar icons: colored while hiding is active, grey otherwise
     ICONS: {
