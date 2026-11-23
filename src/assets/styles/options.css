@@ -1,4 +1,4 @@
-/* Options page — Claude-inspired: warm neutrals, clay accent, serif headings. */
+/* Options page — Claude-inspired: warm neutrals, blue accent, serif headings. */
 
 /* ── Palette (overrides tokens.css for this page only) ── */
 :root {
@@ -13,9 +13,9 @@
   --muted: #73726c;
   --border: #e8e6dc;
   --border-strong: #d1cfc5;
-  --accent: #c96442;
-  --accent-hover: #b4553a;
-  --accent-soft: #f5e4dc;
+  --accent: #2c84db;
+  --accent-hover: #2573c2;
+  --accent-soft: #e3eefa;
   --accent-contrast: #ffffff;
   --danger: #b3261e;
   --danger-soft: #fbe9e7;
@@ -38,9 +38,9 @@
     --muted: #a6a39a;
     --border: #3a3935;
     --border-strong: #4a4944;
-    --accent: #d97757;
-    --accent-hover: #e08a6c;
-    --accent-soft: #46302a;
+    --accent: #2c7cd3;
+    --accent-hover: #3b8ae0;
+    --accent-soft: #233547;
     --accent-contrast: #ffffff;
     --danger: #f28b82;
     --danger-soft: #3b2826;
@@ -60,9 +60,9 @@
   --muted: #a6a39a;
   --border: #3a3935;
   --border-strong: #4a4944;
-  --accent: #d97757;
-  --accent-hover: #e08a6c;
-  --accent-soft: #46302a;
+  --accent: #2c7cd3;
+  --accent-hover: #3b8ae0;
+  --accent-soft: #233547;
   --accent-contrast: #ffffff;
   --danger: #f28b82;
   --danger-soft: #3b2826;
