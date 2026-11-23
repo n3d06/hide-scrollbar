@@ -412,15 +412,44 @@ label.row {
   display: inline-block;
 }
 
-.editor-card {
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-lg);
+.editor {
+  border: 1px solid var(--border);
+  border-radius: 16px;
   background: var(--surface);
   overflow: hidden;
 }
 
-.editor-card:focus-within {
-  border-color: var(--muted);
+.editor:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft) !important;
+}
+
+.editor-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 6px 6px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.editor-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px 2px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
 }
 
 .whitelist-editor-wrap {
@@ -428,34 +457,37 @@ label.row {
   height: 320px;
 }
 
+/* Line numbers sit in the text column: no background, no divider */
 .editor-gutter {
   flex-shrink: 0;
   min-width: 0; /* width follows the widest line number */
-  padding: 12px 8px;
-  border-inline-end: 1px solid var(--border);
-  background: var(--sidebar);
-  color: var(--muted);
+  padding: 14px 0 14px 16px;
+  color: var(--border-strong);
   font-family: var(--mono);
   font-size: 12px;
-  line-height: 21px;
+  line-height: 22px;
   text-align: end;
   white-space: pre;
   user-select: none;
   overflow: hidden;
 }
 
+.editor:focus-within .editor-gutter {
+  color: var(--muted);
+}
+
 .whitelist-textarea {
   flex: 1;
   width: 100%;
   height: 100%;
-  padding: 12px 14px;
+  padding: 14px 16px 14px 14px;
   border: 0;
   outline: none;
   resize: none;
   background: transparent;
   font-family: var(--mono);
   font-size: 13px;
-  line-height: 21px;
+  line-height: 22px;
   white-space: pre;
   overflow-wrap: normal;
   overflow: auto;
@@ -470,15 +502,31 @@ label.row {
   color: var(--muted);
 }
 
-.editor-toolbar {
+.editor-footer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding: 10px;
-  border-top: 1px solid var(--border);
-  background: var(--bg);
+  margin-top: 12px;
+}
+
+.kbd-hint {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.kbd-hint kbd {
+  min-width: 22px;
+  padding: 1px 6px;
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 11.5px;
+  text-align: center;
 }
 
 /* ── Statistics ── */
@@ -506,12 +554,6 @@ label.row {
   line-height: 1;
   color: var(--accent);
   font-variant-numeric: tabular-nums;
-}
-
-.danger-zone {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
 }
 
 /* ── Report ── */

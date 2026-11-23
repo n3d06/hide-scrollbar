@@ -21,6 +21,8 @@
     whitelistFile: $('whitelistFileInput', HTMLInputElement),
     saveIndicator: $('saveIndicator'),
     gutter: $('whitelistGutter'),
+    whitelistCount: $('whitelistCount'),
+    saveShortcutMod: $('saveShortcutMod'),
     editor: $('whitelistInput', HTMLTextAreaElement),
     // Statistics & backup
     cleanedCount: $('statCleanedCount'),
@@ -74,8 +76,9 @@
   const isEditorDirty = () => getEditorText() !== savedWhitelistText;
 
   const updateLineNumbers = () => {
-    const lineCount = getEditorText().split('\n').length;
-    ui.gutter.textContent = Array.from({ length: lineCount }, (_, i) => i + 1).join('\n');
+    const lines = getEditorText().split('\n');
+    ui.gutter.textContent = lines.map((_, i) => i + 1).join('\n');
+    ui.whitelistCount.textContent = normalizeWhitelist(lines).length.toLocaleString();
   };
 
   const updateDirtyState = () => {
@@ -297,6 +300,7 @@
   /* ── Init ─────────────────────────────────────────────────── */
 
   applyI18n();
+  if (/Mac|iPhone|iPad/.test(navigator.platform)) ui.saveShortcutMod.textContent = '⌘';
   showPanel(location.hash.slice(1));
   ui.version.textContent = `v${version}`;
   loadAllState().catch((err) => console.error('[Settings] Failed to load', err));
