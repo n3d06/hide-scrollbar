@@ -420,8 +420,7 @@ label.row {
 }
 
 .editor:focus-within {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft) !important;
+  border-color: var(--border-strong);
 }
 
 .editor-head {
