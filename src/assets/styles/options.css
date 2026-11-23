@@ -430,8 +430,8 @@ label.row {
 
 .editor-gutter {
   flex-shrink: 0;
-  min-width: 40px;
-  padding: 12px 10px;
+  min-width: 0; /* width follows the widest line number */
+  padding: 12px 8px;
   border-inline-end: 1px solid var(--border);
   background: var(--sidebar);
   color: var(--muted);
