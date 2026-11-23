@@ -21,6 +21,8 @@
     whitelistFile: $('whitelistFileInput', HTMLInputElement),
     saveIndicator: $('saveIndicator'),
     gutter: $('whitelistGutter'),
+    whitelistCount: $('whitelistCount'),
+    saveShortcutMod: $('saveShortcutMod'),
     editor: $('whitelistInput', HTMLTextAreaElement),
     // Statistics & backup
     cleanedCount: $('statCleanedCount'),
@@ -74,8 +76,9 @@
   const isEditorDirty = () => getEditorText() !== savedWhitelistText;
 
   const updateLineNumbers = () => {
-    const lineCount = getEditorText().split('\n').length;
-    ui.gutter.textContent = Array.from({ length: lineCount }, (_, i) => i + 1).join('\n');
+    const lines = getEditorText().split('\n');
+    ui.gutter.textContent = lines.map((_, i) => i + 1).join('\n');
+    ui.whitelistCount.textContent = normalizeWhitelist(lines).length.toLocaleString();
   };
 
   const updateDirtyState = () => {
@@ -270,9 +273,35 @@
     if (changes.whitelist) showSavedWhitelist(state.whitelist);
   });
 
+  /* ── Sidebar navigation ───────────────────────────────────── */
+
+  const navItems = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('[data-nav]'));
+  const panels = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('[data-panel]'));
+
+  // Shows one panel; the URL hash keeps it across reloads (unknown hash → first panel)
+  const showPanel = (name) => {
+    const target = [...panels].some((panel) => panel.dataset.panel === name) ? name : panels[0].dataset.panel;
+    panels.forEach((panel) => {
+      panel.hidden = panel.dataset.panel !== target;
+    });
+    navItems.forEach((item) => {
+      if (item.dataset.nav === target) item.setAttribute('aria-current', 'page');
+      else item.removeAttribute('aria-current');
+    });
+  };
+
+  navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      history.replaceState(null, '', `#${item.dataset.nav}`);
+      showPanel(item.dataset.nav);
+    });
+  });
+
   /* ── Init ─────────────────────────────────────────────────── */
 
   applyI18n();
+  if (/Mac|iPhone|iPad/.test(navigator.platform)) ui.saveShortcutMod.textContent = '⌘';
+  showPanel(location.hash.slice(1));
   ui.version.textContent = `v${version}`;
   loadAllState().catch((err) => console.error('[Settings] Failed to load', err));
 })();
