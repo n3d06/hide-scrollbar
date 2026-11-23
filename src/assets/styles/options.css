@@ -1,25 +1,25 @@
-/* Options page — Claude-inspired: warm neutrals, blue accent, serif headings. */
+/* Options page — Claude-inspired: soft neutrals, blue accent, serif headings. */
 
 /* ── Palette (overrides tokens.css for this page only) ── */
 :root {
   color-scheme: light;
-  --bg: #faf9f5;
-  --sidebar: #f5f4ed;
+  --bg: #f9f9f8;
+  --sidebar: #f3f3f1;
   --surface: #ffffff;
-  --hover: #f0eee6;
-  --active: #e8e6dc;
+  --hover: #eeeeec;
+  --active: #e6e6e3;
   --text: #141413;
-  --text-soft: #3d3d3a;
-  --muted: #73726c;
-  --border: #e8e6dc;
-  --border-strong: #d1cfc5;
+  --text-soft: #3c3c3a;
+  --muted: #71716d;
+  --border: #e6e6e3;
+  --border-strong: #d4d4d0;
   --accent: #2c84db;
   --accent-hover: #2573c2;
   --accent-soft: #e3eefa;
   --accent-contrast: #ffffff;
   --danger: #b3261e;
   --danger-soft: #fbe9e7;
-  --toggle-off: #d1cfc5;
+  --toggle-off: #d4d4d0;
   --radius: 8px;
   --radius-lg: 12px;
   --serif: ui-serif, 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, Cambria, 'Times New Roman', serif;
@@ -28,45 +28,45 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --bg: #262624;
-    --sidebar: #1f1e1d;
-    --surface: #30302e;
-    --hover: #34332f;
-    --active: #3d3c38;
-    --text: #faf9f5;
-    --text-soft: #e5e3da;
-    --muted: #a6a39a;
-    --border: #3a3935;
-    --border-strong: #4a4944;
+    --bg: #252525;
+    --sidebar: #1e1e1e;
+    --surface: #2f2f2f;
+    --hover: #343434;
+    --active: #3c3c3c;
+    --text: #f9f9f8;
+    --text-soft: #e4e4e4;
+    --muted: #a3a3a3;
+    --border: #3a3a3a;
+    --border-strong: #4a4a4a;
     --accent: #2c7cd3;
     --accent-hover: #3b8ae0;
     --accent-soft: #233547;
     --accent-contrast: #ffffff;
     --danger: #f28b82;
     --danger-soft: #3b2826;
-    --toggle-off: #55544f;
+    --toggle-off: #555555;
   }
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --bg: #262624;
-  --sidebar: #1f1e1d;
-  --surface: #30302e;
-  --hover: #34332f;
-  --active: #3d3c38;
-  --text: #faf9f5;
-  --text-soft: #e5e3da;
-  --muted: #a6a39a;
-  --border: #3a3935;
-  --border-strong: #4a4944;
+  --bg: #252525;
+  --sidebar: #1e1e1e;
+  --surface: #2f2f2f;
+  --hover: #343434;
+  --active: #3c3c3c;
+  --text: #f9f9f8;
+  --text-soft: #e4e4e4;
+  --muted: #a3a3a3;
+  --border: #3a3a3a;
+  --border-strong: #4a4a4a;
   --accent: #2c7cd3;
   --accent-hover: #3b8ae0;
   --accent-soft: #233547;
   --accent-contrast: #ffffff;
   --danger: #f28b82;
   --danger-soft: #3b2826;
-  --toggle-off: #55544f;
+  --toggle-off: #555555;
 }
 
 html,
